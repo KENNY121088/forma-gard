@@ -1,0 +1,2130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FORMA-GARD — Formation gardien d'immeuble en ligne</title>
+<meta name="description" content="Formation 100 % en ligne au métier de gardien d'immeuble en logement social. Onze modules, attestation de fin de formation, paiement en huit fois. Île-de-France.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- =====================================================================
+     ⚠️  UNE SEULE CHOSE À MODIFIER : vos deux liens, tout en bas de la page,
+         dans le bloc  const FG_LIENS = { ... }
+     ===================================================================== -->
+
+<style>
+#fgx-page{
+  --nav:#0e2442;
+  --nav-deep:#071427;
+  --gold:#c4b99a;
+  --gold-dk:#9a8060;
+  --parch:#f0ece4;
+  --parch-lt:#fbfaf8;
+  --green:#1e6b46;
+  --grey:#6b7280;
+  --ink:#1f2937;
+}
+#fgx-page,#fgx-page *,#fgx-page *:before,#fgx-page *:after{box-sizing:border-box}
+#fgx-page{
+  font-family:'DM Sans',system-ui,sans-serif;color:var(--ink);line-height:1.6;font-size:17px;
+  -webkit-font-smoothing:antialiased;background:#fff;text-align:left;
+}
+#fgx-page p{margin:0 0 1em}
+#fgx-page a{color:inherit;text-decoration:none}
+#fgx-page ul{list-style:none;margin:0;padding:0}
+#fgx-page .fgx-serif{font-family:'DM Serif Display',serif}
+#fgx-page .fgx-wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+#fgx-page .fgx-eyebrow{
+  display:inline-flex;align-items:center;gap:14px;font-size:.78rem;font-weight:600;
+  letter-spacing:.24em;text-transform:uppercase;color:var(--gold-dk);margin-bottom:18px}
+#fgx-page .fgx-eyebrow:before,#fgx-page .fgx-eyebrow:after{content:"";width:38px;height:1px;background:var(--gold)}
+#fgx-page h2{font-family:'DM Serif Display',serif;font-style:italic;font-weight:400;
+  font-size:clamp(2.1rem,4.6vw,3.4rem);line-height:1.12;color:var(--nav);margin:0}
+#fgx-page h3{font-family:'DM Serif Display',serif;font-weight:400;font-size:1.5rem;line-height:1.2;color:var(--nav);margin:0}
+
+/* ---------- boutons ---------- */
+#fgx-page .fgx-btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  border:1px solid transparent;border-radius:999px;padding:15px 30px;font-family:'DM Sans',sans-serif;font-weight:700;
+  font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;
+  transition:transform .25s ease,background .25s ease,color .25s ease,border-color .25s ease,box-shadow .25s ease}
+#fgx-page .fgx-btn:hover{transform:translateY(-3px)}
+#fgx-page .fgx-btn-gold{background:var(--gold);color:var(--nav);box-shadow:0 10px 30px -10px rgba(196,185,154,.9)}
+#fgx-page .fgx-btn-gold:hover{background:#d3cab1;box-shadow:0 16px 38px -12px rgba(196,185,154,1)}
+#fgx-page .fgx-btn-gold:after{content:"";position:absolute;top:0;left:-140%;width:60%;height:100%;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.65),transparent);transform:skewX(-20deg);
+  animation:fgxShine 4.5s ease-in-out infinite}
+@keyframes fgxShine{0%,72%{left:-140%}92%,100%{left:150%}}
+#fgx-page .fgx-btn-ghost{background:transparent;color:#fff;border-color:rgba(196,185,154,.55)}
+#fgx-page .fgx-btn-ghost:hover{border-color:var(--gold);background:rgba(196,185,154,.14)}
+#fgx-page .fgx-btn-ink{background:var(--nav);color:#fff}
+#fgx-page .fgx-btn-ink:hover{background:#16325c}
+#fgx-page .fgx-btn-sm{padding:11px 20px;font-size:.72rem}
+#fgx-page .fgx-btn:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+/* ---------- bandeau défilant ---------- */
+#fgx-page .fgx-ticker{background:var(--nav-deep);color:var(--gold);overflow:hidden;white-space:nowrap;
+  border-bottom:1px solid rgba(196,185,154,.22);padding:9px 0;font-size:.72rem;letter-spacing:.22em;
+  text-transform:uppercase;font-weight:600}
+#fgx-page .fgx-ticker-run{display:inline-block;animation:fgxRun 34s linear infinite}
+#fgx-page .fgx-ticker-run span{padding:0 26px;opacity:.85}
+#fgx-page .fgx-ticker-run i{font-style:normal;color:rgba(196,185,154,.45)}
+@keyframes fgxRun{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ---------- barre ---------- */
+#fgx-page .fgx-bar{position:sticky;top:0;z-index:70;background:rgba(14,36,66,.97);
+  backdrop-filter:blur(10px);border-bottom:1px solid rgba(196,185,154,.2)}
+#fgx-page .fgx-bar .fgx-wrap{display:flex;align-items:center;gap:14px;height:74px}
+#fgx-page .fgx-logo{display:flex;align-items:center;gap:12px;color:#fff}
+#fgx-page .fgx-logo-txt{font-family:'DM Serif Display',serif;font-size:1.32rem;letter-spacing:.02em}
+#fgx-page .fgx-logo-sub{display:block;font-size:.56rem;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--gold);font-weight:600;margin-top:-2px}
+#fgx-page .fgx-logo-img{height:46px;width:auto;flex:0 0 auto}
+#fgx-page .fgx-nav{margin-left:auto;display:flex;align-items:center;gap:8px}
+#fgx-page .fgx-nav-link{color:rgba(255,255,255,.72);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;
+  font-weight:600;padding:10px 14px;transition:color .2s}
+#fgx-page .fgx-nav-link:hover{color:var(--gold)}
+@media(max-width:1080px){#fgx-page .fgx-nav-link{display:none}}
+
+/* ---------- hero ---------- */
+#fgx-page .fgx-hero{position:relative;background:var(--nav);color:#fff;overflow:hidden;padding:92px 0 84px}
+#fgx-page .fgx-hero:before{content:"";position:absolute;top:-30%;right:-10%;width:70%;height:140%;
+  background:radial-gradient(circle at center,rgba(196,185,154,.20),transparent 62%);pointer-events:none}
+#fgx-page .fgx-hero:after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:linear-gradient(rgba(255,255,255,.028) 1px,transparent 1px);background-size:100% 46px}
+#fgx-page .fgx-hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.08fr .92fr;gap:60px;align-items:center}
+#fgx-page .fgx-hero .fgx-eyebrow{color:var(--gold)}
+#fgx-page .fgx-hero h1{font-family:'DM Serif Display',serif;font-weight:400;margin:0;
+  font-size:clamp(2.6rem,5.6vw,4.4rem);line-height:1.05;letter-spacing:-.01em;max-width:15ch}
+#fgx-page .fgx-hero h1 em{font-style:italic;color:var(--gold)}
+#fgx-page .fgx-orn{display:flex;align-items:center;gap:12px;margin:26px 0 22px}
+#fgx-page .fgx-orn i{display:block;width:8px;height:8px;transform:rotate(45deg);background:var(--gold)}
+#fgx-page .fgx-orn s{display:block;height:1px;width:96px;background:linear-gradient(90deg,var(--gold),transparent);text-decoration:none}
+#fgx-page .fgx-hero-sub{font-size:1.14rem;font-weight:300;color:rgba(255,255,255,.8);max-width:47ch}
+#fgx-page .fgx-hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}
+#fgx-page .fgx-hero-note{margin-top:20px;font-size:.82rem;color:rgba(255,255,255,.5)}
+
+/* ---------- façade (signature) ---------- */
+#fgx-page .fgx-facade{position:relative}
+#fgx-page .fgx-facade-frame{position:relative;background:linear-gradient(175deg,#0a1b33,#061020);
+  border:1px solid rgba(196,185,154,.28);border-radius:6px 6px 0 0;padding:22px 22px 0;
+  box-shadow:0 40px 80px -30px rgba(0,0,0,.85)}
+#fgx-page .fgx-roof{position:absolute;top:-12px;left:-12px;right:-12px;height:12px;
+  background:linear-gradient(90deg,var(--gold-dk),var(--gold),var(--gold-dk));border-radius:3px 3px 0 0}
+#fgx-page .fgx-roof:before{content:"";position:absolute;top:-9px;left:16%;width:36px;height:9px;
+  background:#0a1b33;border:1px solid rgba(196,185,154,.55);border-bottom:0;border-radius:2px 2px 0 0}
+#fgx-page .fgx-roof:after{content:"";position:absolute;top:-20px;right:20%;width:2px;height:20px;
+  background:linear-gradient(180deg,var(--gold),rgba(196,185,154,.3));box-shadow:0 -3px 0 1px var(--gold)}
+#fgx-page .fgx-windows{display:grid;grid-template-columns:repeat(6,1fr);gap:12px 14px}
+#fgx-page .fgx-win{position:relative;aspect-ratio:3/4;border-radius:2px 2px 0 0;
+  background:linear-gradient(180deg,rgba(255,255,255,.09),rgba(255,255,255,.02));
+  border:1px solid rgba(255,255,255,.09);
+  border-bottom:3px solid rgba(196,185,154,.30);
+  transition:background-color 1.2s ease,box-shadow 1.2s ease,border-color 1.2s ease}
+#fgx-page .fgx-win.fgx-on{background-color:rgba(255,206,120,.32);border-color:rgba(255,214,150,.42);
+  box-shadow:0 0 16px rgba(255,196,100,.32),inset 0 0 10px rgba(255,206,120,.28)}
+#fgx-page .fgx-win.fgx-curt:after{content:"";position:absolute;top:0;left:0;right:0;height:46%;pointer-events:none;
+  background:repeating-linear-gradient(180deg,rgba(240,236,228,.18) 0 2px,transparent 2px 5px);
+  border-bottom:1px solid rgba(240,236,228,.25)}
+#fgx-page .fgx-win.fgx-balc:after{content:"";position:absolute;left:-3px;right:-3px;bottom:-4px;height:9px;pointer-events:none;
+  background:repeating-linear-gradient(90deg,rgba(196,185,154,.7) 0 1.5px,transparent 1.5px 5px);
+  border-bottom:2px solid rgba(196,185,154,.8)}
+#fgx-page .fgx-slab{grid-column:1/-1;height:6px;margin:1px -22px;
+  background:linear-gradient(90deg,rgba(196,185,154,.08),rgba(196,185,154,.26),rgba(196,185,154,.08));
+  border-top:1px solid rgba(196,185,154,.16)}
+#fgx-page .fgx-win:before{content:"";position:absolute;inset:0;pointer-events:none;z-index:2;
+  background:
+    linear-gradient(90deg,transparent calc(50% - 1px),rgba(7,20,39,.85) calc(50% - 1px) calc(50% + 1px),transparent calc(50% + 1px)),
+    linear-gradient(180deg,transparent calc(40% - 1px),rgba(7,20,39,.85) calc(40% - 1px) calc(40% + 1px),transparent calc(40% + 1px))}
+/* fenetre ouverte : pas de croisillons. Se declenche avec sansCroix:true dans FG_GENS */
+#fgx-page .fgx-win.fgx-sans-croix:before{display:none}
+#fgx-page .fgx-win.fgx-flick{animation:fgxFlick 9s ease-in-out infinite}
+#fgx-page .fgx-win.fgx-flick.d2{animation-delay:2.6s}
+#fgx-page .fgx-win.fgx-flick.d3{animation-delay:5.1s}
+@keyframes fgxFlick{0%,88%,100%{background-color:transparent}92%,96%{background-color:rgba(196,185,154,.25)}}
+#fgx-page .fgx-door{height:64px;margin:12px -22px 0;background:rgba(255,255,255,.045);
+  border-top:1px solid rgba(196,185,154,.28);display:flex;align-items:flex-end;justify-content:center;gap:20px;
+  padding:0 12px}
+#fgx-page .fgx-porte{width:36px;height:52px;background:linear-gradient(180deg,#13294b,#0a1b33);
+  border:1px solid rgba(196,185,154,.6);border-bottom:0;border-radius:5px 5px 0 0;position:relative}
+#fgx-page .fgx-porte:before{content:"";position:absolute;inset:5px 5px 0;border:1px solid rgba(196,185,154,.25);
+  border-bottom:0;border-radius:3px 3px 0 0}
+#fgx-page .fgx-porte i{position:absolute;right:6px;top:52%;width:5px;height:5px;border-radius:999px;background:var(--gold)}
+#fgx-page .fgx-plaque{align-self:center;background:linear-gradient(160deg,var(--gold),var(--gold-dk));color:#0a1b33;padding:7px 18px;
+  border-radius:2px;font-size:.6rem;letter-spacing:.28em;font-weight:700;box-shadow:0 4px 14px rgba(0,0,0,.4)}
+#fgx-page .fgx-porte:after{content:"";position:absolute;top:-9px;left:-7px;right:-7px;height:7px;
+  background:linear-gradient(160deg,var(--gold),var(--gold-dk));border-radius:4px 4px 0 0;box-shadow:0 3px 8px rgba(0,0,0,.45)}
+/* habitants aux fenêtres : tes images de personnages (voir FG_GENS tout en bas du fichier) */
+#fgx-page .fgx-win.fgx-avec-gens{overflow:hidden}
+/* le décor : l'intérieur du logement, au fond de la fenêtre, derrière le personnage.
+   Volontairement en retrait — assombri, désaturé, très légèrement flou — pour que
+   l'œil sépare bien le personnage du fond au lieu de tout lire comme une seule image.
+   Si tu veux le rendre plus ou moins présent, joue sur le brightness et l'opacity. */
+#fgx-page .fgx-decor{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  pointer-events:none;z-index:0;opacity:0;transition:opacity 1.8s ease;
+  filter:brightness(.68) saturate(.58) blur(.7px)}
+#fgx-page .fgx-win.fgx-on .fgx-decor{opacity:.7}
+/* léger ombrage sous le personnage : il se détache du décor au lieu d'y être collé */
+#fgx-page .fgx-gens{filter:drop-shadow(0 2px 3px rgba(7,20,39,.5))}
+#fgx-page .fgx-gens{position:absolute;left:0;bottom:0;width:100%;height:100%;pointer-events:none;z-index:1;
+  object-fit:contain;object-position:50% 100%;transform-origin:50% 100%;
+  transform:translateY(var(--fg-bas,30%)) scale(var(--fg-zoom,1.5));
+  opacity:0;transition:opacity 1.8s ease}
+#fgx-page .fgx-win.fgx-on .fgx-gens{opacity:1}
+/* respiration très légère : personne ne reste parfaitement immobile derrière une vitre */
+#fgx-page .fgx-win.fgx-on .fgx-gens.fgx-respire{animation:fgxRespire 11s ease-in-out infinite}
+@keyframes fgxRespire{
+  0%,100%{transform:translateY(var(--fg-bas,30%)) scale(var(--fg-zoom,1.5))}
+  50%    {transform:translateY(calc(var(--fg-bas,30%) - 1.2%)) scale(calc(var(--fg-zoom,1.5) * 1.015))}}
+/* la personne qui passe : elle entre par la droite, traverse la pièce, ressort à gauche */
+#fgx-page .fgx-win.fgx-on .fgx-gens.fgx-passe{animation:fgxPasse 19s ease-in-out infinite}
+@keyframes fgxPasse{
+  0%,6%   {transform:translateX(115%)  translateY(var(--fg-bas,30%)) scale(var(--fg-zoom,1.5));opacity:0}
+  16%     {transform:translateX(24%)   translateY(var(--fg-bas,30%)) scale(var(--fg-zoom,1.5));opacity:1}
+  46%     {transform:translateX(-6%)   translateY(var(--fg-bas,30%)) scale(var(--fg-zoom,1.5));opacity:1}
+  62%     {transform:translateX(-120%) translateY(var(--fg-bas,30%)) scale(var(--fg-zoom,1.5));opacity:0}
+  100%    {transform:translateX(115%)  translateY(var(--fg-bas,30%)) scale(var(--fg-zoom,1.5));opacity:0}}
+@media(prefers-reduced-motion:reduce){
+  #fgx-page .fgx-win.fgx-on .fgx-gens.fgx-respire,
+  #fgx-page .fgx-win.fgx-on .fgx-gens.fgx-passe{animation:none;opacity:1;
+    transform:translateY(var(--fg-bas,30%)) scale(var(--fg-zoom,1.5))}}
+/* le papillon : ajouté par la page, pas dessiné dans l'image du chat.
+   Il volette en haut à gauche de la fenêtre, là où le chat lève la patte.
+   Pour le mettre dans une autre fenêtre, ajoute papillon:true dans FG_GENS. */
+#fgx-page .fgx-papillon{position:absolute;left:14%;top:12%;z-index:3;
+  font-size:clamp(11px,1.5vw,17px);line-height:1;pointer-events:none;
+  opacity:0;transition:opacity 1.8s ease;
+  filter:drop-shadow(0 1px 2px rgba(7,20,39,.55))}
+#fgx-page .fgx-win.fgx-on .fgx-papillon{opacity:1;animation:fgxPapillon 7.5s ease-in-out infinite}
+@keyframes fgxPapillon{
+  0%,100%{transform:translate(0,0)        rotate(-8deg)}
+  18%    {transform:translate(26%,-34%)   rotate(9deg)}
+  36%    {transform:translate(-14%,-14%)  rotate(-14deg)}
+  54%    {transform:translate(34%,10%)    rotate(6deg)}
+  72%    {transform:translate(6%,-26%)    rotate(-5deg)}
+  86%    {transform:translate(-20%,4%)    rotate(11deg)}}
+@media(prefers-reduced-motion:reduce){
+  #fgx-page .fgx-win.fgx-on .fgx-papillon{animation:none}}
+#fgx-page .fgx-trottoir{height:11px;margin:0 -12px;border-radius:0 0 5px 5px;
+  background:linear-gradient(180deg,#1c222b,#0c1016);box-shadow:0 22px 34px -14px rgba(0,0,0,.85)}
+
+/* métier — registre éditorial */
+#fgx-page .fgx-metier{display:grid;grid-template-columns:.9fr 1.1fr;gap:72px;align-items:start}
+#fgx-page .fgx-metier-intro{position:sticky;top:120px}
+#fgx-page .fgx-metier-intro p{margin-top:20px;font-size:1.08rem;font-weight:300;color:var(--grey)}
+#fgx-page .fgx-ledger{border-top:1px solid var(--parch)}
+#fgx-page .fgx-ledge{display:flex;gap:28px;padding:32px 0;border-bottom:1px solid var(--parch);align-items:flex-start;
+  transition:padding .3s ease}
+#fgx-page .fgx-ledge:hover{padding-left:10px}
+#fgx-page .fgx-ledge em{font-family:'DM Serif Display',serif;font-style:italic;font-size:2rem;line-height:1;
+  color:var(--gold-dk);min-width:54px}
+#fgx-page .fgx-ledge h3{font-size:1.35rem;margin-bottom:7px}
+#fgx-page .fgx-ledge p{margin:0;font-size:.95rem;color:var(--grey)}
+
+/* parcours — fil vertical */
+#fgx-page .fgx-fil{max-width:660px;margin:0 auto;position:relative}
+#fgx-page .fgx-fil:before{content:"";position:absolute;left:27px;top:16px;bottom:16px;width:1px;
+  background:linear-gradient(180deg,transparent,rgba(196,185,154,.6),transparent)}
+#fgx-page .fgx-etape{position:relative;display:flex;gap:30px;padding:24px 0;align-items:flex-start}
+#fgx-page .fgx-etape em{position:relative;z-index:2;flex:0 0 54px;height:54px;display:flex;align-items:center;justify-content:center;
+  border-radius:999px;background:var(--nav);border:1px solid var(--gold);color:var(--gold);
+  font-family:'DM Serif Display',serif;font-style:normal;font-size:1.35rem}
+#fgx-page .fgx-etape h3{margin-bottom:6px}
+#fgx-page .fgx-etape p{margin:0;color:rgba(255,255,255,.7);font-weight:300;font-size:.96rem}
+#fgx-page .fgx-facade-note{margin:12px 0 0;text-align:center;font-size:.7rem;letter-spacing:.18em;
+  text-transform:uppercase;color:rgba(255,255,255,.45)}
+#fgx-page .fgx-facade-label{margin:18px 0 0;text-align:center;min-height:1.7em;
+  font-family:'DM Serif Display',serif;font-style:italic;font-size:1.08rem;color:var(--gold)}
+
+/* ---------- chiffres ---------- */
+#fgx-page .fgx-stats{background:var(--nav-deep);border-top:1px solid rgba(196,185,154,.2);
+  border-bottom:1px solid rgba(196,185,154,.2)}
+#fgx-page .fgx-stats-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+#fgx-page .fgx-stat{padding:38px 22px;text-align:center;border-right:1px solid rgba(196,185,154,.16)}
+#fgx-page .fgx-stat:last-child{border-right:0}
+#fgx-page .fgx-stat b{display:block;font-family:'DM Serif Display',serif;font-weight:400;font-size:2.9rem;
+  line-height:1;color:var(--gold)}
+#fgx-page .fgx-stat span{display:block;margin-top:10px;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(255,255,255,.55)}
+
+/* ---------- sections ---------- */
+#fgx-page .fgx-sec{padding:104px 0;position:relative}
+#fgx-page .fgx-parch{border-top:1px solid var(--parch);border-bottom:1px solid var(--parch);
+  background:var(--parch-lt) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .028 0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E")}
+#fgx-page .fgx-dark{background:var(--nav);color:#fff}
+#fgx-page .fgx-dark h2,#fgx-page .fgx-dark h3{color:#fff}
+#fgx-page .fgx-dark .fgx-eyebrow{color:var(--gold)}
+#fgx-page .fgx-head{max-width:64ch;margin-bottom:58px}
+#fgx-page .fgx-head p{margin-top:20px;font-size:1.1rem;font-weight:300;color:var(--grey)}
+#fgx-page .fgx-dark .fgx-head p{color:rgba(255,255,255,.72)}
+#fgx-page .fgx-center{text-align:center;margin-left:auto;margin-right:auto}
+
+/* métier */
+#fgx-page .fgx-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+#fgx-page .fgx-card{position:relative;background:#fff;border:1px solid var(--parch);border-radius:14px;padding:34px 28px;
+  overflow:hidden;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}
+#fgx-page .fgx-card:before{content:"";position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--gold),var(--gold-dk));transform:scaleX(0);transform-origin:left;
+  transition:transform .4s ease}
+#fgx-page .fgx-card:hover{transform:translateY(-8px);box-shadow:0 28px 50px -26px rgba(14,36,66,.42);border-color:var(--gold)}
+#fgx-page .fgx-card:hover:before{transform:scaleX(1)}
+#fgx-page .fgx-card b{font-family:'DM Serif Display',serif;font-weight:400;font-size:2.6rem;color:var(--parch);
+  line-height:1;display:block;margin-bottom:14px;transition:color .3s ease}
+#fgx-page .fgx-card:hover b{color:var(--gold)}
+#fgx-page .fgx-card p{margin:12px 0 0;font-size:.95rem;color:var(--grey)}
+
+/* programme */
+#fgx-page .fgx-mods{border-top:1px solid var(--parch)}
+#fgx-page .fgx-mod{position:relative;border-bottom:1px solid var(--parch);padding:30px 30px 30px 0;
+  display:grid;grid-template-columns:104px 1fr 190px;gap:28px;align-items:center;transition:background .35s ease,padding .35s ease}
+#fgx-page .fgx-mod:before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--gold);
+  transform:scaleY(0);transition:transform .35s ease}
+#fgx-page .fgx-mod:hover{background:#fff;padding-left:26px}
+#fgx-page .fgx-mod:hover:before{transform:scaleY(1)}
+#fgx-page .fgx-mod-num{font-family:'DM Serif Display',serif;font-size:2.3rem;line-height:1;color:var(--gold);
+  transition:color .3s ease}
+#fgx-page .fgx-mod:hover .fgx-mod-num{color:var(--gold-dk)}
+#fgx-page .fgx-mod h3{margin-bottom:7px;font-size:1.4rem}
+#fgx-page .fgx-mod p{margin:0;font-size:.95rem;color:var(--grey);max-width:58ch}
+#fgx-page .fgx-chip{justify-self:end;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;
+  color:var(--gold-dk);background:rgba(196,185,154,.16);border:1px solid rgba(196,185,154,.4);
+  padding:7px 14px;border-radius:999px;white-space:nowrap}
+
+/* étapes */
+#fgx-page .fgx-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;position:relative}
+#fgx-page .fgx-steps:before{content:"";position:absolute;top:27px;left:12%;right:12%;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(196,185,154,.5),transparent)}
+#fgx-page .fgx-step{position:relative;text-align:center}
+#fgx-page .fgx-step em{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;
+  width:54px;height:54px;margin:0 auto 24px;border-radius:999px;background:var(--nav);
+  border:1px solid var(--gold);color:var(--gold);font-family:'DM Serif Display',serif;font-style:normal;font-size:1.4rem}
+#fgx-page .fgx-step p{margin:12px 0 0;font-size:.95rem;color:rgba(255,255,255,.7);font-weight:300}
+
+/* manifeste */
+#fgx-page .fgx-manif{background:var(--nav-deep);color:#fff;text-align:center;padding:110px 0;position:relative;overflow:hidden}
+#fgx-page .fgx-manif:before{content:"\201C";position:absolute;top:-30px;left:50%;transform:translateX(-50%);
+  font-family:'DM Serif Display',serif;font-size:20rem;color:rgba(196,185,154,.07);line-height:1}
+#fgx-page .fgx-manif blockquote{position:relative;margin:0 auto;max-width:900px;
+  font-family:'DM Serif Display',serif;font-style:italic;font-size:clamp(1.5rem,3.2vw,2.4rem);line-height:1.35}
+#fgx-page .fgx-manif footer{margin-top:30px;font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold)}
+
+/* témoignages */
+#fgx-page .fgx-quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+#fgx-page .fgx-quote{background:#fff;border:1px solid var(--parch);border-radius:14px;padding:34px 30px;position:relative}
+#fgx-page .fgx-quote:before{content:"\201C";position:absolute;top:8px;right:22px;font-family:'DM Serif Display',serif;
+  font-size:5rem;color:var(--parch);line-height:1}
+#fgx-page .fgx-quote p{position:relative;font-size:1.02rem;font-style:italic;color:var(--ink)}
+#fgx-page .fgx-quote footer{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-dk);font-weight:600}
+#fgx-page .fgx-note{margin-top:26px;font-size:.84rem;color:var(--grey);border-left:2px solid var(--gold);padding-left:16px}
+
+/* faq */
+#fgx-page .fgx-faq details{border-bottom:1px solid var(--parch);transition:background .3s ease}
+#fgx-page .fgx-faq details[open]{background:#fff}
+#fgx-page .fgx-faq summary{cursor:pointer;padding:26px 20px 26px 0;font-family:'DM Serif Display',serif;font-size:1.24rem;
+  color:var(--nav);list-style:none;display:flex;align-items:center;gap:18px}
+#fgx-page .fgx-faq summary::-webkit-details-marker{display:none}
+#fgx-page .fgx-faq summary:after{content:"+";margin-left:auto;color:var(--gold-dk);font-family:'DM Sans',sans-serif;
+  font-size:1.6rem;font-weight:300;line-height:1;transition:transform .3s ease}
+#fgx-page .fgx-faq details[open] summary:after{content:"\2212";transform:rotate(180deg)}
+#fgx-page .fgx-faq .fgx-ans{padding:0 20px 28px 0;color:var(--grey);max-width:74ch;font-weight:300}
+
+/* cta final */
+#fgx-page .fgx-final{position:relative;background:var(--nav);color:#fff;text-align:center;padding:120px 0;overflow:hidden}
+#fgx-page .fgx-final:before{content:"";position:absolute;inset:0;
+  background:radial-gradient(ellipse at 50% 120%,rgba(196,185,154,.28),transparent 62%)}
+#fgx-page .fgx-final .fgx-wrap{position:relative;z-index:2}
+#fgx-page .fgx-final h2{color:#fff;max-width:19ch;margin:0 auto}
+#fgx-page .fgx-final p{max-width:52ch;margin:24px auto 36px;color:rgba(255,255,255,.75);font-weight:300}
+#fgx-page .fgx-final-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+/* fiche : public visé, prérequis, objectifs — présentation en registre, label à gauche */
+#fgx-page .fgx-fiche{max-width:880px;margin:0 auto}
+#fgx-page .fgx-ligne{display:grid;grid-template-columns:170px 1fr;gap:34px;
+  padding:30px 0;border-top:1px solid rgba(14,36,66,.13);align-items:start}
+#fgx-page .fgx-ligne:last-child{border-bottom:1px solid rgba(14,36,66,.13)}
+#fgx-page .fgx-ligne > h3{font-family:'DM Sans',sans-serif;font-size:.72rem;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--gold-dk);font-weight:600;margin:5px 0 0;line-height:1.7}
+#fgx-page .fgx-ligne p{margin:0 0 12px;color:#3d4c60;font-weight:300;line-height:1.8}
+#fgx-page .fgx-ligne p:last-child{margin-bottom:0}
+#fgx-page .fgx-ligne ul{margin:0;padding:0;list-style:none;columns:2;column-gap:34px}
+#fgx-page .fgx-ligne ul.fgx-un{columns:1}
+#fgx-page .fgx-ligne li{position:relative;padding-left:18px;margin-bottom:9px;
+  color:#3d4c60;font-weight:300;line-height:1.7;break-inside:avoid}
+#fgx-page .fgx-ligne li:before{content:"";position:absolute;left:0;top:12px;width:7px;height:1px;
+  background:var(--gold-dk)}
+#fgx-page .fgx-ligne .fgx-precision{margin-top:16px;font-size:.88rem;color:var(--grey);font-style:italic}
+@media(max-width:760px){
+  #fgx-page .fgx-ligne{grid-template-columns:1fr;gap:14px;padding:24px 0}
+  #fgx-page .fgx-ligne ul{columns:1}}
+
+/* les fenêtres habitées racontent une situation au survol */
+#fgx-page .fgx-win.fgx-parlante{cursor:pointer}
+#fgx-page .fgx-win.fgx-parlante:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+#fgx-page .fgx-win.fgx-parlante:after{content:"";position:absolute;inset:0;z-index:3;pointer-events:none;
+  box-shadow:inset 0 0 0 0 rgba(196,185,154,0);transition:box-shadow .3s ease}
+#fgx-page .fgx-win.fgx-parlante:hover:after,
+#fgx-page .fgx-win.fgx-parlante:focus-visible:after{box-shadow:inset 0 0 0 2px rgba(196,185,154,.85)}
+#fgx-page .fgx-bulle{position:absolute;z-index:40;pointer-events:none;
+  transform:translate(-50%,calc(-100% - 14px));max-width:250px;width:max-content;
+  background:var(--nav-deep);border:1px solid rgba(196,185,154,.55);border-left:3px solid var(--gold);
+  border-radius:8px;padding:11px 14px;box-shadow:0 18px 40px -12px rgba(0,0,0,.6);
+  opacity:0;transition:opacity .28s ease,transform .28s ease}
+#fgx-page .fgx-bulle.fgx-bulle-on{opacity:1;transform:translate(-50%,calc(-100% - 20px))}
+#fgx-page .fgx-bulle b{display:block;font-family:'DM Sans',sans-serif;font-size:.6rem;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--gold);margin-bottom:5px;font-weight:500}
+#fgx-page .fgx-bulle span{display:block;font-size:.85rem;line-height:1.5;color:rgba(255,255,255,.9);
+  font-weight:300}
+#fgx-page .fgx-bulle:before{content:"";position:absolute;left:50%;bottom:-6px;width:10px;height:10px;
+  transform:translateX(-50%) rotate(45deg);background:var(--nav-deep);
+  border-right:1px solid rgba(196,185,154,.55);border-bottom:1px solid rgba(196,185,154,.55)}
+@media(max-width:560px){#fgx-page .fgx-bulle{max-width:200px;padding:9px 11px}
+  #fgx-page .fgx-bulle span{font-size:.79rem}}
+@media(prefers-reduced-motion:reduce){#fgx-page .fgx-bulle{transition:opacity .01s}}
+
+/* La Loge Virtuelle */
+#fgx-page .fgx-loge-intro{max-width:660px;margin:0 auto 52px;text-align:center;
+  color:#3d4c60;font-weight:300;line-height:1.85}
+#fgx-page .fgx-loge-intro strong{color:var(--nav);font-weight:500}
+#fgx-page .fgx-outils{max-width:940px;margin:0 auto;display:grid;
+  grid-template-columns:repeat(3,1fr);gap:0}
+#fgx-page .fgx-outil{padding:6px 30px;border-left:1px solid rgba(196,185,154,.55)}
+#fgx-page .fgx-outil:first-child{padding-left:0;border-left:0}
+#fgx-page .fgx-outil:last-child{padding-right:0}
+#fgx-page .fgx-outil-num{font-family:'DM Sans',sans-serif;font-size:.72rem;letter-spacing:.22em;
+  color:var(--gold-dk);display:block;margin-bottom:14px}
+#fgx-page .fgx-outil h3{font-family:'DM Serif Display',serif;font-style:italic;font-size:1.35rem;
+  color:var(--nav);margin:0 0 12px;line-height:1.25}
+#fgx-page .fgx-outil p{margin:0;font-size:.94rem;line-height:1.75;color:#3d4c60;font-weight:300}
+#fgx-page .fgx-loge-plus{max-width:940px;margin:44px auto 0;text-align:center;
+  font-family:'DM Serif Display',serif;font-style:italic;font-size:1.15rem;color:var(--nav)}
+#fgx-page .fgx-demo{margin-bottom:52px;max-width:940px;margin:44px auto 0;padding:0}
+#fgx-page .fgx-demo-video{display:block;width:100%;height:auto;border-radius:12px;
+  border:1px solid rgba(196,185,154,.45);box-shadow:0 40px 80px -40px rgba(7,20,39,.5);background:var(--nav)}
+#fgx-page .fgx-demo figcaption{margin-top:14px;text-align:center;font-size:.86rem;
+  color:var(--grey);font-style:italic}
+#fgx-page .fgx-loge-pied{max-width:940px;margin:34px auto 0;font-size:.86rem;color:var(--grey);
+  text-align:center;font-style:italic}
+@media(max-width:780px){
+  #fgx-page .fgx-outils{grid-template-columns:1fr;gap:0}
+  #fgx-page .fgx-outil{padding:26px 0;border-left:0;border-top:1px solid rgba(196,185,154,.55)}
+  #fgx-page .fgx-outil:first-child{padding-top:0;border-top:0}}
+
+/* footer */
+#fgx-page .fgx-foot{background:var(--nav-deep);color:rgba(255,255,255,.5);padding:40px 0;font-size:.84rem;
+  border-top:1px solid rgba(196,185,154,.18)}
+#fgx-page .fgx-foot .fgx-wrap{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center}
+#fgx-page .fgx-foot a{color:rgba(255,255,255,.72)}
+#fgx-page .fgx-foot a:hover{color:var(--gold)}
+#fgx-page .fgx-foot-legal{flex:1 1 100%;order:3;border-top:1px solid rgba(255,255,255,.1);
+  padding-top:16px;margin-top:4px;font-size:.78rem;line-height:2;color:rgba(255,255,255,.42)}
+#fgx-page .fgx-foot-legal button{background:none;border:0;padding:0;cursor:pointer;font:inherit;
+  color:rgba(255,255,255,.62);text-decoration:underline;text-underline-offset:3px}
+#fgx-page .fgx-foot-legal button:hover{color:var(--gold)}
+/* documents juridiques : panneau qui s'ouvre par-dessus la page */
+#fgx-page .fgx-docmask{position:fixed;inset:0;z-index:400;background:rgba(7,20,39,.72);
+  display:none;padding:24px 16px;overflow-y:auto}
+#fgx-page .fgx-docmask.fgx-open{display:block}
+#fgx-page .fgx-docbox{max-width:760px;margin:0 auto;background:var(--parch-lt);color:var(--nav);
+  border-radius:3px;padding:40px 42px 46px;position:relative;box-shadow:0 30px 80px rgba(7,20,39,.5)}
+#fgx-page .fgx-docbox h3{font-family:'DM Serif Display',serif;font-style:italic;font-size:1.7rem;
+  margin:0 0 6px;line-height:1.2}
+#fgx-page .fgx-docbox .fgx-docmaj{font-size:.76rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--gold-dk);margin-bottom:26px}
+#fgx-page .fgx-docbox h4{font-size:.95rem;margin:26px 0 8px;color:var(--nav)}
+#fgx-page .fgx-docbox p,#fgx-page .fgx-docbox li{font-size:.92rem;line-height:1.75;
+  color:#3d4c60;font-weight:300;margin:0 0 10px}
+#fgx-page .fgx-docbox ul{margin:0 0 10px;padding-left:20px}
+#fgx-page .fgx-docx{position:absolute;top:14px;right:16px;background:none;border:0;cursor:pointer;
+  font-size:1.8rem;line-height:1;color:var(--grey)}
+#fgx-page .fgx-docx:hover{color:var(--nav)}
+@media(max-width:640px){#fgx-page .fgx-docbox{padding:34px 22px 38px}}
+
+/* pop-up */
+#fgx-page .fgx-toast{position:fixed;left:24px;bottom:24px;z-index:9990;max-width:352px;background:#fff;
+  border:1px solid var(--parch);border-left:3px solid var(--gold);border-radius:12px;
+  box-shadow:0 26px 60px -18px rgba(7,20,39,.32);padding:18px 46px 18px 20px;
+  opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease;pointer-events:none}
+#fgx-page .fgx-toast.fgx-in{opacity:1;transform:translateY(0);pointer-events:auto}
+#fgx-page .fgx-toast b{display:block;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--gold-dk);margin-bottom:7px}
+#fgx-page .fgx-toast p{margin:0;font-size:.9rem;line-height:1.5;color:var(--ink)}
+#fgx-page .fgx-toast button{position:absolute;top:10px;right:10px;border:0;background:transparent;color:#9ca3af;
+  cursor:pointer;font-size:1.3rem;line-height:1;padding:2px 7px}
+#fgx-page .fgx-toast button:hover{color:var(--nav)}
+
+/* révélation */
+#fgx-page .fgx-rev{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+#fgx-page .fgx-rev.fgx-in{opacity:1;transform:none}
+
+/* responsive */
+@media(max-width:980px){
+  #fgx-page .fgx-hero-grid{grid-template-columns:1fr;gap:48px}
+  #fgx-page .fgx-metier{grid-template-columns:1fr;gap:36px}
+  #fgx-page .fgx-metier-intro{position:static}
+  #fgx-page .fgx-stats-grid{grid-template-columns:repeat(2,1fr)}
+  #fgx-page .fgx-stat:nth-child(2){border-right:0}
+  #fgx-page .fgx-quotes{grid-template-columns:1fr}
+  #fgx-page .fgx-mod{grid-template-columns:72px 1fr;gap:18px}
+  #fgx-page .fgx-chip{grid-column:2;justify-self:start}
+}
+@media(max-width:620px){
+  #fgx-page .fgx-sec{padding:72px 0}
+  #fgx-page .fgx-hero{padding:62px 0 58px}
+  #fgx-page .fgx-cards{grid-template-columns:1fr}
+  #fgx-page .fgx-toast{left:14px;right:14px;max-width:none}
+  #fgx-page .fgx-manif{padding:80px 0}
+}
+@media(prefers-reduced-motion:reduce){
+  #fgx-page *{animation:none!important;transition-duration:.01ms!important}
+  #fgx-page .fgx-rev{opacity:1;transform:none}
+}
+</style>
+</head>
+
+<body style="margin:0">
+<div id="fgx-page">
+
+  <!-- ============ BANDEAU DÉFILANT ============ -->
+  <div class="fgx-ticker" aria-hidden="true">
+    <div class="fgx-ticker-run">
+      <span>Formation 100 % en ligne</span><i>&#10022;</i><span>11 modules</span><i>&#10022;</i><span>Paiement en 8 fois</span><i>&#10022;</i><span>Attestation de fin de formation</span><i>&#10022;</i><span>Accès 12 mois à la plateforme</span><i>&#10022;</i><span>Île-de-France</span><i>&#10022;</i><span>Formation 100 % en ligne</span><i>&#10022;</i><span>11 modules</span><i>&#10022;</i><span>Paiement en 8 fois</span><i>&#10022;</i><span>Attestation de fin de formation</span><i>&#10022;</i><span>Accès 12 mois à la plateforme</span><i>&#10022;</i><span>Île-de-France</span><i>&#10022;</i>
+    </div>
+  </div>
+
+  <!-- ============ BARRE ============ -->
+  <header class="fgx-bar">
+    <div class="fgx-wrap">
+      <a class="fgx-logo" href="#fgx-top">
+        <img class="fgx-logo-img" src="https://res.cloudinary.com/dffpdts1c/image/upload/e_colorize,co_white/v1784388332/Blue_Minimalist_simple_real_estate_architecture_Logo_5_husnha.png" alt="Logo FORMA-GARD">
+        <span><span class="fgx-logo-txt">FORMA-GARD</span><span class="fgx-logo-sub">Organisme de formation</span></span>
+      </a>
+      <nav class="fgx-nav">
+        <a class="fgx-nav-link" href="#fgx-programme">Programme</a>
+        <a class="fgx-nav-link" href="#fg-tarifs">Tarifs</a>
+        <a class="fgx-nav-link" href="#fgx-faq">Questions</a>
+        <a class="fgx-btn fgx-btn-ghost fgx-btn-sm" data-fg="connexion" href="#">Se connecter</a>
+        <a class="fgx-btn fgx-btn-gold fgx-btn-sm" data-fg="paiement" href="#">Je m'inscris</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="fgx-hero" id="fgx-top">
+    <div class="fgx-wrap fgx-hero-grid">
+      <div>
+        <span class="fgx-eyebrow">Formation au métier de gardien d'immeuble</span>
+        <h1>Ce métier ne s'improvise pas. Il <em>s'apprend.</em></h1>
+        <div class="fgx-orn"><i></i><s></s></div>
+        <p class="fgx-hero-sub">Formation 100 % en ligne au métier de gardien d'immeuble, conçue par une professionnelle en poste dans le logement social. Onze modules, des mises en situation réelles, une attestation à la clé.</p>
+        <div class="fgx-hero-cta">
+          <a class="fgx-btn fgx-btn-gold" data-fg="paiement" href="#">Je m'inscris</a>
+          <a class="fgx-btn fgx-btn-ghost" href="#fgx-programme">Voir le programme</a>
+        </div>
+        <p class="fgx-hero-note">Paiement comptant ou en 4 mensualités &middot; Accès immédiat après inscription</p>
+      </div>
+
+      <div class="fgx-facade">
+        <div class="fgx-facade-frame">
+          <div class="fgx-roof"></div>
+          <div class="fgx-windows" id="fgxWindows" role="group" aria-label="La façade de l'immeuble : passez sur les fenêtres habitées"></div>
+          <div class="fgx-door">
+            <span class="fgx-plaque">LOGE DU GARDIEN</span>
+            <span class="fgx-porte" aria-hidden="true"><i></i></span>
+          </div>
+        </div>
+        <div class="fgx-trottoir" aria-hidden="true"></div>
+        <p class="fgx-facade-label" id="fgxFacadeLabel">Passez sur les fenêtres habitées : voilà une journée de gardien</p>
+        <p class="fgx-facade-note">Survolez pour découvrir &middot; cliquez pour y aller</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CHIFFRES ============ -->
+  <section class="fgx-stats">
+    <div class="fgx-wrap fgx-stats-grid">
+      <div class="fgx-stat"><b>07</b><span>Modules</span></div>
+      <div class="fgx-stat"><b>04</b><span>Mensualités possibles</span></div>
+      <div class="fgx-stat"><b>100 %</b><span>En ligne, à votre rythme</span></div>
+      <div class="fgx-stat"><b>14 j</b><span>Droit de rétractation</span></div>
+    </div>
+  </section>
+
+  <!-- ============ LE MÉTIER ============ -->
+  <section class="fgx-sec">
+    <div class="fgx-wrap">
+      <div class="fgx-metier">
+        <div class="fgx-metier-intro fgx-rev">
+          <span class="fgx-eyebrow">Le métier</span>
+          <h2>Quatre casquettes, un seul poste.</h2>
+          <p>Un gardien d'immeuble tient l'entretien, la relation locataire, le technique et l'administratif. La formation couvre les quatre, avec les textes et les procédures du logement social.</p>
+        </div>
+        <div class="fgx-ledger fgx-rev">
+          <div class="fgx-ledge"><em>I.</em><div><h3>Propreté &amp; hygiène</h3>
+            <p>Protocoles de nettoyage, produits, matériel professionnel, gestion des déchets et des parties communes.</p></div></div>
+          <div class="fgx-ledge"><em>II.</em><div><h3>Relation locataire</h3>
+            <p>Posture, accueil, réclamations et conflits : la juste distance dans un immeuble où l'on travaille au quotidien.</p></div></div>
+          <div class="fgx-ledge"><em>III.</em><div><h3>Technique</h3>
+            <p>Électricité, plomberie, chauffage : repérer, signaler correctement, savoir ce qui relève de vous.</p></div></div>
+          <div class="fgx-ledge"><em>IV.</em><div><h3>Administratif</h3>
+            <p>États des lieux, bail HLM, traçabilité des interventions, attribution de logement, loyers et charges.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROGRAMME ============ -->
+  <section class="fgx-sec fgx-parch" id="fgx-programme">
+    <div class="fgx-wrap">
+      <div class="fgx-head fgx-rev">
+        <span class="fgx-eyebrow">Le programme</span>
+        <h2>Onze modules, dans l'ordre où le métier se pratique.</h2>
+        <p>Chaque module se découpe en parties courtes, à suivre à votre rythme, avec des mises en situation tirées du terrain.</p>
+      </div>
+      <div class="fgx-mods">
+        <article class="fgx-mod fgx-rev" id="fgx-module-1" data-mod="1">
+          <div class="fgx-mod-num">01</div>
+          <div><h3>Histoire du HLM et métier de gardien</h3>
+            <p>Du HBM au HLM, les rôles réels du gardien d'immeuble, le statut, la convention collective et le logement de fonction.</p></div>
+          <span class="fgx-chip">3 parties</span>
+        </article>
+        <article class="fgx-mod fgx-rev" id="fgx-module-2" data-mod="2">
+          <div class="fgx-mod-num">02</div>
+          <div><h3>Posture professionnelle et relation locataire</h3>
+            <p>Communication verbale et non verbale, écoute active, styles de comportement, accueil en loge et au téléphone, réclamations, conflits de voisinage, stress et agressivité.</p></div>
+          <span class="fgx-chip">8 parties</span>
+        </article>
+        <article class="fgx-mod fgx-rev" id="fgx-module-3" data-mod="3">
+          <div class="fgx-mod-num">03</div>
+          <div><h3>Hygiène et nettoyage</h3>
+            <p>Santé, sécurité et ergonomie, matériel et produits, méthodes et surfaces, déchets et conteneurs, la science du nettoyage, les principes du geste, l'escalier.</p></div>
+          <span class="fgx-chip">9 parties</span>
+        </article>
+        <article class="fgx-mod fgx-rev" id="fgx-module-4" data-mod="4">
+          <div class="fgx-mod-num">04</div>
+          <div><h3>L'état des lieux</h3>
+            <p>Cadre légal et logement décent, réaliser et rédiger l'état des lieux, menuiseries, chauffage et ventilation, sanitaires, électricité, chiffrage et vétusté.</p></div>
+          <span class="fgx-chip">7 parties</span>
+        </article>
+        <article class="fgx-mod fgx-rev" id="fgx-module-5" data-mod="5">
+          <div class="fgx-mod-num">05</div>
+          <div><h3>Les baux</h3>
+            <p>Le bail du logement social, le loyer, transfert, échange, colocation et sous-location, fin de bail et résiliation, réparations locatives.</p></div>
+          <span class="fgx-chip">5 parties</span>
+        </article>
+        <article class="fgx-mod fgx-rev" id="fgx-module-6" data-mod="6">
+          <div class="fgx-mod-num">06</div>
+          <div><h3>Attribution de logement social</h3>
+            <p>Comprendre le logement social, la demande et l'attribution, la proposition et la visite du logement.</p></div>
+          <span class="fgx-chip">3 parties</span>
+        </article>
+        <article class="fgx-mod fgx-rev" id="fgx-module-7" data-mod="7">
+          <div class="fgx-mod-num">07</div>
+          <div><h3>Gardien en site sensible</h3>
+            <p>Comprendre le territoire, cadre légal et responsabilités, posture, médiation et conflits, traçabilité et surveillance, situations de terrain.</p></div>
+          <span class="fgx-chip">5 parties</span>
+        </article>
+        <article class="fgx-mod fgx-rev" id="fgx-module-8" data-mod="8">
+          <div class="fgx-mod-num">08</div>
+          <div><h3>Loyers et charges</h3>
+            <p>Le calcul du loyer, le paiement et la quittance, les impayés de la relance à l'expulsion, les charges récupérables, le supplément de loyer de solidarité.</p></div>
+          <span class="fgx-chip">5 parties</span>
+        </article>
+        <article class="fgx-mod fgx-rev" id="fgx-module-9" data-mod="9">
+          <div class="fgx-mod-num">09</div>
+          <div><h3>Hygiène et sécurité</h3>
+            <p>Obligations de l'employeur et du gardien, vérifications quotidiennes, accident du travail, sécurité incendie, risques électriques, chimiques et physiques, risques du bâti.</p></div>
+          <span class="fgx-chip">7 parties</span>
+        </article>
+        <article class="fgx-mod fgx-rev" id="fgx-module-10" data-mod="10">
+          <div class="fgx-mod-num">10</div>
+          <div><h3>Accueil et relation locataire</h3>
+            <p>Médiation appliquée : gestion des conflits, gestion des réclamations, gestion du stress et de l'agressivité.</p></div>
+          <span class="fgx-chip">3 parties</span>
+        </article>
+        <article class="fgx-mod fgx-rev" id="fgx-module-11" data-mod="11">
+          <div class="fgx-mod-num">11</div>
+          <div><h3>Hygiène, désinfection et protocoles de nettoyage</h3>
+            <p>Nettoyer ou désinfecter, micro-organismes et transmission, dosage et pictogrammes, protocole en cinq étapes, nettoyage zone par zone, zones à risque, matières biologiques, traçabilité.</p></div>
+          <span class="fgx-chip">9 parties</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LA LOGE VIRTUELLE ============ -->
+  <section class="fgx-sec" id="fgx-loge">
+    <div class="fgx-wrap">
+      <div class="fgx-head fgx-center fgx-rev">
+        <span class="fgx-eyebrow">La Loge Virtuelle</span>
+        <h2>Vous ne lisez pas le métier. Vous le faites.</h2>
+      </div>
+
+      <!-- ====== VIDÉO DU SIMULATEUR ======
+           Source : ta vidéo Cloudinary. Le .webm et l'image fixe sont générés
+           à la volée par Cloudinary à partir du même fichier :
+             ac_none  = piste audio supprimée (la vidéo est muette de toute façon)
+             .webm    = transcodage automatique, plus léger que le mp4
+             so_0     = première image de la vidéo, utilisée comme poster
+           Pour changer de vidéo plus tard, remplace  v1787599251/0824_2_w6hgnz
+           aux trois endroits. -->
+      <figure class="fgx-demo fgx-rev">
+        <video class="fgx-demo-video"
+               poster="https://res.cloudinary.com/dffpdts1c/video/upload/so_0/v1787599251/0824_2_w6hgnz.jpg"
+               autoplay muted loop playsinline preload="metadata"
+               aria-label="Démonstration de la Loge Virtuelle : la messagerie et les outils du gardien">
+          <source src="https://res.cloudinary.com/dffpdts1c/video/upload/ac_none/v1787599251/0824_2_w6hgnz.webm" type="video/webm">
+          <source src="https://res.cloudinary.com/dffpdts1c/video/upload/ac_none/v1787599251/0824_2_w6hgnz.mp4"  type="video/mp4">
+        </video>
+        <figcaption>La Loge Virtuelle, telle que vous l'utiliserez pendant la formation.</figcaption>
+      </figure>
+
+      <p class="fgx-loge-intro fgx-rev">En entretien, on ne vous demandera pas de réciter un cours.
+        On vous demandera <strong>ce que vous savez faire</strong>. La Loge Virtuelle est l'espace
+        où vous vous entraînez sur les outils du métier, avant de les utiliser pour de vrai.</p>
+
+      <div class="fgx-outils fgx-rev">
+        <div class="fgx-outil">
+          <span class="fgx-outil-num">01</span>
+          <h3>La messagerie</h3>
+          <p>Répondre à un locataire, à une entreprise, à son responsable de site. Écrire un message
+            clair, daté, qui fait preuve.</p>
+        </div>
+        <div class="fgx-outil">
+          <span class="fgx-outil-num">02</span>
+          <h3>Les réclamations</h3>
+          <p>Enregistrer une demande, la qualifier, la classer par ordre de priorité et de danger,
+            et la suivre jusqu'à sa clôture.</p>
+        </div>
+        <div class="fgx-outil">
+          <span class="fgx-outil-num">03</span>
+          <h3>Les bons de commande</h3>
+          <p>Décrire la prestation attendue, choisir le bon prestataire, puis contrôler
+            l'intervention réalisée.</p>
+        </div>
+      </div>
+
+      <p class="fgx-loge-plus fgx-rev">Et plus encore.</p>
+
+      <p class="fgx-loge-pied fgx-rev">La Loge Virtuelle est incluse dans la formation. Elle s'ajoute aux
+        onze modules, elle ne les remplace pas.</p>
+    </div>
+  </section>
+
+  <!-- ============ FICHE : PUBLIC, PRÉREQUIS, OBJECTIFS ============
+       Ces trois rubriques sont attendues sur toute fiche de formation.
+       Le nombre d'heures est à compléter (voir la ligne « Durée estimée »). -->
+  <section class="fgx-sec fgx-parch">
+    <div class="fgx-wrap">
+      <div class="fgx-head fgx-center fgx-rev">
+        <span class="fgx-eyebrow">La formation en clair</span>
+        <h2>Pour qui, à quelles conditions, pour quels acquis.</h2>
+      </div>
+      <div class="fgx-fiche fgx-rev">
+
+        <div class="fgx-ligne">
+          <h3>Pour qui</h3>
+          <div>
+            <ul>
+              <li>Employé d'immeuble souhaitant évoluer</li>
+              <li>Gardien déjà en poste, sans formation initiale</li>
+              <li>Agent d'entretien ou agent de sécurité</li>
+              <li>Salarié en reconversion professionnelle</li>
+              <li>Demandeur d'emploi en reconversion</li>
+              <li>Bénéficiaire du RSA en reconversion</li>
+            </ul>
+            <p class="fgx-precision">La formation est ouverte à tous, sans condition d'âge ni de diplôme.</p>
+          </div>
+        </div>
+
+        <div class="fgx-ligne">
+          <h3>Avant de commencer</h3>
+          <div>
+            <ul class="fgx-un">
+              <li>Savoir lire, écrire et comprendre le français</li>
+              <li>Maîtriser les opérations de calcul courantes</li>
+              <li>Savoir utiliser un ordinateur, une tablette ou un téléphone, et une messagerie électronique</li>
+              <li>Disposer d'une connexion internet</li>
+            </ul>
+            <p class="fgx-precision">Aucun diplôme n'est exigé. Aucune expérience préalable du métier n'est nécessaire.</p>
+          </div>
+        </div>
+
+        <div class="fgx-ligne">
+          <h3>À la fin, vous savez</h3>
+          <div>
+            <ul class="fgx-un">
+              <li>Situer le logement social, ses acteurs et la place exacte du gardien dans cet ensemble</li>
+              <li>Tenir la relation avec les locataires : accueillir, informer, recevoir une réclamation et la traiter jusqu'au bout</li>
+              <li>Organiser l'entretien des parties communes : produits, matériel, protocoles, gestion des déchets</li>
+              <li>Appliquer un protocole de désinfection et en assurer la traçabilité</li>
+              <li>Réaliser un état des lieux d'entrée et de sortie, apprécier la vétusté et distinguer ce qui relève du locataire de ce qui relève du bailleur</li>
+              <li>Lire un bail, expliquer ses clauses à un locataire et repérer les situations qui doivent remonter au bailleur</li>
+              <li>Expliquer le parcours d'attribution d'un logement social et renseigner un demandeur sans se substituer au bailleur</li>
+              <li>Décomposer un loyer et ses charges, comprendre la régularisation annuelle et repérer les premiers signaux d'impayé</li>
+              <li>Travailler en sécurité : équipements de protection, risques du poste, consignes incendie et gestion des accès</li>
+              <li>Exercer en quartier prioritaire : cadre légal, posture, traçabilité des incidents</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="fgx-ligne">
+          <h3>Durée estimée</h3>
+          <div>
+            <p>[nombre] heures de formation, réparties sur onze modules et 64 parties. Vous avancez à votre rythme, sans horaire ni date imposés, avec un accès à la plateforme ouvert pendant douze mois.</p>
+          </div>
+        </div>
+
+        <div class="fgx-ligne">
+          <h3>Ce que vous obtenez</h3>
+          <div>
+            <p>Une attestation de fin de formation mentionnant les objectifs, la nature et la durée de l'action ainsi que les résultats de l'évaluation des acquis.</p>
+            <p class="fgx-precision">Cette attestation n'est ni un diplôme, ni un titre professionnel, ni une certification enregistrée au RNCP. Elle atteste que vous avez suivi la formation et acquis les compétences ci-dessus.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DÉROULÉ ============ -->
+  <section class="fgx-sec fgx-dark">
+    <div class="fgx-wrap">
+      <div class="fgx-head fgx-center fgx-rev">
+        <span class="fgx-eyebrow">Déroulé</span>
+        <h2>De l'inscription à l'attestation.</h2>
+      </div>
+      <div class="fgx-fil fgx-rev">
+        <div class="fgx-etape"><em>I</em><div><h3>Vous vous inscrivez</h3>
+          <p>Comptant ou en quatre mensualités. Vos identifiants d'accès arrivent par e-mail, et votre accès à la plateforme est ouvert pendant douze mois.</p></div></div>
+        <div class="fgx-etape"><em>II</em><div><h3>Vous avancez à votre rythme</h3>
+          <p>Onze modules, à suivre dans l'ordre ou non, sur téléphone comme sur ordinateur. Vous reprenez là où vous vous êtes arrêté, le soir, le week-end, entre deux services. Personne ne vous impose de date.</p></div></div>
+        <div class="fgx-etape"><em>III</em><div><h3>Vous n'êtes pas seul devant l'écran</h3>
+          <p>Une question sur un état des lieux, sur un congé, sur une situation que vous vivez au travail : vous écrivez, on vous répond. Le Club Réseau vous met aussi en lien avec les autres apprenants.</p></div></div>
+        <div class="fgx-etape"><em>IV</em><div><h3>Vous recevez votre attestation</h3>
+          <p>À l'issue du parcours, votre attestation de fin de formation vous est délivrée.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MANIFESTE ============ -->
+  <section class="fgx-manif">
+    <div class="fgx-wrap">
+      <blockquote>Un état des lieux mal rempli, une réclamation mal traitée, et c'est toute une résidence qui bascule. Ce métier mérite mieux qu'un apprentissage sur le tas.</blockquote>
+      <footer>FORMA-GARD</footer>
+    </div>
+  </section>
+
+  <!-- ============ INTRO TARIFS ============ -->
+  <section class="fgx-sec fgx-parch" style="padding-bottom:0">
+    <div class="fgx-wrap">
+      <div class="fgx-head fgx-center fgx-rev" style="margin-bottom:0">
+        <span class="fgx-eyebrow">Investissement</span>
+        <h2>Une seule formation. Il n'y a rien à choisir.</h2>
+        <p>Pas de version allégée, pas d'option à débloquer pour avoir le vrai contenu. Tout le monde reçoit les onze modules, La Loge Virtuelle, la convention de stage et l'accompagnement jusqu'à l'embauche. Ce que vous choisissez, c'est seulement la façon de payer.</p>
+      </div>
+    </div>
+  </section>
+
+  <div style="background:#fbfaf8">
+
+<!-- ====== FORMA-GARD — BLOC TARIFS (compatible Systeme.io) ====== -->
+<!-- À coller dans un bloc "Code HTML" sur ta page de vente. -->
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+/* ---- RESET LOCAL (scopé, ne touche que la page tarifs) ---- */
+#fg-tarifs *,#fg-tarifs *:after,#fg-tarifs *:before{box-sizing:border-box!important;margin:0;padding:0;border:0 solid #e5e7eb}
+#fg-tarifs{font-family:'DM Sans',sans-serif!important;color:#1f2937;line-height:1.5;-webkit-font-smoothing:antialiased;text-align:left}
+#fg-tarifs h1,#fg-tarifs h2,#fg-tarifs h3,#fg-tarifs h4{font-size:inherit;font-weight:inherit;margin:0;line-height:1.2}
+#fg-tarifs p,#fg-tarifs ul{margin:0}
+#fg-tarifs ul{list-style:none!important;padding:0!important}
+#fg-tarifs button{cursor:pointer;background:transparent;border:0;font-family:inherit;color:inherit}
+#fg-tarifs a{color:inherit;text-decoration:none}
+#fg-tarifs img{display:block;max-width:100%;height:auto}
+#fg-tarifs input{font-family:inherit;border:0;margin:0;background:#fff}
+#fg-tarifs table{border-collapse:collapse}
+
+#fg-tarifs .fg-serif{font-family:'DM Serif Display',serif!important}
+#fg-tarifs .fg-not-italic{font-style:normal}
+#fg-tarifs .fg-c-ink{color:#0e2442}
+#fg-tarifs .fg-c-gold{color:#c4b99a}
+#fg-tarifs .fg-c-golddark{color:#9a8060}
+#fg-tarifs .fg-c-green{color:#1e6b46}
+
+#fg-tarifs .fg-wrap{max-width:1850px;margin:0 auto;padding:48px 16px;background:transparent}
+@media(min-width:640px){#fg-tarifs .fg-wrap{padding:48px 24px}}
+@media(min-width:1024px){#fg-tarifs .fg-wrap{padding:48px 32px}}
+
+#fg-tarifs .fg-header{text-align:center;margin-bottom:40px}
+#fg-tarifs .fg-eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:.8rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:#6b7280;margin-bottom:16px}
+#fg-tarifs .fg-eyebrow span{width:40px;height:1px;background:#c4b99a}
+#fg-tarifs .fg-title{font-family:'DM Serif Display',serif!important;font-style:italic;font-size:2.5rem;color:#0e2442;line-height:1.15;margin-bottom:16px}
+@media(min-width:640px){#fg-tarifs .fg-title{font-size:3rem}}
+@media(min-width:1024px){#fg-tarifs .fg-title{font-size:3.75rem}}
+#fg-tarifs .fg-subtitle{font-size:1.25rem;color:#6b7280;max-width:46rem;margin:0 auto;font-weight:300}
+@media(min-width:640px){#fg-tarifs .fg-subtitle{font-size:1.45rem}}
+
+#fg-tarifs .fg-top-actions{margin-top:32px;display:flex;flex-wrap:wrap;justify-content:center;gap:16px;align-items:center}
+#fg-tarifs .fg-btn-pill{display:inline-flex;align-items:center;gap:8px;font-weight:600;padding:10px 20px;border-radius:999px;font-size:.875rem;transition:all .2s}
+#fg-tarifs .fg-btn-pill svg{width:16px;height:16px}
+#fg-tarifs .fg-btn-quiz{background:rgba(196,185,154,.1);color:#9a8060;border:1px solid rgba(196,185,154,.3)}
+#fg-tarifs .fg-btn-quiz:hover{background:rgba(196,185,154,.2);transform:translateY(-2px)}
+#fg-tarifs .fg-btn-table{background:#f3f4f6;color:#374151}
+#fg-tarifs .fg-btn-table:hover{background:#e5e7eb}
+
+#fg-tarifs .fg-billing{display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:48px}
+#fg-tarifs .fg-billing-track{background:rgba(240,236,228,.4);padding:4px;border-radius:999px;display:inline-flex;align-items:center;border:1px solid #f0ece4}
+#fg-tarifs .fg-billing-track button{padding:8px 24px;border-radius:999px;font-size:.875rem;font-weight:600;transition:all .2s;color:#6b7280}
+#fg-tarifs .fg-billing-track button.fg-active{color:#0e2442;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.05)}
+#fg-tarifs .fg-billing-note{font-size:.75rem;color:#9a8060;font-weight:500;margin-top:8px;display:flex;align-items:center;gap:4px}
+#fg-tarifs .fg-pulse-dot{display:inline-block;width:8px;height:8px;border-radius:999px;background:#1e6b46;animation:fgpulse 2s cubic-bezier(.4,0,.6,1) infinite}
+@keyframes fgpulse{50%{opacity:.5}}
+
+#fg-tarifs .fg-mobile-tabs{display:flex;gap:4px;justify-content:flex-start;border-bottom:1px solid #f0ece4;padding:0 8px 8px;margin-bottom:24px;overflow-x:auto}
+#fg-tarifs .fg-mobile-tab-btn{flex-shrink:0;padding:8px 16px;font-size:.875rem;font-weight:600;border-bottom:2px solid transparent;color:#9ca3af;white-space:nowrap}
+#fg-tarifs .fg-mobile-tab-btn.fg-active{border-bottom-color:#0e2442;color:#0e2442}
+@media(min-width:1024px){#fg-tarifs .fg-mobile-tabs{display:none}}
+
+#fg-tarifs .fg-grid-scroll{position:relative;overflow-x:auto;padding-bottom:24px}
+#fg-tarifs .fg-grid-scroll::-webkit-scrollbar{height:8px}
+#fg-tarifs .fg-grid-scroll::-webkit-scrollbar-track{background:#f0ece4;border-radius:999px}
+#fg-tarifs .fg-grid-scroll::-webkit-scrollbar-thumb{background:#c4b99a;border-radius:999px}
+#fg-tarifs .fg-grid-scroll::-webkit-scrollbar-thumb:hover{background:#9a8060}
+
+#fg-tarifs .fg-grid{border:1px solid #f0ece4;border-radius:16px;background:#fff;box-shadow:0 20px 25px -5px rgba(0,0,0,.1);overflow:hidden}
+@media(min-width:1024px){#fg-tarifs .fg-grid{display:block;min-width:0}}
+@media(min-width:1024px){#fg-tarifs .fg-grid .fg-col{border-right:0}}
+
+#fg-tarifs .fg-col{background:#fff;border-right:1px solid #f0ece4;display:flex;flex-direction:column;transition:all .3s}
+#fg-tarifs .fg-col-head{padding:32px;border-bottom:1px solid #f0ece4;position:relative}
+#fg-tarifs .fg-col-num{color:#9a8060;font-size:1.05rem!important;font-weight:600;letter-spacing:.05em;text-transform:uppercase;margin-bottom:4px}
+#fg-tarifs .fg-col-name{font-family:'DM Serif Display',serif!important;font-size:2.2rem!important;color:#0e2442;margin-bottom:16px}
+#fg-tarifs .fg-price{font-family:'DM Serif Display',serif!important;font-size:3rem;color:#0e2442;display:flex;align-items:flex-start;gap:4px;line-height:1}
+#fg-tarifs .fg-price .fg-cur{font-size:1.5rem;align-self:flex-end;margin-bottom:5px}
+#fg-tarifs .fg-price .fg-cents{font-size:1.5rem;font-family:'DM Sans',sans-serif!important;font-weight:500;margin-top:4px}
+#fg-tarifs .fg-price-int{transition:opacity .2s}
+#fg-tarifs .fg-col-body{padding:32px;flex-grow:1;display:flex;flex-direction:column;justify-content:space-between}
+#fg-tarifs .fg-feat{font-size:1.2rem!important;line-height:1.5;color:#6b7280;font-style:italic;margin-bottom:16px}
+#fg-tarifs .fg-flist{display:flex;flex-direction:column;gap:18px;margin-bottom:24px;font-size:1.35rem!important;line-height:1.4;color:#4b5563}
+#fg-tarifs .fg-flist li{display:flex;align-items:flex-start;gap:12px}
+#fg-tarifs .fg-flist .fg-chk{color:#9a8060;font-weight:700;font-size:1.5rem;line-height:1}
+#fg-tarifs .fg-strong-line{font-weight:600;color:#0e2442}
+
+#fg-tarifs .fg-gift{margin-bottom:24px}
+#fg-tarifs .fg-col-kenny .fg-col-body>.fg-cta{margin-top:36px}
+#fg-tarifs .fg-gift-head{font-size:1.05rem!important;font-weight:700;color:#9a8060;text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px;display:flex;align-items:center;justify-content:space-between}
+#fg-tarifs .fg-gift-head .fg-line{width:33%;height:1px;background:#f0ece4}
+#fg-tarifs .fg-gift-img{overflow:hidden;border-radius:8px}
+#fg-tarifs .fg-gift-img img{width:100%;border-radius:8px;transition:transform .3s;object-fit:cover}
+#fg-tarifs .fg-gift-img img:hover{transform:scale(1.01)}
+#fg-tarifs .fg-gift-list{display:flex;flex-direction:column;gap:10px;margin-top:12px;font-size:1.15rem!important;line-height:1.4;color:#6b7280}
+#fg-tarifs .fg-gift-list li{display:flex;align-items:flex-start;gap:8px}
+#fg-tarifs .fg-gift-list .fg-chk{color:#9a8060;font-weight:700}
+
+#fg-tarifs .fg-cta{width:100%;padding:20px 24px;font-weight:600;font-size:1.1rem!important;letter-spacing:.08em;text-transform:uppercase;border-radius:8px;transition:all .2s;box-shadow:0 4px 6px -1px rgba(0,0,0,.1)}
+#fg-tarifs .fg-cta-ink{background:#0e2442;color:#fff}
+#fg-tarifs .fg-cta-ink:hover{background:rgba(14,36,66,.9);transform:translateY(-2px)}
+#fg-tarifs .fg-cta-gold{background:#c4b99a;color:#0e2442;font-weight:700}
+#fg-tarifs .fg-cta-gold:hover{background:rgba(196,185,154,.9);transform:translateY(-2px)}
+
+#fg-tarifs .fg-col-kenny{background:#0e2442;color:#fff;border:4px solid #c4b99a;position:relative;z-index:10;box-shadow:0 25px 50px -12px rgba(0,0,0,.25)}
+@media(min-width:1024px){#fg-tarifs .fg-col-kenny{transform:scale(1.02)}}
+#fg-tarifs .fg-col-kenny .fg-col-head{border-bottom-color:rgba(240,236,228,.1)}
+#fg-tarifs .fg-col-kenny .fg-col-num{color:#c4b99a}
+#fg-tarifs .fg-col-kenny .fg-col-name{color:#fff}
+#fg-tarifs .fg-col-kenny .fg-price{color:#fff}
+#fg-tarifs .fg-col-kenny .fg-price .fg-cur{color:#c4b99a}
+#fg-tarifs .fg-col-kenny .fg-feat{color:#d1d5db}
+#fg-tarifs .fg-col-kenny .fg-flist{color:#e5e7eb}
+#fg-tarifs .fg-col-kenny .fg-flist .fg-chk{color:#c4b99a}
+#fg-tarifs .fg-col-kenny .fg-strong-line{color:#fff}
+#fg-tarifs .fg-col-kenny .fg-gift-head{color:#c4b99a}
+#fg-tarifs .fg-col-kenny .fg-gift-head .fg-line{background:rgba(255,255,255,.1)}
+#fg-tarifs .fg-col-kenny .fg-gift-list{color:#e5e7eb}
+#fg-tarifs .fg-col-kenny .fg-gift-list .fg-chk{color:#c4b99a}
+@media(min-width:960px){
+  #fg-tarifs .fg-col-kenny .fg-col-body>div{
+    display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);
+    column-gap:40px;align-items:start;
+  }
+  #fg-tarifs .fg-col-kenny .fg-col-body>div>.fg-feat{grid-column:1/-1}
+  #fg-tarifs .fg-col-kenny .fg-col-body>div>.fg-flist{grid-column:1;grid-row:2;margin-bottom:0}
+  #fg-tarifs .fg-col-kenny .fg-col-body>div>.fg-gift{grid-column:2;grid-row:2;margin-bottom:0;align-self:center}
+  #fg-tarifs .fg-col-kenny .fg-col-body>div>.fg-gift .fg-gift-head{justify-content:center;font-size:1.5rem!important;letter-spacing:.06em;margin-bottom:18px}
+  #fg-tarifs .fg-col-kenny .fg-col-body>div>.fg-gift .fg-gift-head .fg-line{display:none}
+  #fg-tarifs .fg-col-kenny .fg-col-body>div>.fg-gift .fg-gift-list{margin-top:22px;gap:14px}
+  #fg-tarifs .fg-col-kenny .fg-gift-img img{max-height:400px;object-fit:contain}
+}
+
+#fg-tarifs .fg-club-block{display:flex;flex-direction:column;gap:24px}
+#fg-tarifs .fg-club-tag{font-size:1.1rem!important;font-weight:600;text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px}
+#fg-tarifs .fg-tag-emploi{color:#2563eb}
+#fg-tarifs .fg-tag-reseau{color:#1e6b46}
+#fg-tarifs .fg-club-list{display:flex;flex-direction:column;gap:12px;font-size:1.2rem!important;line-height:1.4;color:#4b5563}
+#fg-tarifs .fg-club-list li{display:flex;align-items:flex-start;gap:8px}
+#fg-tarifs .fg-club-list .fg-chk-blue{color:#2563eb;font-weight:700}
+#fg-tarifs .fg-club-list .fg-chk-green{color:#1e6b46;font-weight:700}
+#fg-tarifs .fg-price-sm{font-family:'DM Serif Display',serif!important;font-size:2.25rem;color:#0e2442;display:flex;align-items:flex-start;gap:4px}
+#fg-tarifs .fg-price-sm .fg-cur{font-size:1.25rem;align-self:flex-end;margin-bottom:4px}
+#fg-tarifs .fg-price-sm .fg-cents{font-size:1.25rem;font-family:'DM Sans',sans-serif!important;font-weight:500;margin-top:4px}
+#fg-tarifs .fg-price-cap{font-size:1.1rem!important;line-height:1.5;color:#9ca3af;margin-top:4px}
+#fg-tarifs .fg-club-cta{width:auto;margin-top:0;padding:15px 28px;font-weight:600;font-size:1.05rem!important;text-transform:uppercase;border-radius:8px;transition:all .2s;cursor:pointer}
+@media(max-width:767px){#fg-tarifs .fg-club-cta{width:100%}}
+#fg-tarifs .fg-cta-emploi{background:#eff6ff;color:#1d4ed8;border:1px solid #bfdbfe}
+#fg-tarifs .fg-cta-emploi:hover{background:#dbeafe}
+#fg-tarifs .fg-cta-emploi.fg-on{background:#2563eb;color:#fff;border-color:#2563eb}
+#fg-tarifs .fg-cta-reseau{background:rgba(30,107,70,.1);color:#1e6b46;border:1px solid rgba(30,107,70,.2)}
+#fg-tarifs .fg-cta-reseau:hover{background:rgba(30,107,70,.2)}
+#fg-tarifs .fg-cta-reseau.fg-on{background:#1e6b46;color:#fff;border-color:#1e6b46}
+#fg-tarifs .fg-divider{border-top:1px solid #f0ece4;margin:16px 0}
+
+#fg-tarifs .fg-col-loge .fg-col-body{padding:24px}
+#fg-tarifs .fg-loge-incl{margin-top:14px;font-weight:600;color:#9a8060;letter-spacing:.02em}
+/* --- Ligne « La Loge Virtuelle » mise en avant dans la liste de la formation --- */
+#fg-tarifs .fg-star-line{position:relative;background:rgba(196,185,154,.14);border:1px solid rgba(196,185,154,.5);border-radius:12px;padding:14px 16px!important;margin:6px 0}
+#fg-tarifs .fg-col-kenny .fg-star-line{background:rgba(196,185,154,.16);border-color:rgba(196,185,154,.55)}
+#fg-tarifs .fg-star-btn{display:inline-flex;align-items:center;gap:6px;margin-top:16px;background:#c4b99a;color:#0e2442;font-weight:700;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;padding:9px 16px;border-radius:999px;text-decoration:none;transition:transform .2s,box-shadow .2s;box-shadow:0 2px 6px rgba(7,20,39,.18)}
+#fg-tarifs .fg-star-btn:hover{transform:translateY(-2px);box-shadow:0 6px 14px rgba(7,20,39,.28)}
+@media(prefers-reduced-motion:no-preference){
+  #fg-tarifs .fg-star-btn{animation:fgStarPulse 2.6s ease-in-out infinite}
+}
+@keyframes fgStarPulse{
+  0%,100%{box-shadow:0 2px 6px rgba(7,20,39,.18)}
+  50%{box-shadow:0 0 0 6px rgba(196,185,154,.28),0 2px 6px rgba(7,20,39,.18)}
+}
+/* --- Section paysage « La Loge Virtuelle » --- */
+#fg-tarifs .fg-loge-band{margin-top:48px;background:#0e2442;border-radius:20px;overflow:hidden;box-shadow:0 20px 25px -5px rgba(7,20,39,.28)}
+#fg-tarifs .fg-loge-band-in{padding:44px 32px}
+@media(min-width:768px){#fg-tarifs .fg-loge-band-in{padding:52px 56px}}
+#fg-tarifs .fg-loge-band-cap{font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#c4b99a;margin-bottom:10px}
+#fg-tarifs .fg-loge-band-head{display:flex;flex-direction:column;gap:30px}
+@media(min-width:1024px){#fg-tarifs .fg-loge-band-head{flex-direction:row;align-items:center;gap:48px}}
+#fg-tarifs .fg-loge-band-txt{min-width:0}
+@media(min-width:1024px){#fg-tarifs .fg-loge-band-txt{flex:1 1 52%}}
+#fg-tarifs .fg-loge-band-video{flex:1 1 48%;margin:0;min-width:0;border-radius:14px;overflow:hidden;border:1px solid rgba(196,185,154,.35);box-shadow:0 18px 34px -12px rgba(0,0,0,.55);background:#071427}
+#fg-tarifs .fg-loge-band-video video{display:block;width:100%;height:auto}
+#fg-tarifs .fg-loge-band-punch{font-size:1.6rem;font-weight:700;color:#fff;line-height:1.3;margin:0 0 14px;letter-spacing:-.01em}
+@media(min-width:768px){#fg-tarifs .fg-loge-band-punch{font-size:2.2rem}}
+#fg-tarifs .fg-loge-band h3{font-family:'DM Serif Display',serif!important;font-style:italic;font-size:1.5rem;color:#c4b99a;margin:0 0 6px}
+@media(min-width:768px){#fg-tarifs .fg-loge-band h3{font-size:1.75rem}}
+@media(min-width:768px){#fg-tarifs .fg-loge-band h3{font-size:2.6rem}}
+#fg-tarifs .fg-loge-band-lead{color:#d1d5db;font-size:1rem;line-height:1.7;max-width:62ch;margin:14px 0 0}
+#fg-tarifs .fg-loge-band-rule{height:1px;background:linear-gradient(90deg,rgba(196,185,154,.7),rgba(196,185,154,0));margin:32px 0}
+#fg-tarifs .fg-loge-band-grid{display:grid;grid-template-columns:1fr;gap:18px 40px}
+@media(min-width:640px){#fg-tarifs .fg-loge-band-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:1024px){#fg-tarifs .fg-loge-band-grid{grid-template-columns:1fr 1fr 1fr}}
+#fg-tarifs .fg-loge-band-grid li{display:flex;gap:12px;align-items:flex-start;color:#e5e7eb;font-size:.92rem;line-height:1.6;list-style:none}
+#fg-tarifs .fg-loge-band-grid .fg-chk{color:#c4b99a;flex-shrink:0;font-weight:700}
+#fg-tarifs .fg-loge-band-grid strong{color:#fff;font-weight:600}
+#fg-tarifs .fg-loge-band-foot{margin-top:34px;display:flex;flex-direction:column;gap:18px;align-items:flex-start}
+@media(min-width:768px){#fg-tarifs .fg-loge-band-foot{flex-direction:row;align-items:center;justify-content:space-between}}
+#fg-tarifs .fg-loge-band-kicker{font-family:'DM Serif Display',serif!important;font-style:italic;font-size:1.15rem;color:#c4b99a;max-width:56ch;margin:0}
+#fg-tarifs .fg-loge-band-cta{flex-shrink:0;background:#c4b99a;color:#0e2442;font-weight:700;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;padding:15px 30px;border-radius:8px;text-decoration:none;transition:all .2s}
+#fg-tarifs .fg-loge-band-cta:hover{background:rgba(196,185,154,.88);transform:translateY(-2px)}
+#fg-tarifs .fg-opt-list{display:flex;flex-direction:column;gap:12px}
+#fg-tarifs .fg-opt{display:block;background:#fff;padding:18px;border-radius:12px;border:1px solid #f0ece4;cursor:pointer;transition:all .2s}
+#fg-tarifs .fg-opt:hover{border-color:rgba(154,128,96,.5)}
+#fg-tarifs .fg-opt-row{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
+#fg-tarifs .fg-opt-left{display:flex;align-items:flex-start;gap:10px}
+#fg-tarifs .fg-opt input{margin-top:4px;accent-color:#9a8060}
+#fg-tarifs .fg-opt-title{font-size:1.4rem!important;font-weight:600;color:#0e2442;display:block;line-height:1.3}
+#fg-tarifs .fg-opt-desc{font-size:1.15rem!important;color:#9ca3af;display:block;line-height:1.55}
+#fg-tarifs .fg-badge-free{font-size:1.1rem!important;font-weight:600;color:#1e6b46;background:rgba(30,107,70,.1);padding:4px 12px;border-radius:4px;white-space:nowrap}
+#fg-tarifs .fg-badge-price{font-size:1.35rem!important;font-weight:600;color:#0e2442;font-family:'DM Serif Display',serif!important;white-space:nowrap}
+
+#fg-tarifs .fg-quote-drawer{position:fixed;bottom:0;left:0;right:0;background:#0e2442;color:#fff;box-shadow:0 -10px 40px rgba(0,0,0,.3);border-top:1px solid rgba(196,185,154,.3);transform:translateY(100%);transition:transform .5s;z-index:9998}
+#fg-tarifs .fg-quote-drawer.fg-open{transform:translateY(0)}
+#fg-tarifs .fg-drawer-inner{max-width:1850px;margin:0 auto;padding:16px 24px;display:flex;flex-direction:column;align-items:center;justify-content:space-between;gap:16px}
+@media(min-width:768px){#fg-tarifs .fg-drawer-inner{flex-direction:row}}
+#fg-tarifs .fg-drawer-left{display:flex;align-items:center;gap:16px}
+#fg-tarifs .fg-cart-ic{background:rgba(196,185,154,.2);padding:12px;border-radius:999px;display:none}
+@media(min-width:640px){#fg-tarifs .fg-cart-ic{display:block}}
+#fg-tarifs .fg-cart-ic svg{width:24px;height:24px}
+#fg-tarifs .fg-drawer-cap{font-size:.75rem;color:#c4b99a;font-weight:600;text-transform:uppercase;letter-spacing:.1em}
+#fg-tarifs .fg-drawer-desc{font-size:1.125rem;font-family:'DM Serif Display',serif!important}
+#fg-tarifs .fg-drawer-right{display:flex;flex-wrap:wrap;align-items:center;gap:24px;justify-content:center;width:100%}
+@media(min-width:768px){#fg-tarifs .fg-drawer-right{justify-content:flex-end;width:auto}}
+#fg-tarifs .fg-drawer-total-cap{font-size:.75rem;color:#9ca3af;display:block}
+#fg-tarifs .fg-drawer-total{font-family:'DM Serif Display',serif!important;font-size:1.875rem;color:#c4b99a}
+#fg-tarifs .fg-drawer-total .fg-small{font-size:.875rem;font-family:'DM Sans',sans-serif!important;color:#d1d5db}
+#fg-tarifs .fg-drawer-cta{background:#c4b99a;color:#0e2442;font-weight:700;padding:14px 32px;border-radius:8px;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;transition:all .2s;box-shadow:0 4px 6px -1px rgba(0,0,0,.1)}
+#fg-tarifs .fg-drawer-cta:hover{background:rgba(196,185,154,.9);transform:translateY(-2px)}
+
+#fg-tarifs .fg-compare-opts{margin-top:40px}
+#fg-tarifs .fg-compare-opts th:first-child{width:34%}
+#fg-tarifs .fg-opt-cell{display:flex;align-items:center;gap:10px;cursor:pointer}
+#fg-tarifs .fg-opt-cell input{width:18px;height:18px;flex-shrink:0;accent-color:#0e2442}
+#fg-tarifs .fg-opt-detail{font-size:.86rem;color:#6b7280;line-height:1.7}
+/* --- Mon Partenaire Emploi — section autonome --- */
+#fg-tarifs .fg-mpe-band{margin-top:28px;background:#fbfaf8;border:1px solid #f0ece4;border-radius:20px;overflow:hidden;box-shadow:0 12px 20px -8px rgba(7,20,39,.12)}
+#fg-tarifs .fg-mpe-band-in{padding:40px 28px}
+@media(min-width:768px){#fg-tarifs .fg-mpe-band-in{padding:48px 56px}}
+#fg-tarifs .fg-mpe-head{display:flex;flex-direction:column;gap:22px}
+@media(min-width:768px){#fg-tarifs .fg-mpe-head{flex-direction:row;align-items:flex-start;justify-content:space-between;gap:40px}}
+#fg-tarifs .fg-mpe-cap{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#9a8060;margin-bottom:10px}
+#fg-tarifs .fg-mpe-punch{font-size:1.5rem;font-weight:700;color:#0e2442;line-height:1.3;margin:0 0 12px;letter-spacing:-.01em}
+@media(min-width:768px){#fg-tarifs .fg-mpe-punch{font-size:2rem}}
+#fg-tarifs .fg-mpe-band h3{font-family:'DM Serif Display',serif!important;font-style:italic;font-size:1.4rem;color:#9a8060;margin:0}
+#fg-tarifs .fg-mpe-baseline{font-family:'DM Serif Display',serif!important;font-style:italic;font-size:1.05rem;color:#6b7280;margin:8px 0 0;line-height:1.45}
+#fg-tarifs .fg-mpe-pricebox{flex-shrink:0;text-align:left;background:#0e2442;color:#fff;border-radius:14px;padding:20px 26px}
+@media(min-width:768px){#fg-tarifs .fg-mpe-pricebox{text-align:center}}
+#fg-tarifs .fg-mpe-price{font-family:'DM Serif Display',serif!important;font-size:2.6rem;line-height:1;color:#fff}
+#fg-tarifs .fg-mpe-price .fg-cur{font-size:1.4rem;margin-left:5px;color:#c4b99a}
+#fg-tarifs .fg-mpe-pricecap{font-size:.78rem;color:#c4b99a;line-height:1.5;margin:10px 0 0}
+#fg-tarifs .fg-mpe-lead{color:#6b7280;font-size:1rem;line-height:1.7;max-width:66ch;margin:22px 0 0}
+#fg-tarifs .fg-mpe-rule{height:1px;background:linear-gradient(90deg,rgba(196,185,154,.8),rgba(196,185,154,0));margin:30px 0}
+#fg-tarifs .fg-mpe-sub{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#9a8060;margin:0 0 16px}
+#fg-tarifs .fg-mpe-grid{display:grid;grid-template-columns:1fr;gap:16px 40px;list-style:none;padding:0;margin:0}
+@media(min-width:900px){#fg-tarifs .fg-mpe-grid{grid-template-columns:1fr 1fr}}
+#fg-tarifs .fg-mpe-grid li{display:flex;gap:11px;align-items:flex-start;color:#6b7280;font-size:.92rem;line-height:1.6}
+#fg-tarifs .fg-mpe-grid .fg-chk-blue{flex-shrink:0;font-weight:700}
+#fg-tarifs .fg-mpe-grid strong{color:#0e2442;font-weight:600}
+#fg-tarifs .fg-mpe-foot{margin-top:34px;padding:24px 26px;background:#fff;border:1px solid #f0ece4;border-radius:14px;display:flex;flex-direction:column;gap:20px;align-items:stretch}
+@media(min-width:768px){#fg-tarifs .fg-mpe-foot{flex-direction:row;align-items:center;justify-content:space-between;gap:36px;padding:26px 30px}}
+#fg-tarifs .fg-mpe-argu{font-size:.95rem;color:#4b5563;line-height:1.65;margin:0;padding-left:16px;border-left:3px solid #c4b99a;max-width:52ch}
+#fg-tarifs .fg-mpe-cta{flex-shrink:0;margin:0;white-space:nowrap}
+#fg-tarifs .fg-mpe-reseau{margin-top:18px;padding:24px 26px;background:#fff;border:1px solid #f0ece4;border-radius:14px;display:flex;flex-direction:column;gap:18px;align-items:stretch}
+@media(min-width:768px){#fg-tarifs .fg-mpe-reseau{flex-direction:row;align-items:center;justify-content:space-between;gap:36px;padding:26px 30px}}
+#fg-tarifs .fg-mpe-reseau-txt{font-size:.92rem;color:#6b7280;line-height:1.6;margin:8px 0 0;max-width:56ch}
+#fg-tarifs .fg-mpe-reseau .fg-club-tag{margin-bottom:0}
+#fg-tarifs .fg-mpe-cta-reseau{flex-shrink:0;margin:0;white-space:nowrap}
+#fg-tarifs .fg-col-loge .fg-col-body{background:rgba(251,250,248,.5)}
+#fg-tarifs .fg-compare{margin-top:96px;background:#fff;border:1px solid #f0ece4;border-radius:16px;padding:24px;box-shadow:0 10px 15px -3px rgba(0,0,0,.1)}
+@media(min-width:640px){#fg-tarifs .fg-compare{padding:40px}}
+#fg-tarifs .fg-compare h3{font-family:'DM Serif Display',serif!important;font-size:1.875rem;color:#0e2442;margin-bottom:8px}
+#fg-tarifs .fg-compare-sub{font-size:.875rem;color:#6b7280}
+#fg-tarifs .fg-compare-scroll{overflow-x:auto}
+#fg-tarifs .fg-compare table{width:100%;text-align:left}
+#fg-tarifs .fg-compare thead tr{border-bottom:1px solid #f0ece4;color:#0e2442;font-family:'DM Serif Display',serif!important;font-size:1.125rem}
+#fg-tarifs .fg-compare th,#fg-tarifs .fg-compare td{padding:16px}
+#fg-tarifs .fg-compare th.fg-ctr,#fg-tarifs .fg-compare td.fg-ctr{text-align:center}
+#fg-tarifs .fg-compare th:first-child{width:33%}
+#fg-tarifs .fg-compare tbody{font-size:1.2rem!important;color:#4b5563}
+#fg-tarifs .fg-compare tbody tr{border-top:1px solid rgba(240,236,228,.5)}
+#fg-tarifs .fg-compare td.fg-label{font-weight:600;color:#0e2442}
+#fg-tarifs .fg-yes{color:#1e6b46;font-weight:700;font-size:1.125rem}
+#fg-tarifs .fg-no{color:#d1d5db}
+#fg-tarifs .fg-hl{background:rgba(240,236,228,.2)}
+
+#fg-tarifs .fg-modal{position:fixed;inset:0;background:rgba(14,36,66,.8);backdrop-filter:blur(4px);z-index:9999;display:flex;align-items:center;justify-content:center;padding:16px;opacity:0;pointer-events:none;transition:all .3s}
+#fg-tarifs .fg-modal.fg-open{opacity:1;pointer-events:auto}
+#fg-tarifs .fg-modal-card{background:#fff;border-radius:16px;width:100%;overflow:hidden;box-shadow:0 25px 50px -12px rgba(0,0,0,.25);border:1px solid #f0ece4;transform:translateY(16px);transition:transform .3s}
+#fg-tarifs .fg-modal.fg-open .fg-modal-card{transform:translateY(0)}
+#fg-tarifs .fg-modal-card.fg-lg{max-width:32rem}
+#fg-tarifs .fg-modal-card.fg-md{max-width:28rem}
+#fg-tarifs .fg-modal-head{padding:24px;background:rgba(251,250,248,.5);border-bottom:1px solid #f0ece4;display:flex;align-items:center;justify-content:space-between}
+#fg-tarifs .fg-modal-head h3{font-family:'DM Serif Display',serif!important;font-size:1.5rem;color:#0e2442}
+#fg-tarifs .fg-modal-close{color:#9ca3af;font-size:1.5rem;font-weight:700}
+#fg-tarifs .fg-modal-close:hover{color:#0e2442}
+#fg-tarifs .fg-modal-body{padding:24px}
+#fg-tarifs .fg-quiz-eyebrow{font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:#9a8060;margin-bottom:16px}
+#fg-tarifs .fg-quiz-q{font-size:1rem;font-weight:600;color:#0e2442;margin-bottom:16px}
+#fg-tarifs .fg-quiz-opts{display:flex;flex-direction:column;gap:8px}
+#fg-tarifs .fg-quiz-opt{width:100%;text-align:left;padding:16px;border-radius:12px;border:1px solid #f0ece4;transition:all .2s;font-size:.875rem;font-weight:500;display:flex;justify-content:space-between;align-items:center;gap:12px}
+#fg-tarifs .fg-quiz-opt:hover{border-color:#9a8060;background:rgba(251,250,248,.8)}
+#fg-tarifs .fg-quiz-opt .fg-arr{color:#9a8060}
+#fg-tarifs .fg-hidden{display:none!important}
+#fg-tarifs .fg-quiz-result{text-align:center;padding:24px 0;display:flex;flex-direction:column;gap:16px}
+#fg-tarifs .fg-quiz-ic{width:64px;height:64px;background:rgba(196,185,154,.2);color:#9a8060;border-radius:999px;display:flex;align-items:center;justify-content:center;margin:0 auto;font-size:1.875rem}
+#fg-tarifs .fg-quiz-result h4{font-family:'DM Serif Display',serif!important;font-size:1.5rem;color:#0e2442}
+#fg-tarifs .fg-quiz-result p{font-size:.875rem;color:#6b7280;max-width:28rem;margin:0 auto}
+#fg-tarifs .fg-quiz-actions{padding-top:16px;display:flex;gap:8px;justify-content:center}
+#fg-tarifs .fg-quiz-btn-primary{background:#0e2442;color:#fff;font-weight:600;font-size:.75rem;letter-spacing:.05em;text-transform:uppercase;padding:12px 24px;border-radius:8px;transition:all .2s}
+#fg-tarifs .fg-quiz-btn-primary:hover{background:rgba(14,36,66,.9)}
+#fg-tarifs .fg-quiz-btn-ghost{color:#6b7280;font-weight:600;font-size:.75rem;letter-spacing:.05em;text-transform:uppercase;padding:12px 16px;border-radius:8px}
+#fg-tarifs .fg-quiz-btn-ghost:hover{background:#f3f4f6}
+
+#fg-tarifs .fg-co-summary{background:rgba(240,236,228,.25);padding:16px;border-radius:12px;font-size:.875rem;border:1px solid #f0ece4;margin-bottom:16px}
+#fg-tarifs .fg-co-summary h4{font-family:'DM Serif Display',serif!important;color:#0e2442;font-size:1rem;margin-bottom:8px}
+#fg-tarifs .fg-co-items{display:flex;flex-direction:column;gap:8px;color:#6b7280;font-size:.75rem}
+#fg-tarifs .fg-co-items li{display:flex;justify-content:space-between}
+#fg-tarifs .fg-co-total{border-top:1px solid #f0ece4;margin-top:12px;padding-top:12px;display:flex;justify-content:space-between;font-weight:700;color:#0e2442;font-size:.875rem}
+#fg-tarifs .fg-co-fields{display:flex;flex-direction:column;gap:12px}
+#fg-tarifs .fg-co-fields label{display:block;font-size:.75rem;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:4px}
+#fg-tarifs .fg-co-fields input{width:100%;padding:10px;border-radius:8px;border:1px solid #f0ece4;font-size:.875rem;outline:none}
+#fg-tarifs .fg-co-fields input:focus{box-shadow:0 0 0 1px #9a8060}
+#fg-tarifs .fg-co-actions{padding-top:16px;display:flex;gap:12px}
+#fg-tarifs .fg-co-cancel{width:50%;padding:12px;background:#f3f4f6;color:#374151;font-weight:600;font-size:.75rem;letter-spacing:.05em;text-transform:uppercase;border-radius:8px;transition:all .2s}
+#fg-tarifs .fg-co-cancel:hover{background:#e5e7eb}
+#fg-tarifs .fg-co-submit{width:50%;padding:12px;background:#1e6b46;color:#fff;font-weight:600;font-size:.75rem;letter-spacing:.05em;text-transform:uppercase;border-radius:8px;transition:all .2s}
+#fg-tarifs .fg-co-submit:hover{background:rgba(30,107,70,.9)}
+#fg-tarifs .fg-co-success{padding:32px;text-align:center;display:flex;flex-direction:column;gap:24px}
+#fg-tarifs .fg-co-success-ic{width:80px;height:80px;background:rgba(30,107,70,.1);color:#1e6b46;border-radius:999px;display:flex;align-items:center;justify-content:center;margin:0 auto;font-size:2.25rem;animation:fgbounce 1s infinite}
+@keyframes fgbounce{0%,100%{transform:translateY(-25%);animation-timing-function:cubic-bezier(.8,0,1,1)}50%{transform:none;animation-timing-function:cubic-bezier(0,0,.2,1)}}
+#fg-tarifs .fg-co-success h3{font-family:'DM Serif Display',serif!important;font-size:1.875rem;color:#0e2442}
+#fg-tarifs .fg-co-success p{font-size:.875rem;color:#4b5563;line-height:1.625}
+#fg-tarifs .fg-co-note{background:rgba(240,236,228,.2);padding:16px;border-radius:12px;text-align:left;font-size:.75rem;color:#6b7280;display:flex;flex-direction:column;gap:8px}
+#fg-tarifs .fg-co-close{width:100%;padding:12px;background:#0e2442;color:#fff;font-weight:700;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;border-radius:8px}
+#fg-tarifs .fg-err-box{padding:12px;background:#fef2f2;color:#b91c1c;font-size:.75rem;border-radius:8px;margin-top:8px;animation:fgpulse 2s cubic-bezier(.4,0,.6,1) infinite}
+#fg-tarifs .fg-legal{margin-top:56px;padding:32px 16px 8px;border-top:1px solid #f0ece4}
+#fg-tarifs .fg-legal-inner{max-width:1000px;margin:0 auto;text-align:center;font-size:.95rem;line-height:1.65;color:#9ca3af}
+#fg-tarifs .fg-legal-inner p{margin:0 0 6px}
+#fg-tarifs .fg-legal-title{font-family:'DM Serif Display',serif!important;color:#0e2442;font-size:1.2rem;margin-bottom:14px}
+#fg-tarifs .fg-legal-link{color:#9a8060;text-decoration:underline}
+#fg-tarifs .fg-legal-link:hover{color:#0e2442}
+</style>
+
+<div id="fg-tarifs">
+  <div class="fg-wrap">
+
+    <div class="fg-header">
+      <div class="fg-eyebrow"><span></span>La formation &amp; le paiement<span></span></div>
+      <h1 class="fg-title">FORMA-GARD — <em class="fg-c-golddark">Une seule formation, tout inclus</em></h1>
+      <p class="fg-subtitle">Pas de formule à choisir, pas de version allégée. Un seul parcours complet, La Loge Virtuelle comprise. Et un paiement que vous étalez à votre rythme.</p>
+      <div class="fg-top-actions">
+        <a href="#fg-paiement" class="fg-btn-pill fg-btn-quiz" style="text-decoration:none">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5Z"/></svg>
+          Payer en plusieurs fois
+        </a>
+        <a href="#fg-inclus" class="fg-btn-pill fg-btn-table">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/></svg>
+          Tout ce qui est inclus
+        </a>
+      </div>
+    </div>
+
+    <div class="fg-billing">
+      <div class="fg-billing-track">
+        <button id="fg-btn-monthly" onclick="fgSetBilling('monthly')" class="fg-active">En plusieurs fois</button>
+        <button id="fg-btn-comptant" onclick="fgSetBilling('comptant')">Paiement comptant</button>
+      </div>
+      <span class="fg-billing-note"><span class="fg-pulse-dot"></span>Sans frais &middot; sans organisme de crédit</span>
+    </div>
+
+    <div class="fg-grid-scroll" id="fg-inclus">
+      <div id="fg-grid-container" class="fg-grid">
+
+        <!-- LA FORMATION (cle interne : kenny) -->
+        <div id="fg-col-kenny" class="fg-pricing-col fg-col fg-col-kenny">
+          <div class="fg-col-head">
+            <div class="fg-col-num">La formation complète</div>
+            <h3 class="fg-col-name">Gardien d'immeuble</h3>
+            <div class="fg-price"><span id="fg-price-kenny" class="fg-price-int">187</span><span id="fg-cents-kenny" class="fg-cents">,50</span><span class="fg-cur">€</span></div>
+            <p class="fg-price-cap" id="fg-price-note">par mois, pendant 8 mois<br><strong class="fg-c-gold">1 500 € au total</strong></p>
+          </div>
+          <div class="fg-col-body">
+            <div>
+              <p class="fg-feat">Les onze modules, La Loge Virtuelle, la convention de stage et l'accompagnement jusqu'à l'embauche. Il n'y a pas de version allégée : c'est la formation entière, pour tout le monde.</p>
+              <ul class="fg-flist">
+                <li class="fg-strong-line"><span class="fg-chk">&#10003;</span><span>Les 11 modules complets, à jour du droit en vigueur</span></li>
+                <li class="fg-star-line"><span class="fg-chk">&#10003;</span><span><strong>Vous saurez utiliser les outils informatiques d'un gardien en poste.</strong> C'est La Loge Virtuelle, incluse : le simulateur du poste, dans votre navigateur.<br><a href="#fg-loge-detail" class="fg-star-btn">★ Voir ce que c'est</a></span></li>
+                <li><span class="fg-chk">&#10003;</span><span>Accès complet à la formation pendant 12 mois</span></li>
+                <li><span class="fg-chk">&#10003;</span><span>Convention de stage et accompagnement dans vos démarches</span></li>
+                <li><span class="fg-chk">&#10003;</span><span>Attestation de fin de formation</span></li>
+                <li><span class="fg-chk">&#10003;</span><span>Support pédagogique</span></li>
+                <li><span class="fg-chk">&#10003;</span><span>Accès à la communauté des apprenants</span></li>
+                <li><span class="fg-chk">&#10003;</span><span>Dossier de candidature professionnel personnalisé</span></li>
+                <li><span class="fg-chk">&#10003;</span><span>Préparation aux entretiens d'embauche</span></li>
+                <li><span class="fg-chk">&#10003;</span><span>Suivi individuel</span></li>
+                <li><span class="fg-chk">&#10003;</span><span class="fg-strong-line">Recherche active d'entreprise d'accueil, mobilisation de notre réseau</span></li>
+                <li><span class="fg-chk">&#10003;</span><span>Accompagnement prioritaire</span></li>
+                <li><span class="fg-chk">&#10003;</span><span>Mises à jour incluses pendant l'accès</span></li>
+              </ul>
+              <div class="fg-gift">
+                <div class="fg-gift-head"><span>🎁 Coffret de bienvenue</span><span class="fg-line"></span></div>
+                <div class="fg-gift-img"><img src="https://res.cloudinary.com/dffpdts1c/image/upload/v1781130514/Design_sans_titre_-_2026-06-11T002159.282_xaje6n.png" alt="Coffret de bienvenue FORMA-GARD" onerror="this.src='https://placehold.co/400x200/0e2442/c4b99a?text=Coffret+de+bienvenue'"></div>
+                <ul class="fg-gift-list">
+                  <li><span class="fg-chk">&#10003;</span> Tablette Android offerte</li>
+                  <li><span class="fg-chk">&#10003;</span> Carnet FORMA-GARD</li>
+                  <li><span class="fg-chk">&#10003;</span> Stylo FORMA-GARD</li>
+                  <li><span class="fg-chk">&#10003;</span> 3 mois offerts à Mon Partenaire Emploi</li>
+                </ul>
+              </div>
+            </div>
+            <button onclick="fgSelectPlan('kenny')" class="fg-cta fg-cta-gold">Je m'inscris à la formation</button>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+    <!-- LA LOGE VIRTUELLE — section paysage (ex-colonne 05) -->
+    <section id="fg-loge-detail" class="fg-loge-band">
+      <div class="fg-loge-band-in">
+        <div class="fg-loge-band-head">
+          <div class="fg-loge-band-txt">
+            <div class="fg-loge-band-cap">Comprise dans la formation — sans supplément</div>
+            <p class="fg-loge-band-punch">Vous saurez utiliser les outils informatiques d'un gardien d'immeuble en poste.</p>
+            <h3>La Loge Virtuelle</h3>
+            <p class="fg-loge-band-lead">Le bureau du gardien, reconstitué à l'identique : un vrai environnement de travail dans votre navigateur, sans rien installer. Vous vous entraînez sur les outils du métier avant de les utiliser pour de vrai.</p>
+          </div>
+
+          <!-- Video de la Loge. webm et poster generes a la volee par Cloudinary
+               a partir du meme fichier : ac_none (sans piste audio), .webm (plus leger),
+               so_0 (premiere image en poster). Pour changer de video, remplacer
+               v1787573978/0824_sze8mw aux trois endroits. -->
+          <figure class="fg-loge-band-video">
+            <video poster="https://res.cloudinary.com/dffpdts1c/video/upload/so_0/v1787573978/0824_sze8mw.jpg"
+                   autoplay muted loop playsinline preload="metadata"
+                   aria-label="La Loge Virtuelle en fonctionnement">
+              <source src="https://res.cloudinary.com/dffpdts1c/video/upload/ac_none/v1787573978/0824_sze8mw.webm" type="video/webm">
+              <source src="https://res.cloudinary.com/dffpdts1c/video/upload/ac_none/v1787573978/0824_sze8mw.mp4"  type="video/mp4">
+            </video>
+          </figure>
+        </div>
+
+        <div class="fg-loge-band-rule"></div>
+
+        <ul class="fg-loge-band-grid">
+          <li><span class="fg-chk">&#10003;</span><span><strong>La messagerie professionnelle</strong> — répondre à un locataire, une entreprise, son responsable : pièces jointes, copies, transferts… et les mails d'arnaque à repérer</span></li>
+          <li><span class="fg-chk">&#10003;</span><span><strong>Les réclamations locataires</strong> — enregistrer, qualifier, prioriser, suivre et clôturer une demande</span></li>
+          <li><span class="fg-chk">&#10003;</span><span><strong>Les bons de commande</strong> — décrire le besoin, chiffrer HT / TVA / TTC, commander, contrôler l'intervention</span></li>
+          <li><span class="fg-chk">&#10003;</span><span><strong>L'état des lieux sur tablette</strong> — entrée, sortie, constat de sinistre et déclaration d'assurance : photo à l'appui, signatures, transmission au bailleur</span></li>
+          <li><span class="fg-chk">&#10003;</span><span><strong>Le traitement de texte</strong> — notes de service, courriers aux locataires, comptes rendus au responsable</span></li>
+          <li><span class="fg-chk">&#10003;</span><span><strong>Le tableur</strong> — suivis, relevés et calculs du quotidien de la loge</span></li>
+          <li><span class="fg-chk">&#10003;</span><span><strong>Mes Documents et la Corbeille</strong> — classer, ranger, retrouver ses fichiers comme sur un vrai poste</span></li>
+          <li><span class="fg-chk">&#10003;</span><span><strong>Un coach intégré</strong> qui guide pas à pas : 24 exercices notés sur 100, conseils personnalisés, compétences validées</span></li>
+          <li><span class="fg-chk">&#10003;</span><span><strong>Suivi et attestation</strong> — vos résultats suivis par la formatrice, attestation de réussite à la clé</span></li>
+        </ul>
+
+        <div class="fg-loge-band-foot">
+          <p class="fg-loge-band-kicker">C'est ce que les employeurs regardent : non pas ce que vous savez réciter, mais ce que vous savez faire.</p>
+          <a href="#fgx-loge" class="fg-loge-band-cta">Voir la Loge en fonctionnement</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- MON PARTENAIRE EMPLOI — section autonome (ex-colonne clubs) -->
+    <section id="fg-mpe-detail" class="fg-mpe-band">
+      <div class="fg-mpe-band-in">
+
+        <div class="fg-mpe-head">
+          <div>
+            <div class="fg-mpe-cap">En option — abonnement sans engagement</div>
+            <p class="fg-mpe-punch">Vous saurez décrocher le poste,<br>pas seulement le préparer.</p>
+            <h3>Mon Partenaire Emploi</h3>
+            <p class="fg-mpe-baseline">Votre coach de candidature, disponible jour et nuit.</p>
+          </div>
+          <div class="fg-mpe-pricebox">
+            <div class="fg-mpe-price">29,99<span class="fg-cur">€</span></div>
+            <p class="fg-mpe-pricecap">par mois<br>sans engagement</p>
+          </div>
+        </div>
+
+        <p class="fg-mpe-lead">Chercher un poste de gardien d'immeuble, ça ne s'improvise pas. Mon Partenaire Emploi vous accompagne à chaque étape : de l'annonce repérée jusqu'à l'entretien.</p>
+
+        <div class="fg-mpe-rule"></div>
+
+        <p class="fg-mpe-sub">Ce que vous obtenez</p>
+        <ul class="fg-mpe-grid">
+          <li><span class="fg-chk-blue">&#10003;</span><span><strong>L'analyse d'annonce.</strong> Vous transférez une offre, l'outil la décortique : ce que le bailleur attend vraiment, si votre profil correspond, et sur quels points insister.</span></li>
+          <li><span class="fg-chk-blue">&#10003;</span><span><strong>Le CV.</strong> Faites analyser le vôtre et recevez une version corrigée. Ou créez-le entièrement, si vous partez de zéro.</span></li>
+          <li><span class="fg-chk-blue">&#10003;</span><span><strong>La lettre de motivation.</strong> Adaptée à l'annonce, à votre parcours, et aux codes du secteur.</span></li>
+          <li><span class="fg-chk-blue">&#10003;</span><span><strong>L'e-mail de candidature.</strong> Le message d'accompagnement qui donne envie d'ouvrir votre dossier.</span></li>
+          <li><span class="fg-chk-blue">&#10003;</span><span><strong>L'entretien avec Kenny.</strong> Entraînez-vous à l'oral ou à l'écrit avec votre coach virtuelle, autant de fois que nécessaire. Et suivez le parcours « Apprendre à se vendre » en 12 étapes.</span></li>
+        </ul>
+
+        <div class="fg-mpe-foot">
+          <p class="fg-mpe-argu">Un poste de gardien, c'est environ 1 800 € par mois. Arriver préparé à votre entretien, c'est un investissement qui se rembourse dès la première paie.</p>
+          <button onclick="fgToggleClub('club-emploi')" id="fg-btn-club-emploi" class="fg-club-cta fg-cta-emploi fg-mpe-cta">Je commence maintenant &mdash; 29,99 €</button>
+        </div>
+
+        <div class="fg-mpe-reseau">
+          <div>
+            <div class="fg-club-tag fg-tag-reseau">🤝 Club Réseau FORMA-GARD</div>
+            <p class="fg-mpe-reseau-txt">Le groupe WhatsApp et le groupe Facebook privés des apprenants et des anciens élèves : échanges, expériences partagées et opportunités de poste. Gratuit, pour tout le monde.</p>
+          </div>
+          <button onclick="fgToggleClub('club-reseau')" id="fg-btn-club-reseau" class="fg-club-cta fg-cta-reseau fg-mpe-cta-reseau">Rejoindre &mdash; Gratuit</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- LE DETAIL DES PAIEMENTS (remplace l'ancien comparatif de formules) -->
+    <section id="fg-paiement" class="fg-compare">
+      <div style="text-align:center;margin-bottom:32px">
+        <h3>Deux façons de régler</h3>
+        <p class="fg-compare-sub">Le prix ne change pas. Ce qui change, c'est la manière dont vous l'étalez. Aucun frais, aucun organisme de crédit, aucun dossier à monter.</p>
+      </div>
+      <div class="fg-compare-scroll">
+        <table>
+          <thead><tr><th>&nbsp;</th><th class="fg-ctr">Paiement comptant</th><th class="fg-ctr fg-hl">En plusieurs fois</th></tr></thead>
+          <tbody>
+            <tr><td class="fg-label">Montant total de la formation</td><td class="fg-ctr">1 499,99 €</td><td class="fg-ctr fg-hl fg-label">1 500,00 €</td></tr>
+            <tr><td class="fg-label">Pour démarrer</td><td class="fg-ctr">1 499,99 €</td><td class="fg-ctr fg-hl fg-label">187,50 €</td></tr>
+            <tr><td class="fg-label">Puis</td><td class="fg-ctr">—</td><td class="fg-ctr fg-hl fg-label">7 × 187,50 €</td></tr>
+            <tr><td class="fg-label">Nombre de versements</td><td class="fg-ctr">1</td><td class="fg-ctr fg-hl fg-label">8, répartis sur 8 mois</td></tr>
+            <tr><td class="fg-label">Frais de dossier ou d'échelonnement</td><td class="fg-ctr fg-yes">Aucun</td><td class="fg-ctr fg-yes fg-hl">Aucun</td></tr>
+            <tr><td class="fg-label">Ouverture des modules</td><td class="fg-ctr">Les 11 modules d'un coup</td><td class="fg-ctr fg-hl fg-label">Au rythme des versements</td></tr>
+            <tr><td class="fg-label">Convention de stage et attestation</td><td class="fg-ctr fg-yes">✓</td><td class="fg-ctr fg-yes fg-hl">✓ au dernier versement</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="fg-compare-sub" style="margin-top:24px;text-align:left">
+        <strong class="fg-c-ink">Comment fonctionne le paiement en plusieurs fois.</strong>
+        Vous réglez 187,50 € pour démarrer, puis sept versements du même montant, un par mois. À chaque versement encaissé, les modules suivants s'ouvrent dans votre espace.
+        Vous avancez donc au rythme de vos paiements, et vous ne payez jamais pour un contenu que vous n'avez pas encore reçu.
+        Si vous interrompez vos versements, votre accès s'arrête là où vous en êtes : vous ne devez rien de plus.
+        La convention de stage et l'attestation de fin de formation sont délivrées après le dernier versement.
+      </p>
+    </section>
+
+    <!-- OPTIONS À LA CARTE — déplacées sous le comparatif -->
+    <section id="fg-options-table" class="fg-compare fg-compare-opts">
+      <div style="text-align:center;margin-bottom:32px">
+        <h3>Options à la Carte</h3>
+        <p class="fg-compare-sub">En complément de la formation, si vous en avez besoin. Chaque option se règle une seule fois, sans abonnement. Cochez, votre devis s'affiche en bas.</p>
+      </div>
+      <div class="fg-compare-scroll">
+        <table>
+          <thead><tr><th>Option</th><th>Ce qu'elle contient</th><th class="fg-ctr">Tarif — achat unique</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="fg-label"><label class="fg-opt-cell"><input type="checkbox" id="fg-opt-maj" onchange="fgQuote()"> <span>📚 Mises à jour incluses</span></label></td>
+              <td class="fg-opt-detail">✓ Toutes les mises à jour publiées pendant votre accès<br>✓ Nouveaux modules inclus<br>✓ Nouveaux supports inclus</td>
+              <td class="fg-ctr"><span class="fg-badge-free">Gratuit</span></td>
+            </tr>
+            <tr>
+              <td class="fg-label"><label class="fg-opt-cell"><input type="checkbox" id="fg-opt-parrainage" onchange="fgQuote()"> <span>🏆 Programme de Parrainage</span></label></td>
+              <td class="fg-opt-detail">✓ Récompense pour chaque apprenant inscrit<br>✓ Avantages exclusifs parrains</td>
+              <td class="fg-ctr"><span class="fg-badge-free">Gratuit</span></td>
+            </tr>
+            <tr>
+              <td class="fg-label"><label class="fg-opt-cell"><input type="checkbox" id="fg-opt-installation" onchange="fgQuote()"> <span>🎒 Pack Installation dans le Métier</span></label></td>
+              <td class="fg-opt-detail">✓ Guide débutant<br>✓ Conseils prise de poste<br>✓ Lexique professionnel<br>✓ Bonnes pratiques<br>✓ Astuces terrain</td>
+              <td class="fg-ctr"><span class="fg-badge-price">10 €</span></td>
+            </tr>
+            <tr>
+              <td class="fg-label"><label class="fg-opt-cell"><input type="checkbox" id="fg-opt-docs" onchange="fgQuote()"> <span>📋 Pack Documents Professionnels</span></label></td>
+              <td class="fg-opt-detail">✓ Modèles de mails de compte rendu<br>✓ Documents prêts à l'emploi</td>
+              <td class="fg-ctr"><span class="fg-badge-price">7 €</span></td>
+            </tr>
+            <tr>
+              <td class="fg-label"><label class="fg-opt-cell"><input type="checkbox" id="fg-opt-audit" onchange="fgQuote()"> <span>📑 Audit Emploi &amp; Contrat</span></label></td>
+              <td class="fg-opt-detail">✓ Négociation salariale<br>✓ Analyse de la fiche de poste<br>✓ Éléments du contrat<br>✓ Points à vérifier</td>
+              <td class="fg-ctr"><span class="fg-badge-price">10 €</span></td>
+            </tr>
+            <tr>
+              <td class="fg-label"><label class="fg-opt-cell"><input type="checkbox" id="fg-opt-recherche" onchange="fgQuote()"> <span>🔎 Aide à la recherche de stage</span></label></td>
+              <td class="fg-opt-detail">✓ Identification d'entreprises<br>✓ Liste à contacter<br>✓ Conseils démarches</td>
+              <td class="fg-ctr"><span class="fg-badge-price">20 €</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- MENTIONS LÉGALES -->
+    <footer class="fg-legal">
+      <div class="fg-legal-inner">
+        <p class="fg-legal-title">Mentions légales</p>
+        <p>FORMA-GARD — micro-entreprise · SIRET 954 032 348</p>
+        <p>Siège social : [adresse du siège à compléter]</p>
+        <p>TVA non applicable, article 293 B du Code général des impôts</p>
+        <p>Durée de la formation : [nombre] heures</p>
+        <p>Conformément au Code de la consommation, vous disposez d'un droit de rétractation de 14 jours à compter de tout achat en ligne.</p>
+        <p><a href="#" class="fg-legal-link">Conditions générales de vente (CGV)</a></p>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- DRAWER -->
+  <div id="fg-quote-drawer" class="fg-quote-drawer">
+    <div class="fg-drawer-inner">
+      <div class="fg-drawer-left">
+        <div class="fg-cart-ic"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#c4b99a"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"/></svg></div>
+        <div>
+          <div class="fg-drawer-cap">Ma Configuration en direct</div>
+          <div class="fg-drawer-desc" id="fg-quote-desc">Configurez votre offre ci-dessus</div>
+        </div>
+      </div>
+      <div class="fg-drawer-right">
+        <div style="text-align:right">
+          <span class="fg-drawer-total-cap" id="fg-quote-cycle-label">Total :</span>
+          <span class="fg-drawer-total" id="fg-quote-total">0,00 € <span class="fg-small">/ mois</span></span>
+        </div>
+        <button onclick="fgCheckout()" class="fg-drawer-cta">Passer ma commande</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHECKOUT MODAL -->
+  <div id="fg-checkout-modal" class="fg-modal">
+    <div class="fg-modal-card fg-md" id="fg-checkout-card">
+      <div id="fg-checkout-form">
+        <div class="fg-modal-head"><h3>Formulaire de Réservation</h3><button onclick="fgCloseCheckout()" class="fg-modal-close">&times;</button></div>
+        <div class="fg-modal-body">
+          <div class="fg-co-summary">
+            <h4>Récapitulatif de votre commande :</h4>
+            <ul id="fg-co-items" class="fg-co-items"></ul>
+            <div class="fg-co-total"><span>À régler maintenant :</span><span id="fg-co-final">0,00 €</span></div>
+          </div>
+          <div class="fg-co-fields">
+            <div><label>Prénom et Nom</label><input type="text" id="fg-cust-name" placeholder="Ex: Thomas Martin"></div>
+            <div><label>Adresse E-mail</label><input type="email" id="fg-cust-email" placeholder="thomas@example.com"></div>
+            <div><label>Numéro de téléphone</label><input type="tel" id="fg-cust-phone" placeholder="06 12 34 56 78"></div>
+          </div>
+          <div class="fg-co-actions">
+            <button onclick="fgCloseCheckout()" class="fg-co-cancel">Annuler</button>
+            <button onclick="fgProcessOrder()" class="fg-co-submit">Valider l'inscription</button>
+          </div>
+        </div>
+      </div>
+      <div id="fg-checkout-success" class="fg-hidden fg-co-success">
+        <div class="fg-co-success-ic">✓</div>
+        <h3>Félicitations !</h3>
+        <p>Votre demande d'inscription à la formation <strong class="fg-c-ink" id="fg-success-name"></strong> a bien été enregistrée.</p>
+        <div class="fg-co-note">
+          <p><strong>Un conseiller FORMA-GARD va vous contacter dans les prochaines 24h ouvrées</strong> afin de valider vos documents et configurer votre accès.</p>
+          <p style="font-size:11px;color:#9ca3af">Un e-mail récapitulatif contenant les guides de bienvenue vient d'être envoyé.</p>
+        </div>
+        <button onclick="fgCloseCheckout()" class="fg-co-close">Fermer la fenêtre</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+(function(){
+  var fgBilling='monthly', fgPlan=null, fgClubs=[], fgTab=0;
+  var fgOptMeta={
+    'fg-opt-maj':{name:'Mises à jour incluses',price:0,recurring:false},
+    'fg-opt-parrainage':{name:'Programme Parrainage',price:0,recurring:false},
+    'fg-opt-installation':{name:'Pack Installation Métier',price:10,recurring:false},
+    'fg-opt-docs':{name:'Pack Documents Professionnels',price:7,recurring:false},
+    'fg-opt-audit':{name:'Audit Emploi & Contrat',price:10,recurring:false},
+    'fg-opt-recherche':{name:'Aide à la recherche de stage',price:20,recurring:false}
+  };
+  // Une seule formation. La cle interne reste 'kenny' (id CSS/JS historiques).
+  var FG_TOTAL=1499.99;
+  var fgPricing={
+    kenny:{
+      monthly:{i:'187',c:',50',note:'par mois, pendant 8 mois<br><strong class="fg-c-gold">1 500 &euro; au total</strong>'},
+      comptant:{i:'1 499',c:',99',note:'R&eacute;gl&eacute; en une seule fois<br><strong class="fg-c-gold">Les 11 modules ouverts imm&eacute;diatement</strong>'}
+    }
+  };
+
+  window.fgSetBilling=function(cycle){
+    fgBilling=cycle;
+    document.getElementById('fg-btn-monthly').classList.toggle('fg-active',cycle==='monthly');
+    document.getElementById('fg-btn-comptant').classList.toggle('fg-active',cycle==='comptant');
+    ['kenny'].forEach(function(t){
+      var p=document.getElementById('fg-price-'+t),c=document.getElementById('fg-cents-'+t),n=document.getElementById('fg-price-note');
+      p.style.opacity='0';c.style.opacity='0';if(n)n.style.opacity='0';
+      setTimeout(function(){
+        p.textContent=fgPricing[t][cycle].i;c.textContent=fgPricing[t][cycle].c;
+        if(n)n.innerHTML=fgPricing[t][cycle].note;
+        p.style.opacity='1';c.style.opacity='1';if(n)n.style.opacity='1';
+      },150);
+    });
+    fgQuote();
+  };
+
+  window.fgSelectPlan=function(plan){
+    if(fgPlan===plan){
+      fgPlan=null;
+      var cc=document.getElementById('fg-col-'+plan);cc.style.outline='';cc.style.outlineOffset='';
+      fgQuote();return;
+    }
+    fgPlan=plan;
+    ['kenny'].forEach(function(t){
+      var col=document.getElementById('fg-col-'+t);
+      col.style.outline='';col.style.outlineOffset='';
+      if(t===plan){
+        col.style.outline='4px solid rgba(196,185,154,.6)';
+        col.style.outlineOffset='-2px';
+      }
+    });
+    document.getElementById('fg-quote-drawer').classList.add('fg-open');
+    fgQuote();
+  };
+
+  window.fgToggleClub=function(key){
+    var btn=document.getElementById('fg-btn-'+key);
+    if(fgClubs.indexOf(key)>-1){
+      fgClubs=fgClubs.filter(function(x){return x!==key;});
+      btn.classList.remove('fg-on');
+      btn.innerHTML=key==='club-emploi'?'Je commence maintenant &mdash; 29,99 €':'Rejoindre &mdash; Gratuit';
+    }else{
+      fgClubs.push(key);
+      btn.classList.add('fg-on');
+      btn.textContent=key==='club-emploi'?'✓ Mon Partenaire Emploi ajouté':'✓ Club Réseau Rejoint';
+    }
+    fgQuote();
+    document.getElementById('fg-quote-drawer').classList.add('fg-open');
+  };
+
+  window.fgQuote=function(){
+    var base=0,label='';
+    if(fgPlan==='kenny'){base=fgBilling==='monthly'?187.50:FG_TOTAL;label="Formation Gardien d'immeuble";}
+    var optCount=0,optTotal=0;
+    Object.keys(fgOptMeta).forEach(function(id){
+      var cb=document.getElementById(id);
+      if(cb&&cb.checked){optCount++;optTotal+=fgOptMeta[id].price;}
+    });
+    var clubPrice=0;
+    if(fgClubs.indexOf('club-emploi')>-1)clubPrice+=29.99;
+    var total=base+optTotal+clubPrice;
+    var hasSel=(fgPlan!==null)||optCount>0||fgClubs.length>0;
+    var parts=[];
+    if(optCount>0)parts.push(optCount+' option'+(optCount>1?'s':''));
+    if(fgClubs.length>0)parts.push(fgClubs.length+' Club'+(fgClubs.length>1?'s':''));
+    var desc;
+    if(label){
+      desc='<span style="font-weight:700;color:#c4b99a">'+label+'</span>'+(parts.length?' + '+parts.join(' & '):'');
+    }else if(parts.length){
+      desc='<span style="font-weight:700;color:#c4b99a">À la carte</span> — '+parts.join(' & ');
+    }else{
+      desc='Configurez votre offre ci-dessus';
+    }
+    document.getElementById('fg-quote-desc').innerHTML=desc;
+    var cl=document.getElementById('fg-quote-cycle-label'),te=document.getElementById('fg-quote-total');
+    if(fgBilling==='monthly'){
+      cl.textContent=label?'À régler pour démarrer :':'Total mensuel :';
+      te.innerHTML=total.toFixed(2).replace('.',',')+' € <span class="fg-small">'+(label?'puis 7 versements · 1 500 € au total':'/ mois')+'</span>';
+    }else{
+      cl.textContent='À régler en une fois :';
+      te.innerHTML=total.toFixed(2).replace('.',',')+' € <span class="fg-small">+ options mensuelles</span>';
+    }
+    if(hasSel)document.getElementById('fg-quote-drawer').classList.add('fg-open');
+  };
+
+  // Une seule colonne dans la grille : plus d'onglets, la colonne reste visible.
+  window.fgSwitchTab=function(idx){
+    fgTab=idx;
+    document.querySelectorAll('#fg-tarifs .fg-pricing-col').forEach(function(col){col.style.display='flex';});
+  };
+
+  window.addEventListener('resize',function(){
+    if(window.innerWidth>=1024){
+      document.querySelectorAll('#fg-tarifs .fg-pricing-col').forEach(function(c){c.style.display='flex';});
+    }else{
+      fgSwitchTab(fgTab);
+    }
+  });
+
+  window.fgCheckout=function(){
+    var list=document.getElementById('fg-co-items');list.innerHTML='';
+    var total=0;
+    if(fgPlan){
+      var baseCost=fgBilling==='monthly'?187.50:FG_TOTAL;
+      var li=document.createElement('li');li.style.fontWeight='700';li.style.color='#0e2442';
+      li.innerHTML="<span>Formation Gardien d'immeuble"+(fgBilling==='monthly'?' — 1er versement':' — comptant')+'</span><span>'+baseCost.toFixed(2).replace('.',',')+' €</span>';
+      list.appendChild(li);
+      total+=baseCost;
+      if(fgBilling==='monthly'){
+        var li2=document.createElement('li');li2.style.paddingLeft='12px';li2.style.color='#6b7280';
+        li2.innerHTML='<span>Versements suivants : 7 × 187,50 €</span><span>1 312,50 € à venir</span>';
+        list.appendChild(li2);
+      }
+    }
+    Object.keys(fgOptMeta).forEach(function(id){
+      var cb=document.getElementById(id);
+      if(cb&&cb.checked){
+        var o=document.createElement('li');o.style.paddingLeft='12px';o.style.color='#6b7280';
+        o.innerHTML='<span>+ '+fgOptMeta[id].name+'</span><span>'+(fgOptMeta[id].price>0?(fgOptMeta[id].price+',00 €'+(fgOptMeta[id].recurring?'/mois':'')):'Gratuit')+'</span>';
+        list.appendChild(o);total+=fgOptMeta[id].price;
+      }
+    });
+    fgClubs.forEach(function(club){
+      var c=document.createElement('li');c.style.paddingLeft='12px';c.style.color='#1d4ed8';
+      if(club==='club-emploi'){c.innerHTML='<span>+ Mon Partenaire Emploi</span><span>29,99 €/mois</span>';total+=29.99;}
+      else{c.innerHTML='<span>+ Club Réseau d\'Apprenants</span><span>Gratuit</span>';}
+      list.appendChild(c);
+    });
+    if(list.children.length===0){
+      var empty=document.createElement('li');empty.style.color='#9ca3af';empty.style.fontStyle='italic';
+      empty.textContent='Aucune sélection — cliquez sur « Je m\'inscris à la formation » ou cochez des options.';
+      list.appendChild(empty);
+    }
+    document.getElementById('fg-co-final').textContent=total.toFixed(2).replace('.',',')+' €';
+    document.getElementById('fg-checkout-form').classList.remove('fg-hidden');
+    document.getElementById('fg-checkout-success').classList.add('fg-hidden');
+    document.getElementById('fg-checkout-modal').classList.add('fg-open');
+  };
+  window.fgCloseCheckout=function(){document.getElementById('fg-checkout-modal').classList.remove('fg-open');};
+  window.fgProcessOrder=function(){
+    var name=document.getElementById('fg-cust-name').value.trim();
+    var email=document.getElementById('fg-cust-email').value.trim();
+    var phone=document.getElementById('fg-cust-phone').value.trim();
+    if(!name||!email||!phone){
+      var target=document.querySelector('#fg-tarifs .fg-co-fields');
+      var ex=document.querySelector('#fg-tarifs .fg-err-box');if(ex)ex.remove();
+      var err=document.createElement('div');err.className='fg-err-box';
+      err.textContent='⚠️ Veuillez remplir tous les champs obligatoires pour valider votre inscription.';
+      target.appendChild(err);return;
+    }
+    document.getElementById('fg-success-name').textContent=fgPlan?"Gardien d'immeuble":'À la carte';
+    document.getElementById('fg-checkout-form').classList.add('fg-hidden');
+    document.getElementById('fg-checkout-success').classList.remove('fg-hidden');
+  };
+
+  function fgInit(){
+    fgQuote();
+    if(window.innerWidth<1024)fgSwitchTab(0);
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fgInit);}else{fgInit();}
+})();
+</script>
+<!-- ====== FIN BLOC FORMA-GARD ====== -->
+
+  </div>
+
+
+  <!-- ============ TÉMOIGNAGES ============ -->
+  <!-- ⚠️ REMPLACEZ CES 3 TÉMOIGNAGES PAR DE VRAIS AVIS D'APPRENANTS (prénom + initiale suffisent).
+       Tant que vous n'en avez pas, supprimez toute cette section : de faux avis sont sanctionnables. -->
+  <section class="fgx-sec">
+    <div class="fgx-wrap">
+      <div class="fgx-head fgx-center fgx-rev">
+        <span class="fgx-eyebrow">Retours d'apprenants</span>
+        <h2>Ce qu'en disent celles et ceux qui ont suivi la formation.</h2>
+      </div>
+      <div class="fgx-quotes fgx-rev">
+        <blockquote class="fgx-quote"><p>[À remplacer par un vrai témoignage]</p><footer>Prénom N. &middot; Ville</footer></blockquote>
+        <blockquote class="fgx-quote"><p>[À remplacer par un vrai témoignage]</p><footer>Prénom N. &middot; Ville</footer></blockquote>
+        <blockquote class="fgx-quote"><p>[À remplacer par un vrai témoignage]</p><footer>Prénom N. &middot; Ville</footer></blockquote>
+      </div>
+      <p class="fgx-note">Témoignages recueillis auprès d'apprenants ayant suivi la formation, publiés avec leur accord.</p>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="fgx-sec fgx-parch" id="fgx-faq">
+    <div class="fgx-wrap">
+      <div class="fgx-head fgx-rev">
+        <span class="fgx-eyebrow">Questions fréquentes</span>
+        <h2>Avant de vous inscrire.</h2>
+      </div>
+      <div class="fgx-faq fgx-rev">
+        <details><summary>Faut-il un diplôme pour devenir gardien d'immeuble ?</summary>
+          <div class="fgx-ans">Non, le métier reste accessible sans diplôme spécifique. Les bailleurs recherchent surtout une bonne connaissance des procédures, une posture professionnelle solide et de la rigueur administrative — c'est précisément ce que couvre la formation.</div></details>
+        <details><summary>Combien de temps dure la formation ?</summary>
+          <div class="fgx-ans">Vous avancez à votre rythme, module par module, sans rythme imposé. Votre accès à la plateforme est ouvert pendant 12 mois à compter de l'inscription, ce qui laisse très largement le temps de suivre les onze modules en travaillant à côté.</div></details>
+        <details><summary>Et le stage, comment ça se passe ?</summary>
+          <div class="fgx-ans">La convention de stage est incluse dans la formation, et FORMA-GARD recherche activement une entreprise d'accueil pour vous. Il n'y a pas de version sans stage : le passage sur le terrain fait partie du parcours.</div></details>
+        <details><summary>Puis-je payer en plusieurs fois ?</summary>
+          <div class="fgx-ans">Oui. Vous réglez soit 1 499,99 € comptant, soit en huit versements sans frais de 187,50 €, soit 1 500 € au total. Dans ce cas, les modules s'ouvrent au rythme de vos versements, et vous ne devez rien de plus si vous interrompez.</div></details>
+        <details><summary>Que se passe-t-il après mon inscription ?</summary>
+          <div class="fgx-ans">Vous recevez vos identifiants d'accès à la plateforme par e-mail, ainsi qu'un récapitulatif de votre commande. Vous disposez d'un droit de rétractation de 14 jours.</div></details>
+        <details><summary>Je suis déjà inscrit, où est-ce que je me connecte ?</summary>
+          <div class="fgx-ans">Le bouton « Se connecter », en haut de page, vous emmène directement sur votre espace apprenant.</div></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA FINAL ============ -->
+  <section class="fgx-final">
+    <div class="fgx-wrap">
+      <span class="fgx-eyebrow" style="color:var(--gold)">Dernière marche</span>
+      <h2>Prenez le poste avec les bons réflexes.</h2>
+      <p>Inscription en ligne, accès immédiat à la plateforme, paiement en une ou huit fois.</p>
+      <div class="fgx-final-cta">
+        <a class="fgx-btn fgx-btn-gold" data-fg="paiement" href="#">Je m'inscris</a>
+        <a class="fgx-btn fgx-btn-ghost" data-fg="connexion" href="#">Se connecter</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="fgx-foot">
+    <div class="fgx-wrap">
+      <span>FORMA-GARD &middot; Organisme de formation &middot; Île-de-France</span>
+      <span><a href="#fgx-programme">Programme</a> &nbsp;&middot;&nbsp; <a href="#fg-tarifs">Tarifs</a> &nbsp;&middot;&nbsp; <a href="#">Contact</a></span>
+      <div class="fgx-foot-legal">
+        <button type="button" data-doc="cgv">Conditions générales de vente</button> &nbsp;&middot;&nbsp;
+        <button type="button" data-doc="ri">Règlement intérieur</button> &nbsp;&middot;&nbsp;
+        <button type="button" data-doc="conf">Politique de confidentialité</button> &nbsp;&middot;&nbsp;
+        <button type="button" data-doc="handi">Accessibilité et handicap</button> &nbsp;&middot;&nbsp;
+        <button type="button" data-doc="ml">Mentions légales</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ DOCUMENTS JURIDIQUES ============
+       Chaque document s'ouvre depuis les liens du pied de page.
+       Les passages entre crochets sont à compléter par tes informations. -->
+  <div class="fgx-docmask" id="fgxDocMask">
+    <div class="fgx-docbox" role="dialog" aria-modal="true" aria-labelledby="fgxDocTitre">
+      <button class="fgx-docx" id="fgxDocX" aria-label="Fermer">&times;</button>
+      <div id="fgxDocCorps"></div>
+    </div>
+  </div>
+
+  <!-- ============ POP-UP ============ -->
+  <div class="fgx-toast" id="fgxToast" role="status" aria-live="polite">
+    <button id="fgxToastX" aria-label="Fermer la notification">&times;</button>
+    <b id="fgxToastLabel"></b>
+    <p id="fgxToastText"></p>
+  </div>
+
+</div>
+
+<script>
+/* =====================================================================
+   ⚠️  VOS DEUX LIENS — c'est la seule chose à modifier dans ce fichier.
+   ===================================================================== */
+const FG_LIENS = {
+  connexion : "https://espace.forma-gard.com/fr/login",   // ← page de connexion élève (testée, OK)
+  paiement  : "https://espace.forma-gard.com/inscription"  // ← page de paiement (testée)
+};
+
+/* Personnages aux fenêtres.
+   L'ordre ci-dessous suit l'ordre des prompts : 01 maman & bébé · 02 personne âgée ·
+   03 chat · 04 pot de fleurs · 05 enfant · 06 femme à la tasse.
+
+   bas   = de combien on descend le personnage dans sa fenêtre. Plus le chiffre est
+           grand, plus il descend. Monte-le s'il flotte trop haut, baisse-le s'il
+           s'enfonce sous l'appui.
+   zoom  = sa taille. 1.5 = une fois et demie la fenêtre. Attention : si tu réduis le
+           zoom, réduis un peu le "bas" aussi, sinon le personnage descend en même
+           temps qu'il rapetisse.
+   decor = l'intérieur du logement, au fond de la fenêtre, derrière le personnage.
+           Laisse "" tant que tu n'as pas l'image, la fenêtre reste simplement éclairée.
+   effet = "passe" (elle traverse la pièce) · "respire" (balancement discret) · "" (rien).
+   papillon = true pour ajouter un papillon qui volette en haut à gauche de la fenêtre.
+           Il n'est pas dans l'image : c'est la page qui le dessine et l'anime. */
+const FG_GENS = [
+  /* 5e étage — gauche · la maman au bébé */
+  { src:"https://res.cloudinary.com/dffpdts1c/image/upload/v1787580344/femme_avec_l_enfant_wisfyw.png", bas:"49%", zoom:1.78,  effet:"respire",
+    decor:"https://res.cloudinary.com/dffpdts1c/image/upload/v1787495274/dame_avec_son_fils_vbfyji.png" },
+  /* 5e étage — droite · le monsieur âgé */
+  { src:"https://res.cloudinary.com/dffpdts1c/image/upload/v1787493480/ChatGPT_Image_23_ao%C3%BBt_2026_15_57_21_dutqcn.png", bas:"33%", zoom:1.4,  effet:"respire",
+    decor:"https://res.cloudinary.com/dffpdts1c/image/upload/v1787495275/vieux_monsieurs_vtca0r.png" },
+  /* 4e étage — gauche · l'ado au casque, assise sur l'appui */
+  { src:"https://res.cloudinary.com/dffpdts1c/image/upload/v1787583982/ado_ndcsyf.png", bas:"45%", zoom:1.45, effet:"respire",
+    decor:"https://res.cloudinary.com/dffpdts1c/image/upload/v1787583989/decor_ado_fkrssw.png" },
+  /* 4e étage — droite · la femme au téléphone */
+  { src:"https://res.cloudinary.com/dffpdts1c/image/upload/v1787580448/femme_au_tel_xmyev6.png", bas:"18%", zoom:1.45, effet:"",
+    decor:"https://res.cloudinary.com/dffpdts1c/image/upload/v1787580388/decor_dame_au_tel_zngmtj.png" },
+  /* 3e étage — gauche · le chat qui lève la patte (le papillon est ajouté par la page) */
+  { src:"https://res.cloudinary.com/dffpdts1c/image/upload/v1787580345/cha_lev_la_patte_il_est_sur_droite_de_limage_upnfrg.png", bas:"28%", zoom:1.34, effet:"", papillon:true,
+    decor:"https://res.cloudinary.com/dffpdts1c/image/upload/v1787580392/decor_chat_main_lev%C3%A9_bqgjky.png" },
+  /* 3e étage — droite · le monsieur au journal */
+  { src:"https://res.cloudinary.com/dffpdts1c/image/upload/v1787580346/homme_journal_1_tl9j6y.png", bas:"50%", zoom:1.56,  effet:"",
+    decor:"https://res.cloudinary.com/dffpdts1c/image/upload/v1787580395/decor_homme_journal_zycrrp.png" },
+  /* 2e étage — gauche · le pot de fleurs */
+  { src:"https://res.cloudinary.com/dffpdts1c/image/upload/v1787493837/ChatGPT_Image_23_ao%C3%BBt_2026_16_03_49_hf0tiw.png", bas:"34%", zoom:1.5,  effet:"",
+    decor:"https://res.cloudinary.com/dffpdts1c/image/upload/v1787495280/pot_de_fleur_wm9mjz.png" },
+  /* 2e étage — droite · la dame à la tasse */
+  { src:"https://res.cloudinary.com/dffpdts1c/image/upload/v1787580347/tasse_caf%C3%A9_fg9h3o.png", bas:"40%", zoom:1.5,  effet:"passe",
+    decor:"https://res.cloudinary.com/dffpdts1c/image/upload/v1787495275/dame_tasse_de_th%C3%A9_p4taji.png" },
+  /* 1er étage — gauche · le monsieur qui arrose   >>> IL MANQUE LE DÉCOR <<< */
+  { src:"https://res.cloudinary.com/dffpdts1c/image/upload/v1787580343/homme_jardin_mm43cw.png", bas:"39%", zoom:1.56, effet:"", sansCroix:true,
+    decor:"" },
+  /* 1er étage — droite · l'enfant */
+  { src:"https://res.cloudinary.com/dffpdts1c/image/upload/v1787493751/ChatGPT_Image_23_ao%C3%BBt_2026_16_02_22_qbovpu.png", bas:"35%", zoom:1.42, effet:"respire",
+    decor:"https://res.cloudinary.com/dffpdts1c/image/upload/v1787495275/petit_gar%C3%A7on_uxzgwr.png" }
+];
+
+/* Les situations qui s'affichent au survol des fenêtres habitées.
+   Même ordre que FG_GENS ci-dessus, du 5e étage au 1er.
+   Chaque texte décrit ce qu'on voit à la fenêtre. Si tu changes un
+   personnage, change la phrase avec, sinon ça ne colle plus à l'image. */
+const FG_SCENES = [
+  { qui:"5\u1D49 \u00E9tage, porte A", texte:"Elle demande o\u00F9 ranger sa poussette : il n\u2019y a pas de local dans le hall." },
+  { qui:"5\u1D49 \u00E9tage, porte B", texte:"Il n\u2019est pas sorti depuis trois jours. Sa voisine s\u2019inqui\u00E8te." },
+  { qui:"4\u1D49 \u00E9tage, porte A", texte:"La musique s\u2019entend jusque sur le palier. Le voisin du dessous a d\u00E9j\u00E0 \u00E9crit trois fois." },
+  { qui:"4\u1D49 \u00E9tage, porte B", texte:"Elle appelle la loge depuis lundi. Personne ne l\u2019a rappel\u00E9e." },
+  { qui:"3\u1D49 \u00E9tage, porte A", texte:"Le chat sort par la fen\u00EAtre. La voisine du dessous a peur qu\u2019il tombe." },
+  { qui:"3\u1D49 \u00E9tage, porte B", texte:"Il est accoud\u00E9 l\u00E0 tous les soirs. Il voit tout ce qui se passe dans la cour." },
+  { qui:"2\u1D49 \u00E9tage, porte A", texte:"L\u2019arrosage du balcon coule sur celui du dessous. Le voisin se plaint." },
+  { qui:"2\u1D49 \u00E9tage, porte B", texte:"Sa chaudi\u00E8re est en panne. Elle attend l\u2019entreprise depuis huit jours." },
+  { qui:"1\u1D49\u02B3 \u00E9tage, porte A", texte:"Sa jardini\u00E8re est accroch\u00E9e c\u00F4t\u00E9 rue. Rien ne la retient vraiment." },
+  { qui:"1\u1D49\u02B3 \u00E9tage, porte B", texte:"Il attend seul depuis ce matin. Personne ne r\u00E9pond chez lui." }
+];
+/* ===================================================================== */
+
+document.querySelectorAll('[data-fg]').forEach(function(a){
+  a.setAttribute('href', FG_LIENS[a.dataset.fg]);
+});
+
+/* ---- façade : 30 fenêtres sur 5 étages. Décorative : plus de navigation.
+       Les 6 fenêtres habitées portent une situation de gardien (voir FG_SCENES). ---- */
+(function(){
+  var zone = document.getElementById('fgxWindows');
+  if(!zone) return;
+  var COLS = 6, TOTAL = 30;
+  /* Les 10 habitants, deux par étage, du 5e (rangée 0) au 1er (rangée 4).
+     Un emplacement dont la src est vide reste une fenêtre ordinaire :
+     tu peux préparer la place avant d'avoir l'image. */
+  var gens = [0, 5, 7, 11, 13, 16, 18, 23, 25, 27];
+  var curt = [3, 9, 14, 21, 26, 29];              /* rideaux à moitié tirés */
+  var balc = [1, 8, 15, 19, 24];                  /* garde-corps */
+  var gensEls = [];
+  var habitants = [];
+  var scenes = (typeof FG_SCENES !== 'undefined') ? FG_SCENES : [];
+
+  /* la bulle, une seule pour toute la façade */
+  var bulle = document.createElement('div');
+  bulle.className = 'fgx-bulle';
+  bulle.setAttribute('role','status');
+  var enveloppe = zone.parentNode;
+  enveloppe.style.position = enveloppe.style.position || 'relative';
+  enveloppe.appendChild(bulle);
+  var ouverte = null;
+
+  function montreBulle(el, sc){
+    if(!sc) return;
+    bulle.innerHTML = '<b>' + sc.qui + '</b><span>' + sc.texte + '</span>';
+    var r = el.getBoundingClientRect(), rp = enveloppe.getBoundingClientRect();
+    bulle.style.left = (r.left - rp.left + r.width / 2) + 'px';
+    bulle.style.top  = (r.top  - rp.top) + 'px';
+    bulle.classList.add('fgx-bulle-on');
+    ouverte = el;
+  }
+  function cacheBulle(){ bulle.classList.remove('fgx-bulle-on'); ouverte = null; }
+
+  for(var i=0;i<TOTAL;i++){
+    var rang = gens.indexOf(i), el;
+    el = document.createElement('div');
+    el.className = 'fgx-win'
+      + (curt.indexOf(i) > -1 ? ' fgx-curt' : '')
+      + (balc.indexOf(i) > -1 ? ' fgx-balc' : '');
+    if(FG_GENS.length && rang > -1 && FG_GENS[rang] && FG_GENS[rang].src){
+      var perso = FG_GENS[rang];
+      el.className += ' fgx-avec-gens' + (perso.sansCroix ? ' fgx-sans-croix' : '');
+      if(perso.decor){
+        var d = document.createElement('img');
+        d.className = 'fgx-decor';
+        d.alt = ''; d.loading = 'lazy'; d.src = perso.decor;
+        el.appendChild(d);
+      }
+      var g = document.createElement('img');
+      g.className = 'fgx-gens' + (perso.effet ? ' fgx-' + perso.effet : '');
+      g.alt = ''; g.loading = 'lazy';
+      if(perso.bas)  g.style.setProperty('--fg-bas',  perso.bas);
+      if(perso.zoom) g.style.setProperty('--fg-zoom', perso.zoom);
+      g.src = perso.src;
+      el.appendChild(g);
+      if(perso.papillon){
+        var pap = document.createElement('span');
+        pap.className = 'fgx-papillon';
+        pap.setAttribute('aria-hidden','true');
+        pap.textContent = '\uD83E\uDD8B';
+        el.appendChild(pap);
+      }
+      gensEls.push(el);
+
+      /* la situation attachée à cette fenêtre */
+      var sc = scenes[rang];
+      if(sc){
+        el.classList.add('fgx-parlante');
+        el.tabIndex = 0;
+        el.setAttribute('role','button');
+        el.setAttribute('aria-label', sc.qui + ' : ' + sc.texte);
+        (function(node, scene){
+          node.addEventListener('mouseenter', function(){ montreBulle(node, scene); });
+          node.addEventListener('focus',      function(){ montreBulle(node, scene); });
+          node.addEventListener('mouseleave', cacheBulle);
+          node.addEventListener('blur',       cacheBulle);
+          /* mobile : au toucher, et on referme si on retouche la même */
+          node.addEventListener('click', function(e){
+            e.stopPropagation();
+            if(ouverte === node){ cacheBulle(); } else { montreBulle(node, scene); }
+          });
+        })(el, sc);
+      }
+    }
+    habitants.push(el);
+    zone.appendChild(el);
+    if((i+1) % COLS === 0 && i < TOTAL-1){
+      var sl = document.createElement('div');
+      sl.className = 'fgx-slab';
+      zone.appendChild(sl);
+    }
+  }
+  document.addEventListener('click', function(){ if(ouverte) cacheBulle(); });
+  window.addEventListener('resize', cacheBulle);
+
+  /* la vie de l'immeuble : des lumières s'allument et s'éteignent */
+  var depart = [1, 6, 10, 15, 19];
+  depart.forEach(function(n){ if(habitants[n]) habitants[n].classList.add('fgx-on'); });
+  gensEls.forEach(function(w){ w.classList.add('fgx-on'); });
+  var calme = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!calme){
+    var vides = habitants.filter(function(w){ return !w.classList.contains('fgx-avec-gens'); });
+    setInterval(function(){
+      var w = vides[Math.floor(Math.random() * vides.length)];
+      if(w) w.classList.toggle('fgx-on');
+    }, 2100);
+    setInterval(function(){
+      var w = gensEls[Math.floor(Math.random() * gensEls.length)];
+      if(!w || w === ouverte) return;
+      w.classList.remove('fgx-on');
+      setTimeout(function(){ w.classList.add('fgx-on'); }, 5200);
+    }, 12000);
+  }
+})();
+
+/* ---- révélation au scroll ---- */
+(function(){
+  var c = document.querySelectorAll('.fgx-rev');
+  if(!('IntersectionObserver' in window)){
+    c.forEach(function(x){ x.classList.add('fgx-in'); }); return;
+  }
+  var obs = new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('fgx-in'); obs.unobserve(e.target); }
+    });
+  }, {threshold:.12});
+  c.forEach(function(x){ obs.observe(x); });
+})();
+
+/* ---- pop-up d'information (contenu réel, pas de fausse preuve sociale) ---- */
+(function(){
+  var b = document.getElementById('fgxToast'),
+      l = document.getElementById('fgxToastLabel'),
+      t = document.getElementById('fgxToastText'),
+      x = document.getElementById('fgxToastX');
+  if(!b) return;
+  var msg = [
+    {l:"Module 04", t:"L'état des lieux : sept parties, de l'entrée à la sortie, vétusté et réparations locatives comprises."},
+    {l:"Paiement", t:"1 499,99 € comptant, ou huit versements sans frais de 187,50 €."},
+    {l:"Module 07", t:"Gardien en site sensible : cadre légal des quartiers prioritaires, posture et scénarios de terrain."},
+    {l:"Inclus", t:"Recherche active d'une entreprise d'accueil, avec mobilisation du réseau FORMA-GARD."},
+    {l:"Inclus", t:"Les mises à jour de la formation publiées pendant votre accès, sans supplément."},
+    {l:"Module 06", t:"Électricité, plomberie et chauffage expliqués avec des schémas interactifs."}
+  ];
+  var i = 0, stop = false;
+  x.addEventListener('click', function(){ stop = true; b.classList.remove('fgx-in'); });
+  function tour(){
+    if(stop) return;
+    var m = msg[i % msg.length]; i++;
+    l.textContent = m.l; t.textContent = m.t;
+    b.classList.add('fgx-in');
+    setTimeout(function(){
+      b.classList.remove('fgx-in');
+      if(!stop) setTimeout(tour, 4200);
+    }, 6800);
+  }
+  setTimeout(tour, 5000);
+})();
+</script>
+
+<!-- ============ CONTENU DES DOCUMENTS JURIDIQUES ============
+     Tout le texte des documents est ici, en un seul endroit.
+     Les passages entre crochets sont à compléter par tes informations. -->
+<script>
+(function(){
+  var MAJ = "Dernière mise à jour : [date]";
+
+  var DOCS = {
+
+  cgv: '<h3>Conditions générales de vente</h3>'
+    + '<div class="fgx-docmaj">' + MAJ + '</div>'
+    + '<h4>1. Identification du prestataire</h4>'
+    + '<p>Les présentes conditions régissent les ventes de formations réalisées par FORMA-GARD, entreprise individuelle immatriculée sous le numéro SIREN 954 032 348, dont le siège est situé [adresse complète du siège], enregistrée en tant qu\'organisme de formation sous le numéro de déclaration d\'activité [numéro NDA] auprès de la Préfecture d\'Île-de-France. Cet enregistrement ne vaut pas agrément de l\'État. Contact : [adresse e-mail] &middot; [téléphone].</p>'
+    + '<h4>2. Objet</h4>'
+    + '<p>FORMA-GARD propose une formation professionnelle au métier de gardien d\'immeuble, dispensée intégralement à distance sur une plateforme en ligne. La formation comprend onze modules, ainsi que les prestations et options décrites sur la présente page au moment de la commande.</p>'
+    + '<h4>3. Public concerné et prérequis</h4>'
+    + '<p>La formation s\'adresse à toute personne souhaitant exercer ou évoluer dans le métier de gardien d\'immeuble, notamment les salariés du secteur, les personnes en reconversion professionnelle et les demandeurs d\'emploi. Aucun diplôme n\'est exigé. Il est nécessaire de savoir lire et écrire le français et de disposer d\'une connexion internet ainsi que d\'un ordinateur, d\'une tablette ou d\'un téléphone.</p>'
+    + '<h4>4. Inscription et formation du contrat</h4>'
+    + '<p>L\'inscription s\'effectue en ligne. Elle devient définitive à réception du paiement ou du premier versement en cas de règlement échelonné. Les identifiants d\'accès à la plateforme sont transmis par courrier électronique à l\'adresse indiquée lors de la commande.</p>'
+    + '<h4>5. Prix et modalités de paiement</h4>'
+    + '<p>Les prix sont indiqués en euros. FORMA-GARD n\'est pas assujettie à la TVA au titre de l\'article 261-4-4° a du Code général des impôts ; les montants affichés sont donc nets de taxe. Le règlement s\'effectue soit comptant (1 499,99 &euro;), soit de mani&egrave;re &eacute;chelonn&eacute;e en huit versements mensuels sans frais de 187,50 &euro;, soit 1 500,00 &euro; au total. En cas d\'&eacute;chelonnement, l\'acc&egrave;s aux modules est ouvert progressivement, au rythme des versements encaiss&eacute;s ; la convention de stage et l\'attestation de fin de formation sont d&eacute;livr&eacute;es apr&egrave;s le dernier versement. En cas d\'échelonnement, le défaut de paiement d\'une échéance peut entraîner la suspension de l\'accès à la plateforme après relance restée sans réponse pendant quinze jours.</p>'
+    + '<h4>6. Durée de l\'accès</h4>'
+    + '<p>L\'accès à la plateforme et à l\'ensemble des contenus est ouvert pour une durée de douze mois à compter de la confirmation de l\'inscription. Les mises à jour publiées pendant cette période sont incluses sans supplément. Une prolongation peut être accordée sur demande motivée.</p>'
+    + '<h4>7. Droit de rétractation</h4>'
+    + '<p>Conformément aux articles L221-18 et suivants du Code de la consommation, le client particulier dispose d\'un délai de quatorze jours à compter de la conclusion du contrat pour exercer son droit de rétractation, sans avoir à motiver sa décision ni à supporter de frais. La demande s\'effectue par courrier électronique à [adresse e-mail] avant l\'expiration du délai.</p>'
+    + '<p>Lorsque le client demande expressément à accéder aux contenus avant la fin de ce délai, il reconnaît que le remboursement sera calculé au prorata de la prestation déjà fournie. Si l\'intégralité des contenus a été mise à disposition et consultée avec son accord préalable et exprès, le droit de rétractation ne peut plus être exercé, conformément à l\'article L221-28 13° du même code.</p>'
+    + '<h4>8. Attestation délivrée</h4>'
+    + '<p>À l\'issue du parcours, une attestation de fin de formation est délivrée, mentionnant les objectifs, la nature et la durée de l\'action ainsi que les résultats de l\'évaluation des acquis. Cette attestation ne constitue ni un diplôme, ni un titre professionnel, ni une certification enregistrée au Répertoire national des certifications professionnelles.</p>'
+    + '<h4>9. Annulation et report par FORMA-GARD</h4>'
+    + '<p>En cas d\'impossibilité de fournir la prestation, FORMA-GARD en informe le client dans les meilleurs délais et procède au remboursement intégral des sommes versées.</p>'
+    + '<h4>10. Propriété intellectuelle</h4>'
+    + '<p>L\'ensemble des contenus pédagogiques demeure la propriété exclusive de FORMA-GARD. L\'accès accordé est strictement personnel. Toute reproduction, diffusion, revente ou mise à disposition de tiers, à titre gratuit ou onéreux, est interdite et peut entraîner la résiliation immédiate de l\'accès sans remboursement, sans préjudice de poursuites.</p>'
+    + '<h4>11. Réclamations et médiation</h4>'
+    + '<p>Toute réclamation peut être adressée à [adresse e-mail] ; une réponse est apportée sous quinze jours ouvrés. À défaut de solution amiable, le client consommateur peut recourir gratuitement au médiateur de la consommation : [nom et coordonnées du médiateur]. La plateforme européenne de règlement en ligne des litiges est également accessible à l\'adresse ec.europa.eu/consumers/odr.</p>'
+    + '<h4>12. Droit applicable</h4>'
+    + '<p>Les présentes conditions sont soumises au droit français.</p>',
+
+  ri: '<h3>Règlement intérieur</h3>'
+    + '<div class="fgx-docmaj">' + MAJ + '</div>'
+    + '<h4>Article 1 — Objet et champ d\'application</h4>'
+    + '<p>Le présent règlement est établi en application des articles L6352-3 et suivants et R6352-1 et suivants du Code du travail. Il s\'applique à toute personne suivant une formation dispensée par FORMA-GARD, pour toute la durée de sa formation. Il est porté à la connaissance de chaque apprenant avant son inscription.</p>'
+    + '<h4>Article 2 — Nature de la formation</h4>'
+    + '<p>Les formations étant dispensées intégralement à distance, les règles relatives à l\'hygiène et à la sécurité des locaux ne trouvent pas à s\'appliquer. Chaque apprenant demeure responsable des conditions matérielles dans lesquelles il suit la formation, notamment de son poste de travail et de sa connexion.</p>'
+    + '<h4>Article 3 — Accès à la plateforme</h4>'
+    + '<p>Les identifiants sont strictement personnels et confidentiels. Leur partage, leur cession ou leur utilisation par un tiers est interdit. L\'apprenant signale sans délai toute perte ou utilisation frauduleuse de ses identifiants.</p>'
+    + '<h4>Article 4 — Assiduité et suivi</h4>'
+    + '<p>L\'apprenant suit la formation à son rythme, dans la limite de la durée d\'accès prévue. La connexion à la plateforme fait l\'objet d\'un suivi automatisé permettant d\'attester de la réalisation de l\'action de formation. L\'apprenant s\'engage à réaliser les activités et évaluations proposées.</p>'
+    + '<h4>Article 5 — Comportement</h4>'
+    + '<p>Il est attendu de chacun un comportement respectueux envers l\'équipe pédagogique et les autres apprenants, notamment dans les espaces d\'échange. Sont notamment proscrits les propos injurieux, discriminatoires, diffamatoires ou de harcèlement, ainsi que la diffusion de contenus illicites.</p>'
+    + '<h4>Article 6 — Propriété intellectuelle</h4>'
+    + '<p>Les supports mis à disposition sont réservés à l\'usage personnel de l\'apprenant. Leur enregistrement, leur reproduction ou leur diffusion sous quelque forme que ce soit est interdit sans autorisation écrite préalable.</p>'
+    + '<h4>Article 7 — Sanctions et procédure disciplinaire</h4>'
+    + '<p>Tout manquement au présent règlement peut donner lieu, selon sa gravité, à un avertissement, à une exclusion temporaire ou à une exclusion définitive de la formation. Conformément aux articles R6352-4 et suivants du Code du travail, aucune sanction ne peut être prononcée sans que l\'apprenant ait été informé par écrit des griefs retenus contre lui et mis en mesure de s\'expliquer. Il peut se faire assister par la personne de son choix. La sanction est notifiée par écrit et motivée.</p>'
+    + '<h4>Article 8 — Réclamations</h4>'
+    + '<p>Toute réclamation relative au déroulement de la formation peut être adressée à [adresse e-mail]. Une réponse est apportée sous quinze jours ouvrés.</p>',
+
+  conf: '<h3>Politique de confidentialité</h3>'
+    + '<div class="fgx-docmaj">' + MAJ + '</div>'
+    + '<h4>Responsable du traitement</h4>'
+    + '<p>Les données collectées sur ce site sont traitées par FORMA-GARD, SIREN 954 032 348, [adresse complète du siège]. Pour toute question relative à vos données : [adresse e-mail].</p>'
+    + '<h4>Données collectées et finalités</h4>'
+    + '<ul>'
+    + '<li><strong>Inscription et gestion de la formation</strong> — nom, prénom, adresse électronique, numéro de téléphone. Base légale : exécution du contrat.</li>'
+    + '<li><strong>Suivi pédagogique</strong> — progression dans les modules, résultats aux évaluations, données de connexion. Base légale : exécution du contrat et obligation légale de traçabilité des actions de formation.</li>'
+    + '<li><strong>Facturation et comptabilité</strong> — données de commande et de règlement. Base légale : obligation légale.</li>'
+    + '<li><strong>Réponse aux demandes de contact</strong> — coordonnées et contenu du message. Base légale : intérêt légitime.</li>'
+    + '</ul>'
+    + '<h4>Durées de conservation</h4>'
+    + '<p>Les données de suivi pédagogique et les pièces justificatives sont conservées pendant la durée requise par la réglementation applicable aux organismes de formation. Les documents comptables sont conservés dix ans. Les demandes de contact sans suite sont supprimées au bout de trois ans.</p>'
+    + '<h4>Destinataires</h4>'
+    + '<p>Les données ne sont ni vendues ni cédées. Elles peuvent être transmises aux prestataires techniques strictement nécessaires au fonctionnement du service — hébergement de la plateforme, envoi des courriers électroniques, encaissement des paiements — ainsi qu\'aux financeurs et organismes de contrôle lorsque la loi l\'exige.</p>'
+    + '<h4>Vos droits</h4>'
+    + '<p>Vous disposez d\'un droit d\'accès, de rectification, d\'effacement, de limitation, d\'opposition et de portabilité de vos données. Vous pouvez les exercer en écrivant à [adresse e-mail]. Vous pouvez également introduire une réclamation auprès de la CNIL, 3 place de Fontenoy, 75007 Paris, ou sur cnil.fr.</p>'
+    + '<h4>Cookies</h4>'
+    + '<p>Le site utilise les cookies strictement nécessaires à son fonctionnement, qui ne requièrent pas de consentement. [Si tu ajoutes un outil de mesure d\'audience ou de publicité, il faut le déclarer ici et mettre en place une bannière de consentement.]</p>',
+
+  handi: '<h3>Accessibilité et situation de handicap</h3>'
+    + '<div class="fgx-docmaj">' + MAJ + '</div>'
+    + '<p>FORMA-GARD s\'attache à rendre sa formation accessible aux personnes en situation de handicap, conformément à l\'article L6112-3 du Code du travail.</p>'
+    + '<h4>Un interlocuteur dédié</h4>'
+    + '<p>Le référent handicap de FORMA-GARD est [prénom et nom], joignable à [adresse e-mail] et au [téléphone]. Toute personne concernée est invitée à prendre contact avant son inscription afin d\'examiner ensemble ses besoins.</p>'
+    + '<h4>Ce que permet le format à distance</h4>'
+    + '<p>La formation étant entièrement en ligne et sans rythme imposé, elle supprime les contraintes de déplacement et permet à chacun d\'adapter la durée de ses sessions, de revenir autant de fois que nécessaire sur un contenu et d\'utiliser ses propres outils d\'assistance.</p>'
+    + '<h4>Aménagements possibles</h4>'
+    + '<p>Selon la situation, des aménagements peuvent être étudiés : délais adaptés pour les évaluations, transmission des supports dans un format compatible avec les technologies d\'assistance, accompagnement individualisé, prolongation de la durée d\'accès.</p>'
+    + '<h4>Orientation</h4>'
+    + '<p>Lorsqu\'un besoin dépasse ce que FORMA-GARD peut proposer, un relais est organisé vers les acteurs compétents, notamment l\'Agefiph et les Cap Emploi de votre département.</p>',
+
+  ml: '<h3>Mentions légales</h3>'
+    + '<div class="fgx-docmaj">' + MAJ + '</div>'
+    + '<h4>Éditeur du site</h4>'
+    + '<p>FORMA-GARD, entreprise individuelle &middot; SIREN 954 032 348 &middot; Siège : [adresse complète du siège] &middot; Directrice de la publication : [prénom et nom] &middot; Contact : [adresse e-mail] &middot; [téléphone].</p>'
+    + '<h4>Activité de formation</h4>'
+    + '<p>Déclaration d\'activité enregistrée sous le numéro [numéro NDA] auprès du préfet de région d\'Île-de-France. Cet enregistrement ne vaut pas agrément de l\'État.</p>'
+    + '<h4>Hébergement</h4>'
+    + '<p>[Nom de l\'hébergeur] &middot; [adresse de l\'hébergeur].</p>'
+    + '<h4>Propriété intellectuelle</h4>'
+    + '<p>L\'ensemble des contenus de ce site — textes, illustrations, éléments graphiques et supports pédagogiques — est protégé par le droit d\'auteur et demeure la propriété de FORMA-GARD. Toute reproduction sans autorisation écrite est interdite.</p>'
+
+  };
+
+  var mask  = document.getElementById('fgxDocMask'),
+      corps = document.getElementById('fgxDocCorps'),
+      fermer= document.getElementById('fgxDocX');
+  if(!mask) return;
+
+  function ouvrir(cle){
+    if(!DOCS[cle]) return;
+    corps.innerHTML = DOCS[cle];
+    mask.classList.add('fgx-open');
+    mask.scrollTop = 0;
+    document.body.style.overflow = 'hidden';
+    fermer.focus();
+  }
+  function refermer(){
+    mask.classList.remove('fgx-open');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.fgx-foot-legal button[data-doc]').forEach(function(b){
+    b.addEventListener('click', function(){ ouvrir(b.getAttribute('data-doc')); });
+  });
+  fermer.addEventListener('click', refermer);
+  mask.addEventListener('click', function(e){ if(e.target === mask) refermer(); });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && mask.classList.contains('fgx-open')) refermer();
+  });
+})();
+</script>
+
+</body>
+</html>

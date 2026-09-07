@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Payer en plusieurs fois — FORMA-GARD</title>
+<meta name="description" content="La formation de gardien d'immeuble FORMA-GARD se règle en huit mensualités de 187,50 €. Fonctionnement, engagement et conditions.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- =====================================================================
+     ⚠️  UNE SEULE CHOSE À MODIFIER : le lien du bouton, tout en bas,
+         dans le bloc  const FG_LIENS = { ... }
+     ===================================================================== -->
+
+<style>
+#fgp-page{
+  --nav:#0e2442;
+  --nav-deep:#071427;
+  --gold:#c4b99a;
+  --gold-dk:#9a8060;
+  --parch:#f0ece4;
+  --parch-lt:#fbfaf8;
+  --grey:#6b7280;
+  --ink:#1f2937;
+}
+#fgp-page,#fgp-page *,#fgp-page *:before,#fgp-page *:after{box-sizing:border-box}
+#fgp-page{
+  font-family:'DM Sans',system-ui,sans-serif;color:var(--ink);line-height:1.65;font-size:17px;
+  -webkit-font-smoothing:antialiased;background:#fff;text-align:left;
+}
+#fgp-page p{margin:0 0 1.1em}
+#fgp-page a{color:inherit;text-decoration:none}
+#fgp-page ul{list-style:none;margin:0;padding:0}
+#fgp-page .fgp-serif{font-family:'DM Serif Display',serif}
+#fgp-page .fgp-wrap{max-width:860px;margin:0 auto;padding:0 24px}
+
+/* ---------- barre ---------- */
+#fgp-page .fgp-bar{
+  background:var(--nav);padding:20px 0;border-bottom:1px solid rgba(196,185,154,.25);
+}
+#fgp-page .fgp-bar .fgp-wrap{display:flex;align-items:center;justify-content:space-between;gap:20px}
+#fgp-page .fgp-brand{
+  font-family:'DM Serif Display',serif;color:#fff;font-size:1.35rem;letter-spacing:.04em;
+  display:inline-flex;align-items:center;gap:12px;
+}
+#fgp-page .fgp-logo{height:42px;width:auto;display:block}
+#fgp-page .fgp-back{
+  color:var(--gold);font-size:.82rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  border-bottom:1px solid transparent;transition:border-color .25s ease;
+}
+#fgp-page .fgp-back:hover{border-color:var(--gold)}
+
+/* ---------- hero ---------- */
+#fgp-page .fgp-hero{
+  background:var(--nav);color:#fff;padding:64px 0 76px;text-align:center;
+}
+#fgp-page .fgp-eyebrow{
+  display:inline-flex;align-items:center;gap:14px;font-size:.76rem;font-weight:600;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:22px;
+}
+#fgp-page .fgp-eyebrow:before,#fgp-page .fgp-eyebrow:after{
+  content:"";width:34px;height:1px;background:var(--gold);opacity:.55;
+}
+#fgp-page .fgp-hero h1{
+  font-family:'DM Serif Display',serif;font-weight:400;margin:0 0 20px;
+  font-size:clamp(2.1rem,5vw,3.1rem);line-height:1.15;
+}
+#fgp-page .fgp-lede{
+  max-width:620px;margin:0 auto;color:rgba(255,255,255,.82);font-size:1.05rem;
+}
+
+/* ---------- bandeau chiffres ---------- */
+#fgp-page .fgp-figures{
+  background:var(--parch);border-bottom:1px solid rgba(14,36,66,.08);
+}
+#fgp-page .fgp-figures-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+}
+#fgp-page .fgp-fig{
+  padding:32px 20px;text-align:center;border-right:1px solid rgba(14,36,66,.09);
+}
+#fgp-page .fgp-fig:last-child{border-right:none}
+#fgp-page .fgp-fig-n{
+  font-family:'DM Serif Display',serif;color:var(--nav);font-size:1.9rem;line-height:1.1;
+}
+#fgp-page .fgp-fig-l{
+  margin-top:8px;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--grey);
+}
+
+/* ---------- corps ---------- */
+#fgp-page .fgp-body{padding:70px 0 20px}
+#fgp-page .fgp-sec{margin-bottom:56px}
+#fgp-page .fgp-sec h2{
+  font-family:'DM Serif Display',serif;font-weight:400;color:var(--nav);
+  font-size:1.7rem;line-height:1.25;margin:0 0 8px;
+}
+#fgp-page .fgp-rule{
+  width:52px;height:2px;background:var(--gold);margin:0 0 22px;
+}
+
+/* ---------- séquences ---------- */
+#fgp-page .fgp-steps{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:28px}
+#fgp-page .fgp-step{
+  background:var(--parch-lt);border:1px solid rgba(14,36,66,.1);
+  border-top:3px solid var(--gold);padding:26px 24px 24px;
+}
+#fgp-page .fgp-step-n{
+  font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-dk);
+  font-weight:700;margin-bottom:10px;
+}
+#fgp-page .fgp-step h3{
+  font-family:'DM Serif Display',serif;font-weight:400;color:var(--nav);
+  font-size:1.25rem;margin:0 0 10px;
+}
+#fgp-page .fgp-paymode{
+  display:flex;align-items:center;gap:8px;margin-top:10px;
+  font-family:'DM Sans',sans-serif;font-size:.76rem;font-weight:600;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--grey);
+}
+#fgp-page .fgp-pp{height:34px;width:auto;display:block}
+#fgp-page .fgp-card{width:34px;height:auto;display:block;color:var(--gold-dk)}
+#fgp-page .fgp-step-amount{
+  margin-top:16px;padding-top:14px;border-top:1px solid rgba(14,36,66,.1);
+  font-family:'DM Serif Display',serif;color:var(--nav);font-size:1.15rem;
+}
+
+/* ---------- encadré engagement ---------- */
+#fgp-page .fgp-note{
+  background:var(--nav);color:#fff;padding:34px 34px 30px;margin:0 0 56px;
+}
+#fgp-page .fgp-note h2{color:#fff;margin-bottom:8px}
+#fgp-page .fgp-note .fgp-rule{background:var(--gold)}
+#fgp-page .fgp-note p{color:rgba(255,255,255,.84);font-size:.97rem}
+#fgp-page .fgp-note p:last-child{margin-bottom:0}
+
+/* ---------- liste conditions ---------- */
+#fgp-page .fgp-list li{
+  position:relative;padding-left:26px;margin-bottom:13px;font-size:.97rem;color:#404a58;
+}
+#fgp-page .fgp-list li:before{
+  content:"";position:absolute;left:0;top:9px;width:9px;height:9px;
+  background:var(--gold);transform:rotate(45deg);
+}
+
+/* ---------- CTA ---------- */
+#fgp-page .fgp-cta-wrap{
+  background:var(--parch);padding:58px 0 64px;text-align:center;margin-top:20px;
+}
+#fgp-page .fgp-cta-wrap h2{
+  font-family:'DM Serif Display',serif;font-weight:400;color:var(--nav);
+  font-size:1.8rem;margin:0 0 10px;
+}
+#fgp-page .fgp-cta-wrap p{color:var(--grey);font-size:.98rem;max-width:520px;margin:0 auto 28px}
+#fgp-page .fgp-btn{
+  display:inline-block;background:var(--nav);color:#fff;
+  padding:19px 46px;font-size:.9rem;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;border-radius:2px;transition:background .25s ease;
+}
+#fgp-page .fgp-btn:hover{background:#1c3e6b;color:#fff}
+#fgp-page .fgp-alt{
+  display:block;margin-top:22px;font-size:.86rem;color:var(--grey);
+  border-bottom:1px solid rgba(107,114,128,.4);padding-bottom:1px;
+}
+#fgp-page .fgp-alt:hover{color:var(--nav);border-color:var(--nav)}
+#fgp-page .fgp-alt-line{margin-top:24px}
+
+/* ---------- pied ---------- */
+#fgp-page .fgp-foot{
+  background:var(--nav-deep);color:rgba(255,255,255,.55);
+  padding:30px 0;text-align:center;font-size:.8rem;
+}
+
+@media(max-width:720px){
+  #fgp-page .fgp-steps{grid-template-columns:1fr}
+  #fgp-page .fgp-figures-grid{grid-template-columns:1fr}
+  #fgp-page .fgp-fig{border-right:none;border-bottom:1px solid rgba(14,36,66,.09);padding:24px 20px}
+  #fgp-page .fgp-fig:last-child{border-bottom:none}
+  #fgp-page .fgp-note{padding:28px 22px 24px}
+  #fgp-page .fgp-body{padding:50px 0 10px}
+}
+</style>
+</head>
+<body>
+<div id="fgp-page">
+
+  <div class="fgp-bar">
+    <div class="fgp-wrap">
+      <span class="fgp-brand"><img src="https://res.cloudinary.com/dffpdts1c/image/upload/v1787674599/Blue_Minimalist_simple_real_estate_architecture_Logo_2_qd8j9d.png" alt="" class="fgp-logo">FORMA-GARD</span>
+      <a href="#" class="fgp-back" data-fg="accueil">Retour</a>
+    </div>
+  </div>
+
+  <section class="fgp-hero">
+    <div class="fgp-wrap">
+      <span class="fgp-eyebrow">Facilité de paiement</span>
+      <h1>Régler la formation<br>en plusieurs fois</h1>
+      <p class="fgp-lede">Le prix de la formation reste identique. Seul le rythme du règlement change : huit mensualités au lieu d'un versement unique.</p>
+    </div>
+  </section>
+
+  <div class="fgp-figures">
+    <div class="fgp-wrap">
+      <div class="fgp-figures-grid">
+        <div class="fgp-fig">
+          <div class="fgp-fig-n">187,50 €</div>
+          <div class="fgp-fig-l">Par mois</div>
+        </div>
+        <div class="fgp-fig">
+          <div class="fgp-fig-n">8 mensualités</div>
+          <div class="fgp-fig-l">Sur huit mois</div>
+        </div>
+        <div class="fgp-fig">
+          <div class="fgp-fig-n">1 500,00 €</div>
+          <div class="fgp-fig-l">Total, sans frais</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="fgp-body">
+    <div class="fgp-wrap">
+
+      <div class="fgp-sec">
+        <h2>Comment cela fonctionne</h2>
+        <div class="fgp-rule"></div>
+        <p>Le règlement est organisé en deux séquences de quatre mensualités. Vous ne réglez jamais plus de 187,50 € par mois, et le montant total reste celui annoncé.</p>
+        <div class="fgp-steps">
+          <div class="fgp-step">
+            <div class="fgp-step-n">Première séquence</div>
+            <h3>Vous commencez la formation</h3>
+            <p>Votre inscription est enregistrée et l'accès à la plateforme vous est ouvert. Vous travaillez les premiers modules du programme à votre rythme, sans limite de temps.</p>
+            <div class="fgp-step-amount">4 × 187,50 €
+              <span class="fgp-paymode"><img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_111x69.jpg" alt="PayPal" class="fgp-pp"> Réglé via PayPal</span>
+            </div>
+          </div>
+          <div class="fgp-step">
+            <div class="fgp-step-n">Seconde séquence</div>
+            <h3>Vous terminez le programme</h3>
+            <p>À l'issue de la première séquence, vous recevez par e-mail le lien qui met en place la suite du règlement. Les modules restants s'ouvrent alors, jusqu'à l'attestation de fin de formation.</p>
+            <div class="fgp-step-amount">4 × 187,50 €
+              <span class="fgp-paymode"><svg class="fgp-card" viewBox="0 0 24 16" aria-hidden="true"><rect x=".7" y=".7" width="22.6" height="14.6" rx="2" fill="none" stroke="currentColor" stroke-width="1.4"/><rect x="0" y="4" width="24" height="2.6" fill="currentColor"/><rect x="3" y="10" width="7" height="1.6" fill="currentColor"/></svg> Prélèvement automatique</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fgp-note">
+        <h2>Votre engagement</h2>
+        <div class="fgp-rule"></div>
+        <p>En choisissant le paiement en plusieurs fois, vous vous engagez à régler l'intégralité des huit mensualités, soit la totalité du prix de la formation. Le fractionnement est une facilité de paiement, non une remise : le montant dû est le même que pour un règlement comptant.</p>
+        <p>L'accès aux modules suit le règlement des mensualités. En cas d'interruption ou d'échec des prélèvements, l'accès à la plateforme est suspendu jusqu'à régularisation, sans perte de votre progression.</p>
+      </div>
+
+      <div class="fgp-sec">
+        <h2>Ce qu'il faut savoir avant de choisir</h2>
+        <div class="fgp-rule"></div>
+        <ul class="fgp-list">
+          <li>Le paiement en plusieurs fois est proposé par notre partenaire PayPal, sous réserve d'acceptation de votre dossier par PayPal. La décision lui appartient et nous n'en maîtrisons pas l'issue.</li>
+          <li>Si votre demande n'est pas retenue, le règlement comptant reste disponible et vous donne accès à l'intégralité du programme immédiatement.</li>
+          <li>Aucun frais de dossier, aucun intérêt, aucune majoration : 8 × 187,50 € = 1 500,00 €.</li>
+          <li>Le contenu de la formation, l'accompagnement et l'attestation de fin de formation sont strictement identiques quel que soit le mode de règlement choisi.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="fgp-cta-wrap">
+    <div class="fgp-wrap">
+      <h2>Prête à commencer</h2>
+      <p>Vous accédez maintenant au formulaire d'inscription. La première mensualité est prélevée à la validation de votre commande.</p>
+      <a href="#" class="fgp-btn" data-fg="inscription">Je m'inscris en plusieurs fois</a>
+      <div class="fgp-alt-line">
+        <a href="#" class="fgp-alt" data-fg="comptant">Je préfère régler en une seule fois</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="fgp-foot">
+    FORMA-GARD — Organisme de formation · Formation non certifiante, non inscrite au RNCP
+  </div>
+
+</div>
+
+<script>
+/* =====================================================================
+   LES LIENS DE LA PAGE — la seule chose à modifier
+   ===================================================================== */
+const FG_LIENS = {
+  accueil    : "https://forma-gard.com",
+  inscription: "https://espace.forma-gard.com/inscription-8-fois",
+  comptant   : "https://espace.forma-gard.com/inscription"
+};
+
+document.querySelectorAll('#fgp-page [data-fg]').forEach(function(el){
+  var cible = FG_LIENS[el.getAttribute('data-fg')];
+  if (cible) el.setAttribute('href', cible);
+});
+</script>
+</body>
+</html>
