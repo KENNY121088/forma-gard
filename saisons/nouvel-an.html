@@ -817,6 +817,30 @@
           <a class="fgx-btn fgx-btn-ghost" href="#fgx-programme">Voir le programme</a>
         </div>
         <p class="fgx-hero-note">Offre des fêtes, jusqu'au 30 janvier : 19,99 € par mois les deux premiers mois &middot; Rien n'est prélevé pendant 14 jours</p>
+        <div class="fgcd" id="fgcd" aria-live="off">
+          <span class="fgcd-l">L'offre s'arrête dans</span>
+          <div class="fgcd-r"><span><b data-u="j">00</b><small>jours</small></span><span><b data-u="h">00</b><small>heures</small></span><span><b data-u="m">00</b><small>min</small></span><span><b data-u="s">00</b><small>sec</small></span></div>
+          <span class="fgcd-e">Fin le 30 janvier 2027 à minuit</span>
+        </div>
+        <style>
+        #fgcd{margin-top:22px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px}
+        #fgcd .fgcd-l{flex-basis:100%;font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#c4b99a}
+        #fgcd .fgcd-r{display:flex;gap:8px}
+        #fgcd .fgcd-r span{min-width:62px;background:#fff;color:#0E2442;border-radius:10px;padding:9px 6px 6px;text-align:center}
+        #fgcd .fgcd-r b{display:block;font-size:28px;font-weight:800;line-height:1;font-variant-numeric:tabular-nums}
+        #fgcd .fgcd-r small{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#5f6673;font-weight:700}
+        #fgcd .fgcd-e{font-size:.8rem;color:rgba(255,255,255,.6)}
+        @media(max-width:560px){#fgcd .fgcd-r span{min-width:54px}#fgcd .fgcd-r b{font-size:24px}}
+        </style>
+        <script>
+        (function(){var el=document.getElementById('fgcd');if(!el)return;var fin=new Date('2027-01-30T23:59:59+01:00').getTime();
+        var u={};el.querySelectorAll('[data-u]').forEach(function(b){u[b.getAttribute('data-u')]=b;});
+        function p(n){return(n<10?'0':'')+n;}
+        function t(){var d=fin-Date.now();if(d<=0){el.style.display='none';return;}var s=Math.floor(d/1000);
+        u.j.textContent=p(Math.floor(s/86400));u.h.textContent=p(Math.floor(s%86400/3600));u.m.textContent=p(Math.floor(s%3600/60));u.s.textContent=p(s%60);setTimeout(t,1000-(Date.now()%1000));}
+        t();})();
+        </script>
+
       </div>
 
       <div class="fgx-facade">
