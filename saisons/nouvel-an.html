@@ -3639,18 +3639,50 @@ if(cd) tick();
 #fg-choix .x{position:absolute;top:12px;right:14px;width:40px;height:40px;border:0;background:none;font-size:1.8rem;line-height:1;color:#9ca3af;cursor:pointer;border-radius:50%}
 #fg-choix .x:hover{color:#0e2442;background:#f3f4f6}
 @media(max-width:640px){#fg-choix .gr{grid-template-columns:1fr}#fg-choix .bx{padding:28px 18px 20px}}
+#fg-choix{overflow:auto}
+#fg-choix .bx{max-width:800px}
+#fg-choix .gr.fgx{gap:22px;align-items:stretch}
+#fg-choix .gr.fgx>a.op{margin-top:62px;background:linear-gradient(160deg,#1b3a63 0%,#0e2442 60%,#071427 100%);border-color:#0e2442;color:#fff;box-shadow:0 18px 36px -18px rgba(7,20,39,.6)}
+#fg-choix .gr.fgx>a.op .tg{color:#c4b99a}
+#fg-choix .gr.fgx>a.op .go{margin-top:auto;padding:13px 16px;border-radius:12px;text-align:center;background:linear-gradient(180deg,#d6cdb2,#c4b99a 55%,#9a8060);color:#0e2442}
+#fg-choix .gr>.fgk{display:flex;flex-direction:column}#fg-choix .gr>.fgk .fgk-box{flex:1}
+.fgk{position:relative;display:block;text-decoration:none;padding-top:62px;--ease:cubic-bezier(.22,1.16,.36,1)}
+.fgk-lid{position:absolute;z-index:3;left:-8px;right:20px;top:26px;height:30px;transform:rotate(-7deg);transform-origin:12% 100%;transition:transform .55s var(--ease);pointer-events:none}
+.fgk:hover .fgk-lid,.fgk:focus-visible .fgk-lid{transform:translateY(-6px) rotate(-10deg)}
+.fgk-lid i{position:absolute;inset:0;border-radius:16px 16px 10px 10px;background:linear-gradient(180deg,#a3263a 0%,#7c1424 55%,#5a0c18 100%);box-shadow:inset 0 2px 0 rgba(255,255,255,.22),inset 0 -3px 0 #c9a45c,0 14px 18px -8px rgba(60,6,14,.55)}
+.fgk-lid i:after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:5px;border-radius:0 0 10px 10px;background:linear-gradient(90deg,#8a6a2a,#c9a45c,#8a6a2a);opacity:.85}
+.fgk-bow{position:absolute;left:50%;top:-22px;width:70px;height:34px;transform:translateX(-50%)}
+.fgk-bow b{position:absolute;bottom:4px;width:30px;height:22px;border-radius:50% 50% 30% 50%;background:radial-gradient(circle at 35% 30%,#fff3c4,#e2bd62 55%,#9c7426);box-shadow:inset 0 -2px 3px rgba(92,60,6,.45),0 3px 6px rgba(48,8,12,.35)}
+.fgk-bow b:first-child{left:4px;transform:rotate(-18deg)}
+.fgk-bow b:nth-child(2){right:4px;transform:scaleX(-1) rotate(-18deg)}
+.fgk-bow em{position:absolute;left:50%;bottom:2px;width:18px;height:18px;transform:translateX(-50%);border-radius:6px;background:linear-gradient(160deg,#fff0ad,#e2bd62 55%,#a6781b);box-shadow:inset 0 1px 0 rgba(255,255,255,.8),0 2px 5px rgba(0,0,0,.35)}
+.fgk-box{position:relative;z-index:2;display:flex;flex-direction:column;gap:12px;padding:26px 24px 24px;border-radius:16px;color:#fff;overflow:hidden;background:radial-gradient(70% 45% at 45% 0%,rgba(255,190,170,.22),transparent 70%),radial-gradient(circle,rgba(255,255,255,.06) 1px,transparent 1.5px) 0 0/16px 16px,linear-gradient(170deg,#7d1626 0%,#5c0d19 55%,#3f0710 100%);box-shadow:0 22px 40px -18px rgba(63,7,16,.75),inset 0 1px 0 rgba(255,255,255,.12);transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s}
+.fgk:hover .fgk-box{transform:translateY(-2px);box-shadow:0 28px 46px -18px rgba(63,7,16,.85),inset 0 1px 0 rgba(255,255,255,.14)}
+.fgk-box:before{content:"";position:absolute;top:0;bottom:0;left:calc(45% - 14px);width:28px;background:linear-gradient(90deg,rgba(166,120,27,.55),rgba(255,236,170,.75) 45%,rgba(201,164,92,.6) 70%,rgba(140,100,30,.55));opacity:.75}
+.fgk-box>*{position:relative;z-index:1}
+.fgk-badge{align-self:flex-start;padding:6px 14px;border-radius:999px;border:1px solid rgba(226,189,98,.55);background:rgba(255,255,255,.06);color:#f0d27a;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.fgk-price{font-size:2.2rem;font-weight:800;line-height:1.05;letter-spacing:-.02em}
+.fgk-desc{font-size:.95rem;line-height:1.55;color:rgba(255,255,255,.86)}
+.fgk-cta{margin-top:auto;display:block;text-align:center;padding:14px 16px;border-radius:12px;font-weight:700;font-size:.98rem;color:#3a1a0a;background:linear-gradient(180deg,#f7d98c,#e2b85a 55%,#c9973c);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 8px 18px -8px rgba(201,151,60,.8);transition:filter .25s}
+.fgk:hover .fgk-cta{filter:brightness(1.06)}
+.fgk:focus-visible{outline:none}.fgk:focus-visible .fgk-box{outline:3px solid #f0d27a;outline-offset:3px}
+@media(max-width:640px){#fg-choix{align-items:flex-start}#fg-choix .gr.fgx>a.op{margin-top:0}}
+@media(prefers-reduced-motion:reduce){.fgk-lid,.fgk-box,.fgk-cta{transition:none}}
 </style>
 <div id="fg-choix" role="dialog" aria-modal="true" aria-labelledby="fg-choix-t">
  <div class="bx">
   <button class="x" type="button" aria-label="Fermer">&times;</button>
   <h3 id="fg-choix-t">Comment souhaitez-vous payer ?</h3>
   <p class="sub">C'est la même formation complète. Choisissez simplement votre façon de payer.</p>
-  <div class="gr">
-   <a class="op une" href="https://espace.forma-gard.com/inscription-noel">
-    <span class="tg">Au mois · offre des fêtes</span>
-    <span class="px">19,99 € <small>/ mois</small></span>
-    <span class="ds">Les 2 premiers mois, puis 125 € par mois. Engagement 12 mois. Rien n'est prélevé pendant 14 jours.</span>
-    <span class="go">Je choisis cette formule</span>
+  <div class="gr fgx">
+   <a class="fgk" href="https://espace.forma-gard.com/inscription-noel">
+    <span class="fgk-lid" aria-hidden="true"><i></i><span class="fgk-bow"><b></b><b></b><em></em></span></span>
+    <span class="fgk-box">
+     <span class="fgk-badge">Offre des fêtes</span>
+     <span class="fgk-price">19,99&nbsp;€ / mois</span>
+     <span class="fgk-desc">Les 2 premiers mois, puis 125&nbsp;€ par mois. Engagement 12 mois. Rien n'est prélevé pendant 14 jours.</span>
+     <span class="fgk-cta">Je choisis cette formule</span>
+    </span>
    </a>
    <a class="op" href="https://espace.forma-gard.com/inscription-plusieurs-fois">
     <span class="tg">En une ou plusieurs fois</span>
@@ -3663,7 +3695,7 @@ if(cd) tick();
 </div>
 <script>
 (function(){var m=document.getElementById('fg-choix');if(!m)return;var last=null;
-function open(){last=document.activeElement;m.classList.add('on');document.documentElement.style.overflow='hidden';setTimeout(function(){var a=m.querySelector('a.op');a&&a.focus()},50)}
+function open(){last=document.activeElement;m.classList.add('on');document.documentElement.style.overflow='hidden';setTimeout(function(){var a=m.querySelector('.gr a');a&&a.focus()},50)}
 function close(){m.classList.remove('on');document.documentElement.style.overflow='';last&&last.focus&&last.focus()}
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-fg="paiement"],a[href="#inscription"],a[href="./#inscription"]');if(!a)return;e.preventDefault();e.stopImmediatePropagation();open()},true);
 m.addEventListener('click',function(e){if(e.target===m||e.target.closest('.x'))close()});
