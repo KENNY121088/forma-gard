@@ -3117,5 +3117,9 @@ requestAnimationFrame(tick);
  root.appendChild(flight);
  flight.dataset.scope='whole-page';
 })();</script>
+<script>/* FG-ANCRES : les boutons « Je m'inscris » descendent aux tarifs, partout (aussi dans les aperçus) */
+(function(){function go(h){try{var t=document.querySelector(h);if(t){t.scrollIntoView({behavior:'smooth',block:'start'});return true}}catch(e){}return false}
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href]');if(!a)return;var h=a.getAttribute('href')||'';var i=h.indexOf('#');if(i<0||h.length<=i+1)return;var page=h.slice(0,i);if(page&&!/^(\.\/|index\.html)$/.test(page))return;if(page&&document.getElementById('fg-tarifs')===null)return;if(go(h.slice(i))){e.preventDefault();try{history.replaceState(null,'',h.slice(i))}catch(_){}}},true);
+var h0=location.hash;if(h0&&h0.length>1)setTimeout(function(){go(h0)},600);})();</script>
 </body>
 </html>
