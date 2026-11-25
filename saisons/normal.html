@@ -3120,6 +3120,60 @@ requestAnimationFrame(tick);
 .no-sky{display:none!important}
 .no-strip,#noCord,.no-tagrow,#no-avent,#no-snow,.no-snowcap,.fgno-winter-ground,.fgno-contact-shadow,[class*="fgno-snow"],[class*="no-flake"]{display:none!important}
 </style>
+<!-- FG-CHOIX : fenêtre « Je m'inscris » avec les deux façons de payer -->
+<style>
+#fg-choix{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(7,20,39,.72);backdrop-filter:blur(4px);font-family:'DM Sans',system-ui,sans-serif}
+#fg-choix.on{display:flex}
+#fg-choix .bx{position:relative;width:100%;max-width:760px;background:#fff;border-radius:22px;padding:34px 30px 28px;box-shadow:0 40px 90px -30px rgba(0,0,0,.6);animation:fgcIn .25s ease}
+@keyframes fgcIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+#fg-choix h3{margin:0 0 6px;font-size:clamp(1.4rem,3vw,1.8rem);color:#0e2442;font-weight:700;line-height:1.2}
+#fg-choix .sub{margin:0 0 22px;color:#6b7280;font-size:1rem}
+#fg-choix .gr{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+#fg-choix a.op{display:flex;flex-direction:column;gap:8px;text-decoration:none;border-radius:16px;padding:22px 20px;border:2px solid #e8e2d4;background:#fbfaf8;color:#0e2442;transition:border-color .2s,transform .2s,box-shadow .2s}
+#fg-choix a.op:hover,#fg-choix a.op:focus-visible{border-color:#c4b99a;transform:translateY(-3px);box-shadow:0 18px 36px -20px rgba(14,36,66,.45);outline:none}
+#fg-choix a.op.une{background:linear-gradient(160deg,#16325c,#0e2442);border-color:#0e2442;color:#fff}
+#fg-choix .tg{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#9a8060}
+#fg-choix a.une .tg{color:#c4b99a}
+#fg-choix .px{font-size:2rem;font-weight:700;line-height:1.05}
+#fg-choix .px small{font-size:.95rem;font-weight:500}
+#fg-choix .ds{font-size:.95rem;line-height:1.5;opacity:.85}
+#fg-choix .go{margin-top:auto;padding-top:10px;font-weight:700;font-size:.95rem;color:#9a8060}
+#fg-choix a.une .go{color:#c4b99a}
+#fg-choix .x{position:absolute;top:12px;right:14px;width:40px;height:40px;border:0;background:none;font-size:1.8rem;line-height:1;color:#9ca3af;cursor:pointer;border-radius:50%}
+#fg-choix .x:hover{color:#0e2442;background:#f3f4f6}
+@media(max-width:640px){#fg-choix .gr{grid-template-columns:1fr}#fg-choix .bx{padding:28px 18px 20px}}
+</style>
+<div id="fg-choix" role="dialog" aria-modal="true" aria-labelledby="fg-choix-t">
+ <div class="bx">
+  <button class="x" type="button" aria-label="Fermer">&times;</button>
+  <h3 id="fg-choix-t">Comment souhaitez-vous payer ?</h3>
+  <p class="sub">C'est la même formation complète. Choisissez simplement votre façon de payer.</p>
+  <div class="gr">
+   <a class="op une" href="https://espace.forma-gard.com/inscription-engagement">
+    <span class="tg">Au mois</span>
+    <span class="px">125 € <small>/ mois</small></span>
+    <span class="ds">Pendant 12 mois. Rien n'est prélevé pendant 14 jours.</span>
+    <span class="go">Je choisis cette formule</span>
+   </a>
+   <a class="op" href="https://espace.forma-gard.com/inscription-plusieurs-fois">
+    <span class="tg">En une ou plusieurs fois</span>
+    <span class="px">1 500 €</span>
+    <span class="ds">En une fois par carte, ou en plusieurs fois sans frais avec PayPal ou Klarna. Les 12 modules ouverts tout de suite.</span>
+    <span class="go">Je choisis cette formule</span>
+   </a>
+  </div>
+ </div>
+</div>
+<script>
+(function(){var m=document.getElementById('fg-choix');if(!m)return;var last=null;
+function open(){last=document.activeElement;m.classList.add('on');document.documentElement.style.overflow='hidden';setTimeout(function(){var a=m.querySelector('a.op');a&&a.focus()},50)}
+function close(){m.classList.remove('on');document.documentElement.style.overflow='';last&&last.focus&&last.focus()}
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-fg="paiement"],a[href="#inscription"],a[href="./#inscription"]');if(!a)return;e.preventDefault();e.stopImmediatePropagation();open()},true);
+m.addEventListener('click',function(e){if(e.target===m||e.target.closest('.x'))close()});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&m.classList.contains('on'))close()});
+if(location.hash==='#inscription')setTimeout(open,700);
+window.fgOuvrirChoix=open;})();
+</script>
 <script>/* FG-ANCRES : les boutons « Je m'inscris » descendent aux tarifs, partout (aussi dans les aperçus) */
 (function(){function go(h){try{var t=document.querySelector(h);if(t){t.scrollIntoView({behavior:'smooth',block:'start'});return true}}catch(e){}return false}
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href]');if(!a)return;var h=a.getAttribute('href')||'';var i=h.indexOf('#');if(i<0||h.length<=i+1)return;var page=h.slice(0,i);if(page&&!/^(\.\/|index\.html)$/.test(page))return;if(page&&document.getElementById('fg-tarifs')===null)return;if(go(h.slice(i))){e.preventDefault();try{history.replaceState(null,'',h.slice(i))}catch(_){}}},true);
