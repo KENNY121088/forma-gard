@@ -537,5 +537,21 @@ var sx=0;m.addEventListener('touchstart',function(e){sx=e.touches[0].clientX},{p
 /* Lien de la page de commande du kit (Systeme.io). Tant qu'il est vide, le bouton affiche « Bientôt disponible ». */
 const FG_KIT_URL = "https://espace.forma-gard.com/kit-du-gardien";
 (function(){var b=document.getElementById('kfg-btn');if(!b)return;if(FG_KIT_URL){b.href=FG_KIT_URL}else{b.textContent='Bientôt disponible';b.classList.add('off');b.removeAttribute('href')}})();
-</script></body>
+</script><!-- FG-HAUT : bouton pour remonter en haut de la page -->
+<style>
+#fg-haut{position:fixed;right:22px;bottom:22px;z-index:9000;width:52px;height:52px;border-radius:50%;border:1px solid rgba(196,185,154,.55);background:#0e2442;color:#c4b99a;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 14px 30px -12px rgba(7,20,39,.7);opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .3s,transform .3s,visibility .3s,background .2s,color .2s}
+#fg-haut.on{opacity:1;visibility:visible;transform:none}
+#fg-haut:hover,#fg-haut:focus-visible{background:#c4b99a;color:#0e2442;outline:none}
+#fg-haut svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+@media(max-width:640px){#fg-haut{right:14px;bottom:14px;width:46px;height:46px}}
+@media(prefers-reduced-motion:reduce){#fg-haut{transition:none}}
+</style>
+<button id="fg-haut" type="button" aria-label="Remonter en haut de la page" title="Remonter en haut"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+<script>
+(function(){var b=document.getElementById('fg-haut');if(!b)return;
+function maj(){b.classList.toggle('on',window.scrollY>window.innerHeight*0.8)}
+window.addEventListener('scroll',maj,{passive:true});maj();
+b.addEventListener('click',function(){var r=window.matchMedia('(prefers-reduced-motion: reduce)').matches;window.scrollTo({top:0,behavior:r?'auto':'smooth'})});})();
+</script>
+</body>
 </html>
