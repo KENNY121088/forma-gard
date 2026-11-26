@@ -1648,7 +1648,7 @@
     <section id="fg-paiement" class="fg-compare">
       <div style="text-align:center;margin-bottom:32px">
         <h3>Deux façons de régler</h3>
-        <p class="fg-compare-sub">Dans les deux cas, c'est sans frais. La différence : payer au fil des mois, ou régler la formation dès le départ et tout ouvrir tout de suite.</p>
+        <p class="fg-compare-sub">Dans les deux cas, c'est sans frais. La différence : payer au fil des mois, ou régler la formation dès le départ.</p>
       </div>
       <div class="fg-compare-scroll">
         <table>
@@ -1660,7 +1660,7 @@
             <tr><td class="fg-label">La Loge Virtuelle</td><td class="fg-ctr fg-hl fg-label">4 semaines offertes, puis 20 € par mois</td><td class="fg-ctr fg-yes">Incluse</td></tr>
             <tr><td class="fg-label">Premier paiement</td><td class="fg-ctr fg-hl fg-label">Après les 14 jours de rétractation</td><td class="fg-ctr">À l'inscription</td></tr>
             <tr><td class="fg-label">Frais de dossier</td><td class="fg-ctr fg-yes fg-hl">Aucun</td><td class="fg-ctr fg-yes">Aucun</td></tr>
-            <tr><td class="fg-label">Ouverture des modules</td><td class="fg-ctr fg-hl fg-label">Un module à chaque paiement mensuel</td><td class="fg-ctr">Les 12 modules tout de suite</td></tr>
+            <tr><td class="fg-label">Ouverture des modules</td><td class="fg-ctr fg-hl fg-label">Un module à chaque paiement mensuel, dans l'ordre</td><td class="fg-ctr">Dans l'ordre, l'un après l'autre</td></tr>
           </tbody>
         </table>
       </div>
@@ -1764,7 +1764,7 @@
     kenny:{
       monthly:{i:'125',c:'',note:'par mois pendant 12 mois<br><strong class="fg-c-gold">Sans frais</strong>',
         tag:'Au mois sur 12 mois',loge:'offerte 4 semaines, puis 20 &euro; par mois si vous la gardez',cta:'Je m\'inscris',bn:'Sans frais &middot; rien n\'est pr&eacute;lev&eacute; pendant 14 jours'},
-      plusieurs:{i:'1 500',c:'',note:'en une fois par carte, ou en plusieurs fois sans frais avec PayPal ou Klarna<br><strong class="fg-c-gold">Les 12 modules ouverts tout de suite</strong>',
+      plusieurs:{i:'1 500',c:'',note:'en une fois par carte, ou en plusieurs fois sans frais avec PayPal ou Klarna<br><strong class="fg-c-gold">Les modules se suivent dans l&rsquo;ordre</strong>',
         tag:'En une fois ou en plusieurs fois',loge:'incluse',cta:'Je m\'inscris',bn:'Sans frais &middot; en une ou plusieurs fois avec PayPal ou Klarna'}
     }
   };
@@ -1970,7 +1970,7 @@
         <details><summary>Et le stage, comment ça se passe ?</summary>
           <div class="fgx-ans">La convention de stage est incluse dans la formation, et FORMA-GARD recherche activement une entreprise d'accueil pour vous. Il n'y a pas de version sans stage : le passage sur le terrain fait partie du parcours.</div></details>
         <details><summary>Comment se passe le paiement ?</summary>
-          <div class="fgx-ans">Sans frais, de deux façons. Au mois : 125 € par mois pendant 12 mois, avec La Loge Virtuelle et Mon Partenaire Emploi offerts 4 semaines, puis en option, et rien n'est prélevé pendant vos 14 jours de rétractation. Ou bien 1 500 € en une fois par carte, que vous pouvez étaler en plusieurs fois sans frais avec PayPal ou Klarna ; les 12 modules s'ouvrent alors tout de suite, La Loge Virtuelle est comprise et Mon Partenaire Emploi passe à 9,99 € par mois après 4 semaines offertes..</div></details>
+          <div class="fgx-ans">Sans frais, de deux façons. Au mois : 125 € par mois pendant 12 mois, avec La Loge Virtuelle et Mon Partenaire Emploi offerts 4 semaines, puis en option, et rien n'est prélevé pendant vos 14 jours de rétractation. Ou bien 1 500 € en une fois par carte, que vous pouvez étaler en plusieurs fois sans frais avec PayPal ou Klarna ; les modules se suivent dans l'ordre, La Loge Virtuelle est comprise et Mon Partenaire Emploi passe à 9,99 € par mois après 4 semaines offertes.</div></details>
         <details><summary>Puis-je arrêter en cours de route ?</summary>
           <div class="fgx-ans">Vous pouvez changer d'avis pendant 14 jours après l'inscription, sans justification. Ensuite, vous vous engagez sur toute la formation ; si un cas de force majeure vous empêche de la suivre, vous ne payez que ce qui a été suivi.</div></details>
         <details><summary>Que se passe-t-il après mon inscription ?</summary>
@@ -2293,7 +2293,7 @@ document.querySelectorAll('[data-fg]').forEach(function(a){
     + '<h4>4. Inscription et formation du contrat</h4>'
     + '<p>L\'inscription s\'effectue en ligne : le stagiaire signe son contrat de formation et enregistre son moyen de paiement. Aucune somme n\'est prélevée pendant le délai de rétractation de quatorze jours ; l\'inscription devient définitive au premier prélèvement, qui intervient automatiquement à l\'issue de ce délai. Les identifiants d\'accès à la plateforme sont transmis par courrier électronique à l\'adresse indiquée lors de la commande.</p>'
     + '<h4>5. Prix et modalités de paiement</h4>'
-    + '<p>Les prix sont indiqués en euros. TVA non applicable, article 293 B du Code général des impôts ; les montants affichés sont donc nets de taxe. Le prix de la formation est de 1 500 &euro;, sans frais. Deux formules sont proposées. Paiement au mois : douze prélèvements mensuels de 125 &euro;, avec engagement sur douze mois. Paiement de la totalité : 1 500 &euro; réglés à l\'inscription, par carte bancaire en une fois, ou en plusieurs fois par l\'intermédiaire de PayPal ou de Klarna, qui versent la totalité à FORMA-GARD et gèrent eux-mêmes les échéances avec le stagiaire ; les douze modules sont alors ouverts dès l\'inscription et La Loge Virtuelle est comprise. Offre de Noël, réservée au paiement au mois pour les inscriptions effectuées jusqu\'au 30 janvier inclus : les deux premiers prélèvements sont de 19,99 &euro;, les dix suivants de 125 &euro;, soit 1 289,98 &euro; au total. Avec le paiement au mois, La Loge Virtuelle et Mon Partenaire Emploi sont offerts pendant quatre semaines, puis proposés en option, à 20 &euro; et 19,99 &euro; par mois, sans engagement ; avec le paiement de la totalité, La Loge Virtuelle est comprise et Mon Partenaire Emploi est offert pendant quatre semaines, puis proposé en option à 9,99 &euro; par mois, sans engagement. Les paiements de l\'offre de Noël sont traités par la société Stripe ; ceux des autres formules par la plateforme Systeme.io. Mon Partenaire Emploi est une option facultative, offerte quatre semaines puis facturée 19,99 &euro; par mois, sans engagement. Pour le paiement au mois, conformément à l\'article L6353-6 du Code du travail, aucune somme n\'est exigée avant l\'expiration du délai de rétractation, et les paiements sont échelonnés au fur et à mesure du déroulement de la formation : un nouveau module est ouvert à chaque prélèvement. Conformément à l\'article L6353-7 du même code, si, par suite de force majeure dûment reconnue, le stagiaire est empêché de suivre la formation, il peut rompre le contrat ; seules les prestations effectivement dispensées sont alors dues, au prorata de leur valeur. Le défaut de paiement d\'une échéance entraîne la suspension de l\'accès aux modules jusqu\'à sa régularisation.</p>'
+    + '<p>Les prix sont indiqués en euros. TVA non applicable, article 293 B du Code général des impôts ; les montants affichés sont donc nets de taxe. Le prix de la formation est de 1 500 &euro;, sans frais. Hors période d\'offre, trois façons de payer sont proposées : douze prélèvements mensuels de 125 &euro;, avec engagement sur douze mois ; ou 1 500 &euro; réglés à l\'inscription, par carte bancaire en une fois, ou en plusieurs fois par l\'intermédiaire de PayPal ou de Klarna, qui versent la totalité à FORMA-GARD et gèrent eux-mêmes les échéances avec le stagiaire. Avec le paiement de 1 500 &euro;, La Loge Virtuelle est comprise et Mon Partenaire Emploi est offert pendant quatre semaines, puis proposé en option à 9,99 &euro; par mois, sans engagement ; avec le paiement au mois, La Loge Virtuelle et Mon Partenaire Emploi sont offerts pendant quatre semaines, puis proposés en option, à 20 &euro; et 19,99 &euro; par mois, sans engagement. Offre de Noël (ou offre des fêtes), réservée aux inscriptions effectuées du 1er au 31 décembre 2026 inclus : la formation complète est proposée à 150 &euro; au lieu de 1 500 &euro;, réglés soit en une fois par carte bancaire, soit en douze prélèvements mensuels de 12,50 &euro;, avec engagement sur douze mois. Avec l\'offre de Noël, La Loge Virtuelle et Mon Partenaire Emploi sont proposés en option, sans période d\'essai, à 15,90 &euro; et 9,99 &euro; par mois, sans engagement ; le stagiaire conserve ces prix tant que l\'option reste active. Tous les paiements sont traités par la plateforme Systeme.io. Les modules de la formation se suivent dans l\'ordre du programme : chaque module s\'ouvre après le précédent, et le stagiaire ne peut pas accéder à un module plus avancé sans avoir suivi ceux qui le précèdent. Pour le paiement au mois, conformément à l\'article L6353-6 du Code du travail, aucune somme n\'est exigée avant l\'expiration du délai de rétractation, et les paiements sont échelonnés au fur et à mesure du déroulement de la formation : un nouveau module est ouvert à chaque prélèvement. Conformément à l\'article L6353-7 du même code, si, par suite de force majeure dûment reconnue, le stagiaire est empêché de suivre la formation, il peut rompre le contrat ; seules les prestations effectivement dispensées sont alors dues, au prorata de leur valeur. Le défaut de paiement d\'une échéance entraîne la suspension de l\'accès aux modules jusqu\'à sa régularisation.</p>'
     + '<h4>6. Durée de l\'accès</h4>'
     + '<p>L\'accès à la plateforme et à l\'ensemble des contenus est ouvert pour une durée de douze mois à compter de la confirmation de l\'inscription. Les mises à jour publiées pendant cette période sont incluses sans supplément. Une prolongation peut être accordée sur demande motivée.</p>'
     + '<h4>7. Droit de rétractation</h4>'
@@ -3151,7 +3151,7 @@ requestAnimationFrame(tick);
    <a class="op" href="https://espace.forma-gard.com/inscription-plusieurs-fois">
     <span class="tg">En une ou plusieurs fois</span>
     <span class="px">1 500 €</span>
-    <span class="ds">En une fois par carte, ou en plusieurs fois sans frais avec PayPal ou Klarna. Les 12 modules ouverts tout de suite.</span>
+    <span class="ds">En une fois par carte, ou en plusieurs fois sans frais avec PayPal ou Klarna. Les modules se suivent dans l'ordre.</span>
     <span class="go">Je choisis cette formule</span>
    </a>
   </div>
