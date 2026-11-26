@@ -47,6 +47,12 @@ button:focus-visible{outline:3px solid var(--sable);outline-offset:2px}
 .err{color:var(--rouge);font-size:14px;margin-top:10px;min-height:1em}
 .ok{text-align:center}.ok .rond{width:64px;height:64px;border-radius:50%;background:var(--vert);color:#fff;font-size:34px;line-height:64px;margin:6px auto 14px}
 .hidden{display:none}
+.titre-annexe{font-size:20px!important;margin:34px 0 10px!important;padding-top:20px;border-top:2px solid #e3dccb}
+.fin-doc{margin-top:26px;text-align:center;font-size:13px;color:var(--sablef);font-weight:700}
+.aide{margin:6px 0 0;padding:10px 12px;border-radius:12px;background:#FFF8E8;color:#7a5d1c;font-size:13px;line-height:1.45}
+.aide.lu{background:#EAF5EE;color:var(--vert)}
+.check.off{opacity:.45}
+#b1:disabled{background:#B9C0CA;opacity:1;cursor:not-allowed}
 .charge{padding:60px 20px;text-align:center;color:var(--gris)}
 @media (max-width:980px){.wrap{grid-template-columns:1fr;padding:18px 16px 50px}.doc{max-height:none;padding:20px}.side{position:static;order:-1}.hd{padding:20px 16px 26px}}
 </style>
@@ -69,8 +75,9 @@ button:focus-visible{outline:3px solid var(--sable);outline-offset:2px}
 <div id="asigner" class="wrap hidden">
   <div class="doc">
     <div id="contrat"></div>
-    <details><summary>Programme de formation</summary><div id="programme"></div></details>
-    <details><summary>Règlement intérieur</summary><div id="reglement"></div></details>
+    <h2 class="titre-annexe">Programme de formation</h2><div id="programme"></div>
+    <h2 class="titre-annexe">Règlement intérieur</h2><div id="reglement"></div>
+    <div id="fin" class="fin-doc">Fin des documents</div>
   </div>
   <div class="side"><div class="card">
     <div id="e1">
@@ -85,8 +92,9 @@ button:focus-visible{outline:3px solid var(--sable);outline-offset:2px}
         <div><label for="ville">Ville</label><input type="text" id="ville"></div></div>
         <label for="tel">Téléphone</label><input type="tel" id="tel">
       </div>
-      <label class="check"><input type="checkbox" id="accepte"><span>J'ai lu et j'accepte le contrat de formation. J'ai reçu le programme, le règlement intérieur et les <a id="cgv" href="https://espace.forma-gard.com/cgv" target="_blank" rel="noopener">conditions générales de vente</a>.</span></label>
-      <button id="b1">Recevoir mon code par mail</button>
+      <p class="aide" id="aide">⬇ Faites défiler le contrat, le programme et le règlement intérieur jusqu'en bas pour pouvoir cocher la case.</p>
+      <label class="check off" id="lab-accepte"><input type="checkbox" id="accepte" disabled><span>J'ai lu en entier et j'approuve le contrat de formation, le programme de formation et le règlement intérieur. J'accepte les <a id="cgv" href="https://espace.forma-gard.com/cgv" target="_blank" rel="noopener">conditions générales de vente</a>.</span></label>
+      <button id="b1" disabled>Recevoir mon code par mail</button>
       <div class="err" id="err1" role="alert"></div>
     </div>
     <div id="e2" class="hidden">
@@ -126,6 +134,17 @@ function envoyer(btn,err){
   .catch(function(e){btn.disabled=false;$(err).textContent=e.message;});
 }
 $('b1').onclick=function(){envoyer($('b1'),'err1')};
+/* La case ne se coche qu'une fois tout lu jusqu'en bas ; le bouton du code ne s'allume qu'une fois la case cochée. */
+function toutLu(){if(!$('accepte').disabled)return;$('accepte').disabled=false;$('lab-accepte').classList.remove('off');
+  $('aide').classList.add('lu');$('aide').textContent='✓ Vous avez tout lu. Cochez la case pour continuer.';}
+$('accepte').onchange=function(){$('b1').disabled=!this.checked;};
+function surveillerFin(){
+  var fin=$('fin'),doc=document.querySelector('.doc');
+  function verif(){var r=fin.getBoundingClientRect(),bas=window.innerHeight;
+    if(doc.scrollHeight>doc.clientHeight+2)bas=Math.min(bas,doc.getBoundingClientRect().bottom);
+    if(r.top<bas-4)toutLu();}
+  doc.addEventListener('scroll',verif,{passive:true});window.addEventListener('scroll',verif,{passive:true});window.addEventListener('resize',verif);verif();
+}
 $('renvoyer').onclick=function(){envoyer($('renvoyer'),'err2')};
 $('b2').onclick=function(){
   var b=$('b2');b.disabled=true;b.textContent='Signature en cours…';$('err2').textContent='';
@@ -141,7 +160,7 @@ function charger(essai){
     if(d.cgv)$('cgv').href=d.cgv;
     ['prenom','nom','adresse','cp','ville','tel'].forEach(function(k){$(k).value=d.l[k]||''});
     if(!d.l.adresse||!d.l.ville||!d.l.tel)$('infos').classList.remove('hidden');
-    montre('asigner');
+    montre('asigner');surveillerFin();
     if(CODE){$('e1').classList.add('hidden');$('e2').classList.remove('hidden');$('code').value=CODE;$('envoye').textContent='Votre code est déjà rempli : cliquez sur « Signer mon contrat ».';}
   }).catch(function(){ if(essai<2) return setTimeout(function(){charger(essai+1)},1500);
     $('charge').textContent='Impossible de charger votre contrat pour le moment. Réessayez dans un instant, ou écrivez-nous à contact@forma-gard.com.';});
