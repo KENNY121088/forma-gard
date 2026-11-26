@@ -130,7 +130,7 @@ $('b2').onclick=function(){
   .then(function(){$('e2').classList.add('hidden');$('e3').classList.remove('hidden');})
   .catch(function(e){b.disabled=false;b.textContent='Signer mon contrat';$('err2').textContent=e.message;});
 };
-if(!REF){montre('introuvable');}else{
+function charger(essai){
   appel({api:'lire'}).then(function(d){
     if(d.etat==='introuvable')return montre('introuvable');
     if(d.etat==='signe')return montre('dejasigne');
@@ -140,8 +140,10 @@ if(!REF){montre('introuvable');}else{
     if(!d.l.adresse||!d.l.ville||!d.l.tel)$('infos').classList.remove('hidden');
     montre('asigner');
     if(CODE){$('e1').classList.add('hidden');$('e2').classList.remove('hidden');$('code').value=CODE;$('envoye').textContent='Votre code est déjà rempli : cliquez sur « Signer mon contrat ».';}
-  }).catch(function(){$('charge').textContent='Impossible de charger votre contrat pour le moment. Réessayez dans un instant, ou écrivez-nous à contact@forma-gard.com.';});
+  }).catch(function(){ if(essai<2) return setTimeout(function(){charger(essai+1)},1500);
+    $('charge').textContent='Impossible de charger votre contrat pour le moment. Réessayez dans un instant, ou écrivez-nous à contact@forma-gard.com.';});
 }
+if(!REF){montre('introuvable');}else{charger(0);}
 </script>
 </body>
 </html>
