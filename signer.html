@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Contrat de formation — FORMA-GARD</title>
+<link rel="icon" href="favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0E2442;--nuit:#071427;--sable:#C4B99A;--sablef:#9A8060;--creme:#F7F5F0;--gris:#5F6673;--rouge:#A33A3A;--vert:#2F7A4F}
+*{box-sizing:border-box;font-family:'DM Sans',Arial,sans-serif}
+body{margin:0;background:#fff;color:#1B2B42}
+.hd{background:radial-gradient(ellipse 70% 120% at 22% 30%,#1b3a63 0%,#0E2442 55%,#071427 100%);color:#fff;padding:22px 32px 30px}
+.hd .lg{font-size:20px;font-weight:700;letter-spacing:.06em}.hd .lg b{color:var(--sable)}
+.hd h1{margin:14px 0 4px;font-size:clamp(24px,3vw,34px);font-weight:800}
+.hd p{margin:0;color:#d9d3c2;font-size:15px}
+.wrap{display:grid;grid-template-columns:minmax(0,1fr) 420px;gap:32px;padding:28px 32px 60px;max-width:1500px;margin:0 auto}
+.seul{grid-template-columns:1fr;max-width:720px}
+.doc{background:var(--creme);border-radius:20px;padding:28px 34px;max-height:calc(100vh - 60px);overflow:auto}
+.doc h2{font-size:17px;color:var(--navy);margin:22px 0 8px}
+.doc p,.doc li{font-size:15px;line-height:1.6;color:#3d4756}
+.doc table{width:100%;border-collapse:collapse;margin:8px 0 14px;background:#fff;border-radius:10px;overflow:hidden}
+.doc td,.doc th{padding:8px 12px;font-size:14px;text-align:left;border-bottom:1px solid #ebe6da}
+.vide{color:var(--sablef);font-style:italic}
+details{margin-top:14px;background:#fff;border-radius:14px;padding:12px 18px}
+summary{cursor:pointer;font-weight:700;color:var(--navy)}
+.side{position:sticky;top:20px;align-self:start}
+.card{background:#fff;border-radius:20px;box-shadow:0 24px 60px rgba(14,36,66,.16);padding:26px}
+.card h3{margin:0 0 4px;color:var(--navy);font-size:20px}
+.card .sub{margin:0 0 16px;color:var(--gris);font-size:14px}
+.step{font-size:12px;font-weight:800;color:var(--sablef);letter-spacing:.04em;margin-bottom:6px}
+label{display:block;font-size:13px;font-weight:500;color:var(--gris);margin:10px 0 4px}
+input[type=text],input[type=tel]{width:100%;padding:11px 13px;border:1px solid #d9dde3;border-radius:12px;font-size:15px;background:#fff}
+input:focus{outline:2px solid var(--sable);border-color:var(--sable)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.row3{display:grid;grid-template-columns:120px 1fr;gap:10px}
+.check{display:flex;gap:10px;align-items:flex-start;margin:16px 0 6px;font-size:14px;line-height:1.5}
+.check input{width:20px;height:20px;margin-top:2px;accent-color:var(--navy)}
+.check a{color:var(--navy)}
+button{width:100%;margin-top:14px;padding:15px;border:0;border-radius:40px;background:var(--navy);color:#fff;font-size:17px;font-weight:700;cursor:pointer}
+button:hover{background:#1B3A63}button:disabled{opacity:.55;cursor:wait}
+button:focus-visible{outline:3px solid var(--sable);outline-offset:2px}
+.lien{background:none;color:var(--navy);font-size:14px;font-weight:500;text-decoration:underline;padding:8px;margin-top:6px}
+.lien:hover{background:none}
+.code{font-size:28px;letter-spacing:10px;text-align:center;font-weight:700}
+.err{color:var(--rouge);font-size:14px;margin-top:10px;min-height:1em}
+.ok{text-align:center}.ok .rond{width:64px;height:64px;border-radius:50%;background:var(--vert);color:#fff;font-size:34px;line-height:64px;margin:6px auto 14px}
+.hidden{display:none}
+.charge{padding:60px 20px;text-align:center;color:var(--gris)}
+@media (max-width:980px){.wrap{grid-template-columns:1fr;padding:18px 16px 50px}.doc{max-height:none;padding:20px}.side{position:static;order:-1}.hd{padding:20px 16px 26px}}
+</style>
+</head>
+<body>
+<div class="hd"><div class="lg">FORMA<b>-</b>GARD</div><h1>Votre contrat de formation</h1>
+<p>Lisez votre contrat, puis signez-le avec le code reçu par mail.</p></div>
+
+<div id="charge" class="charge">Chargement de votre contrat…</div>
+
+<div id="introuvable" class="wrap seul hidden"><div class="card"><h3>Lien introuvable</h3>
+<p class="sub">Ce lien ne correspond à aucun contrat. Écrivez-nous à contact@forma-gard.com et nous vous renverrons votre lien.</p></div></div>
+
+<div id="dejasigne" class="wrap seul hidden"><div class="card ok"><div class="rond">✓</div><h3>Contrat déjà signé</h3>
+<p class="sub">Votre contrat signé vous a été envoyé par mail. Une question ? contact@forma-gard.com</p></div></div>
+
+<div id="asigner" class="wrap hidden">
+  <div class="doc">
+    <div id="contrat"></div>
+    <details><summary>Programme de formation</summary><div id="programme"></div></details>
+    <details><summary>Règlement intérieur</summary><div id="reglement"></div></details>
+  </div>
+  <div class="side"><div class="card">
+    <div id="e1">
+      <div class="step">ÉTAPE 1 SUR 2</div>
+      <h3>Lisez et acceptez</h3>
+      <p class="sub">Votre contrat est rempli avec les informations données à l'inscription. Lisez-le, puis cochez la case.</p>
+      <div id="infos" class="hidden">
+        <div class="row"><div><label for="prenom">Prénom</label><input type="text" id="prenom"></div>
+        <div><label for="nom">Nom</label><input type="text" id="nom"></div></div>
+        <label for="adresse">Adresse</label><input type="text" id="adresse">
+        <div class="row3"><div><label for="cp">Code postal</label><input type="text" id="cp"></div>
+        <div><label for="ville">Ville</label><input type="text" id="ville"></div></div>
+        <label for="tel">Téléphone</label><input type="tel" id="tel">
+      </div>
+      <label class="check"><input type="checkbox" id="accepte"><span>J'ai lu et j'accepte le contrat de formation. J'ai reçu le programme, le règlement intérieur et les <a id="cgv" href="https://espace.forma-gard.com/cgv" target="_blank" rel="noopener">conditions générales de vente</a>.</span></label>
+      <button id="b1">Recevoir mon code par mail</button>
+      <div class="err" id="err1" role="alert"></div>
+    </div>
+    <div id="e2" class="hidden">
+      <div class="step">ÉTAPE 2 SUR 2</div>
+      <h3>Signez avec votre code</h3>
+      <p class="sub" id="envoye"></p>
+      <label for="code">Code à 6 chiffres</label>
+      <input type="text" id="code" class="code" inputmode="numeric" maxlength="6" autocomplete="one-time-code">
+      <button id="b2">Signer mon contrat</button>
+      <button class="lien" id="renvoyer">Je n'ai rien reçu : renvoyer un code</button>
+      <div class="err" id="err2" role="alert"></div>
+    </div>
+    <div id="e3" class="hidden ok">
+      <div class="rond">✓</div><h3>Contrat signé</h3>
+      <p class="sub">Vous allez recevoir par mail votre contrat signé, le programme et le règlement intérieur. Aucun prélèvement n'a lieu pendant les 14 jours de rétractation.</p>
+    </div>
+  </div></div>
+</div>
+
+<script>
+var API='https://script.google.com/macros/s/AKfycbwuzIBHK0u_UmuTTldefkP2n1fj30zR4EIU4v3GQ8WuSLXV2WDfqbSSBY0GkPjvowivog/exec';
+var q=new URLSearchParams(location.search),REF=q.get('r')||'',CODE=(q.get('c')||'').replace(/\D/g,'').slice(0,6);
+function $(i){return document.getElementById(i)}
+function montre(id){['charge','introuvable','dejasigne','asigner'].forEach(function(x){$(x).classList.toggle('hidden',x!==id)})}
+function appel(params){
+  var u=new URLSearchParams(params);u.set('r',REF);
+  /* credentials:'omit' : la page ne se sert pas de la connexion Google du visiteur */
+  return fetch(API+'?'+u.toString(),{credentials:'omit',redirect:'follow'}).then(function(r){return r.json()}).then(function(d){
+    if(!d.ok)throw new Error(d.erreur||'Une erreur est survenue. Réessayez.');return d;});
+}
+function envoyer(btn,err){
+  btn.disabled=true;$(err).textContent='';
+  appel({api:'code',prenom:$('prenom').value,nom:$('nom').value,adresse:$('adresse').value,cp:$('cp').value,ville:$('ville').value,tel:$('tel').value,accepte:$('accepte').checked?'1':''})
+  .then(function(d){btn.disabled=false;$('contrat').innerHTML=d.contrat;
+    $('envoye').textContent='Nous venons d\'envoyer un code à '+d.email+'. Pensez à regarder dans les courriers indésirables.';
+    $('e1').classList.add('hidden');$('e2').classList.remove('hidden');$('code').focus();})
+  .catch(function(e){btn.disabled=false;$(err).textContent=e.message;});
+}
+$('b1').onclick=function(){envoyer($('b1'),'err1')};
+$('renvoyer').onclick=function(){envoyer($('renvoyer'),'err2')};
+$('b2').onclick=function(){
+  var b=$('b2');b.disabled=true;b.textContent='Signature en cours…';$('err2').textContent='';
+  appel({api:'signer',code:$('code').value,nav:navigator.userAgent.slice(0,300)})
+  .then(function(){$('e2').classList.add('hidden');$('e3').classList.remove('hidden');})
+  .catch(function(e){b.disabled=false;b.textContent='Signer mon contrat';$('err2').textContent=e.message;});
+};
+if(!REF){montre('introuvable');}else{
+  appel({api:'lire'}).then(function(d){
+    if(d.etat==='introuvable')return montre('introuvable');
+    if(d.etat==='signe')return montre('dejasigne');
+    $('contrat').innerHTML=d.contrat;$('programme').innerHTML=d.programme;$('reglement').innerHTML=d.reglement;
+    if(d.cgv)$('cgv').href=d.cgv;
+    ['prenom','nom','adresse','cp','ville','tel'].forEach(function(k){$(k).value=d.l[k]||''});
+    if(!d.l.adresse||!d.l.ville||!d.l.tel)$('infos').classList.remove('hidden');
+    montre('asigner');
+    if(CODE){$('e1').classList.add('hidden');$('e2').classList.remove('hidden');$('code').value=CODE;$('envoye').textContent='Votre code est déjà rempli : cliquez sur « Signer mon contrat ».';}
+  }).catch(function(){$('charge').textContent='Impossible de charger votre contrat pour le moment. Réessayez dans un instant, ou écrivez-nous à contact@forma-gard.com.';});
+}
+</script>
+</body>
+</html>
