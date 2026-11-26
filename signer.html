@@ -57,6 +57,9 @@ button:focus-visible{outline:3px solid var(--sable);outline-offset:2px}
 
 <div id="charge" class="charge">Chargement de votre contrat…</div>
 
+<div id="transmis" class="wrap seul hidden"><div class="card ok"><div class="rond">✓</div><h3>Votre code est sur votre contrat</h3>
+<p class="sub">Nous l'avons mis dans l'onglet où votre contrat est déjà ouvert. Retournez-y et cliquez sur « Signer mon contrat ». Vous pouvez fermer cette page.</p></div></div>
+
 <div id="introuvable" class="wrap seul hidden"><div class="card"><h3>Lien introuvable</h3>
 <p class="sub">Ce lien ne correspond à aucun contrat. Écrivez-nous à contact@forma-gard.com et nous vous renverrons votre lien.</p></div></div>
 
@@ -107,7 +110,7 @@ button:focus-visible{outline:3px solid var(--sable);outline-offset:2px}
 var API='https://script.google.com/macros/s/AKfycbwuzIBHK0u_UmuTTldefkP2n1fj30zR4EIU4v3GQ8WuSLXV2WDfqbSSBY0GkPjvowivog/exec';
 var q=new URLSearchParams(location.search),REF=q.get('r')||'',CODE=(q.get('c')||'').replace(/\D/g,'').slice(0,6);
 function $(i){return document.getElementById(i)}
-function montre(id){['charge','introuvable','dejasigne','asigner'].forEach(function(x){$(x).classList.toggle('hidden',x!==id)})}
+function montre(id){['charge','introuvable','dejasigne','asigner','transmis'].forEach(function(x){$(x).classList.toggle('hidden',x!==id)})}
 function appel(params){
   var u=new URLSearchParams(params);u.set('r',REF);
   /* credentials:'omit' : la page ne se sert pas de la connexion Google du visiteur */
@@ -143,7 +146,26 @@ function charger(essai){
   }).catch(function(){ if(essai<2) return setTimeout(function(){charger(essai+1)},1500);
     $('charge').textContent='Impossible de charger votre contrat pour le moment. Réessayez dans un instant, ou écrivez-nous à contact@forma-gard.com.';});
 }
-if(!REF){montre('introuvable');}else{charger(0);}
+/* Le bouton « Signer avec ce code » du mail ouvre un nouvel onglet : s'il y a déjà un onglet ouvert sur ce contrat,
+   on lui passe le code et la personne reste sur sa page. */
+var canal=null;try{canal=new BroadcastChannel('fg-signer-'+REF);}catch(e){}
+function mettreCode(c){if($('e3').classList.contains('hidden')){$('e1').classList.add('hidden');$('e2').classList.remove('hidden');$('code').value=c;
+  $('envoye').textContent='Votre code est rempli : cliquez sur « Signer mon contrat ».';$('err2').textContent='';try{window.focus();}catch(e){}$('code').focus();}}
+var actif=false;
+if(canal)canal.onmessage=function(ev){var m=ev.data||{};if(!actif)return;
+  if(m.t==='ping')canal.postMessage({t:'pong'});
+  if(m.t==='code'&&m.c){mettreCode(m.c);canal.postMessage({t:'recu'});}};
+function demarrer(){actif=true;charger(0);}
+if(!REF){montre('introuvable');}
+else if(CODE&&canal){
+  var repondu=false;
+  canal.onmessage=function(ev){var m=ev.data||{};
+    if(m.t==='pong'&&!repondu){repondu=true;canal.postMessage({t:'code',c:CODE});}
+    if(m.t==='recu'){montre('transmis');try{window.close();}catch(e){}}};
+  canal.postMessage({t:'ping'});
+  setTimeout(function(){if(!repondu){canal.onmessage=function(ev){var m=ev.data||{};if(m.t==='ping')canal.postMessage({t:'pong'});if(m.t==='code'&&m.c){mettreCode(m.c);canal.postMessage({t:'recu'});}};demarrer();}},700);
+}
+else demarrer();
 </script>
 </body>
 </html>
