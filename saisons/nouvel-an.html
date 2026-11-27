@@ -3648,29 +3648,40 @@ if(cd) tick();
 #fg-choix .gr.fgx>a.op{margin-top:62px;background:linear-gradient(160deg,#1b3a63 0%,#0e2442 60%,#071427 100%);border-color:#0e2442;color:#fff;box-shadow:0 18px 36px -18px rgba(7,20,39,.6)}
 #fg-choix .gr.fgx>a.op .tg{color:#c4b99a}
 #fg-choix .gr.fgx>a.op .go{margin-top:auto;padding:13px 16px;border-radius:12px;text-align:center;background:linear-gradient(180deg,#d6cdb2,#c4b99a 55%,#9a8060);color:#0e2442}
-#fg-choix .gr>.fgk{display:flex;flex-direction:column}#fg-choix .gr>.fgk .fgk-box{flex:1}
-.fgk{position:relative;display:block;text-decoration:none;padding-top:62px;--ease:cubic-bezier(.22,1.16,.36,1)}
-.fgk-lid{position:absolute;z-index:3;left:-6px;right:-6px;top:33px;height:30px;transform:none;transform-origin:4% 100%;transition:transform .55s var(--ease);pointer-events:none}
-.fgk:hover .fgk-lid,.fgk:focus-visible .fgk-lid{transform:translateY(-10px) rotate(-8deg)}
-.fgk-lid i{position:absolute;inset:0;border-radius:16px 16px 10px 10px;background:linear-gradient(180deg,#a3263a 0%,#7c1424 55%,#5a0c18 100%);box-shadow:inset 0 2px 0 rgba(255,255,255,.22),inset 0 -3px 0 #c9a45c,0 14px 18px -8px rgba(60,6,14,.55)}
-.fgk-lid i:after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:5px;border-radius:0 0 10px 10px;background:linear-gradient(90deg,#8a6a2a,#c9a45c,#8a6a2a);opacity:.85}
-.fgk-bow{position:absolute;left:50%;top:-22px;width:70px;height:34px;transform:translateX(-50%)}
-.fgk-bow b{position:absolute;bottom:4px;width:30px;height:22px;border-radius:50% 50% 30% 50%;background:radial-gradient(circle at 35% 30%,#fff3c4,#e2bd62 55%,#9c7426);box-shadow:inset 0 -2px 3px rgba(92,60,6,.45),0 3px 6px rgba(48,8,12,.35)}
-.fgk-bow b:first-child{left:4px;transform:rotate(-18deg)}
-.fgk-bow b:nth-child(2){right:4px;transform:scaleX(-1) rotate(-18deg)}
-.fgk-bow em{position:absolute;left:50%;bottom:2px;width:18px;height:18px;transform:translateX(-50%);border-radius:6px;background:linear-gradient(160deg,#fff0ad,#e2bd62 55%,#a6781b);box-shadow:inset 0 1px 0 rgba(255,255,255,.8),0 2px 5px rgba(0,0,0,.35)}
-.fgk-box{position:relative;z-index:2;display:flex;flex-direction:column;gap:12px;padding:26px 24px 24px;border-radius:16px;color:#fff;overflow:hidden;background:radial-gradient(70% 45% at 45% 0%,rgba(255,190,170,.22),transparent 70%),radial-gradient(circle,rgba(255,255,255,.06) 1px,transparent 1.5px) 0 0/16px 16px,linear-gradient(170deg,#7d1626 0%,#5c0d19 55%,#3f0710 100%);box-shadow:0 22px 40px -18px rgba(63,7,16,.75),inset 0 1px 0 rgba(255,255,255,.12);transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s}
-.fgk:hover .fgk-box{transform:translateY(-2px);box-shadow:0 28px 46px -18px rgba(63,7,16,.85),inset 0 1px 0 rgba(255,255,255,.14)}
-.fgk-box:before{content:"";position:absolute;top:0;bottom:0;left:calc(45% - 14px);width:28px;background:linear-gradient(90deg,rgba(166,120,27,.55),rgba(255,236,170,.75) 45%,rgba(201,164,92,.6) 70%,rgba(140,100,30,.55));opacity:.75}
-.fgk-box>*{position:relative;z-index:1}
-.fgk-badge{align-self:flex-start;padding:6px 14px;border-radius:999px;border:1px solid rgba(226,189,98,.55);background:rgba(255,255,255,.06);color:#f0d27a;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
-.fgk-price{font-size:2.2rem;font-weight:800;line-height:1.05;letter-spacing:-.02em}
-.fgk-desc{font-size:.95rem;line-height:1.55;color:rgba(255,255,255,.86)}
-.fgk-cta{margin-top:auto;display:block;text-align:center;padding:14px 16px;border-radius:12px;font-weight:700;font-size:.98rem;color:#3a1a0a;background:linear-gradient(180deg,#f7d98c,#e2b85a 55%,#c9973c);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 8px 18px -8px rgba(201,151,60,.8);transition:filter .25s}
-.fgk:hover .fgk-cta{filter:brightness(1.06)}
-.fgk:focus-visible{outline:none}.fgk:focus-visible .fgk-box{outline:3px solid #f0d27a;outline-offset:3px}
+#fg-choix .gr>.fgk{display:flex;flex-direction:column}
+.fgk{position:relative;display:flex;flex-direction:column;text-decoration:none;padding-top:43px;perspective:1100px;--fgk-lid:cubic-bezier(.32,1.28,.42,1);--fgk-smooth:cubic-bezier(.22,1,.36,1)}
+.fgk-lid{position:relative;display:block;z-index:12;margin:0 -6px -7px;transform-origin:12% 95%;transform-style:preserve-3d;transition:transform .52s var(--fgk-lid),filter .35s ease;pointer-events:none}
+.fgk:hover .fgk-lid,.fgk:focus-visible .fgk-lid{transform:translate3d(6px,-22px,18px) rotateX(22deg) rotateZ(-8.5deg);filter:drop-shadow(0 12px 16px rgba(24,8,12,.28))}
+.fgk-bar{position:relative;display:flex;align-items:center;justify-content:center;height:26px;border-radius:15px 15px 8px 8px;background:linear-gradient(90deg,#580c19 0%,#86182c 24%,#9b1f35 50%,#86182c 76%,#580c19 100%);border-top:1px solid rgba(255,241,208,.45);border-left:1px solid rgba(255,232,182,.28);border-right:1px solid rgba(255,232,182,.28);border-bottom:2px solid #e8c47d;box-shadow:0 6px 14px rgba(25,7,11,.34)}
+.fgk-bar:before{content:"";position:absolute;inset:0;border-radius:inherit;background:linear-gradient(180deg,rgba(255,255,255,.24) 0%,rgba(255,255,255,.05) 45%,rgba(0,0,0,.24) 100%);pointer-events:none}
+.fgk-bar:after{content:"";position:absolute;left:2px;right:2px;bottom:-4px;height:5px;border-radius:0 0 8px 8px;background:linear-gradient(90deg,rgba(0,0,0,.38),rgba(255,255,255,.14),rgba(0,0,0,.42));pointer-events:none}
+.fgk-notch{position:relative;z-index:2;width:28px;height:100%;background:linear-gradient(90deg,#c69847 0%,#f7e3b3 48%,#d4a654 100%);box-shadow:inset 1.5px 0 0 rgba(255,250,232,.65),inset -1.5px 0 0 rgba(120,82,22,.55)}
+.fgk-notch:after{content:"";position:absolute;top:0;bottom:0;left:6px;width:4px;border-radius:999px;background:linear-gradient(180deg,rgba(255,255,255,.72),rgba(255,255,255,.12))}
+.fgk-bow{position:absolute;top:-17px;left:50%;z-index:6;display:inline-flex;align-items:center;justify-content:center;transform:translateX(-50%);pointer-events:none}
+.fgk-tail{position:absolute;top:8px;z-index:1;width:18px;height:14px;border-radius:2px 2px 6px 2px;background:linear-gradient(180deg,#cfa14f 0%,#9b7028 100%);border:1px solid #8a611e;box-shadow:0 3px 6px rgba(0,0,0,.25)}
+.fgk-tail.l{left:2px;transform:rotate(-28deg)}.fgk-tail.r{right:2px;border-radius:2px 2px 2px 6px;transform:rotate(28deg)}
+.fgk-loop{position:relative;z-index:3;width:26px;height:17px;overflow:hidden;border-radius:16px 16px 4px 16px;background:linear-gradient(145deg,#faebb9 0%,#dfb567 52%,#b98938 100%);border:1px solid #9d7128;box-shadow:inset 0 1px 1px rgba(255,255,255,.7),0 4px 10px rgba(24,8,12,.32)}
+.fgk-loop:before{content:"";position:absolute;top:2px;left:4px;right:4px;height:5px;border-radius:999px;background:linear-gradient(90deg,rgba(255,255,255,.78),rgba(255,255,255,.1))}
+.fgk-loop.r{border-radius:16px 16px 16px 4px}
+.fgk-knot{position:relative;z-index:5;width:13px;height:15px;margin:0 -3px;border-radius:5px;background:linear-gradient(160deg,#f3d697 0%,#c49443 65%,#9a6e25 100%);border:1px solid #855c1b;box-shadow:0 3px 7px rgba(0,0,0,.35)}
+.fgk-knot:before{content:"";position:absolute;top:2px;left:2px;right:2px;height:4px;border-radius:999px;background:rgba(255,255,255,.65)}
+.fgk-box{position:relative;flex:1 1 auto;display:flex;flex-direction:column;justify-content:space-between;gap:12px;overflow:hidden;padding:26px 24px 24px;border-radius:16px;color:#fff8ea;background:radial-gradient(circle at 22% 18%,rgba(255,235,194,.14) 0%,transparent 45%),linear-gradient(165deg,#741223 0%,#560c19 56%,#3e0710 100%);border:1px solid #35050d;box-shadow:inset 0 1px 0 rgba(255,236,198,.18),0 18px 38px rgba(62,7,16,.28);transition:transform .32s var(--fgk-smooth),box-shadow .32s var(--fgk-smooth)}
+.fgk-box:before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background-image:linear-gradient(180deg,rgba(12,3,6,.42) 0%,rgba(12,3,6,.08) 28px,transparent 58px),radial-gradient(rgba(255,248,231,.07) 1px,transparent 0),radial-gradient(rgba(0,0,0,.08) 1px,transparent 0);background-size:100% 100%,14px 14px,14px 14px;background-position:0 0,0 0,7px 7px}
+.fgk-box:after{content:"";position:absolute;top:-18px;left:12%;right:12%;height:76px;z-index:2;pointer-events:none;opacity:0;border-radius:50%;background:radial-gradient(ellipse at center,rgba(255,224,158,.42) 0%,rgba(244,218,170,.12) 55%,transparent 75%);filter:blur(8px);transition:opacity .45s var(--fgk-smooth),transform .45s var(--fgk-smooth)}
+.fgk:hover .fgk-box:after,.fgk:focus-visible .fgk-box:after{opacity:1;transform:translateY(4px)}
+.fgk:hover .fgk-box,.fgk:focus-visible .fgk-box{transform:translateY(-2px)}
+.fgk-rib{position:absolute;top:0;bottom:0;left:50%;z-index:1;width:28px;transform:translateX(-50%);pointer-events:none;background:linear-gradient(90deg,#c69847 0%,rgba(247,227,179,.92) 50%,#c69847 100%);opacity:.88;box-shadow:inset 1.5px 0 0 rgba(255,250,232,.34),inset -1.5px 0 0 rgba(0,0,0,.25)}
+.fgk-rib:after{content:"";position:absolute;top:0;bottom:0;left:6px;width:4px;border-radius:999px;background:linear-gradient(180deg,rgba(255,255,255,.35),rgba(255,255,255,.04))}
+.fgk-box>span:not(.fgk-rib){position:relative;z-index:3}
+.fgk-badge{align-self:flex-start;display:inline-flex;align-items:center;padding:5px 11px;border-radius:999px;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;background:rgba(247,228,186,.18);color:#fae3b3;border:1px solid rgba(247,228,186,.45);transition:transform .38s var(--fgk-lid),box-shadow .35s ease}
+.fgk:hover .fgk-badge,.fgk:focus-visible .fgk-badge{transform:translateY(-2px) scale(1.03);box-shadow:0 4px 14px rgba(247,228,186,.24)}
+.fgk-price{font-size:2.2rem;font-weight:800;line-height:1.1;letter-spacing:-.025em;color:#fff8ea;text-shadow:0 2px 10px rgba(0,0,0,.25)}
+.fgk-desc{font-size:.95rem;line-height:1.56;color:#f8ecee}
+.fgk-cta{margin-top:auto;display:flex;align-items:center;justify-content:center;padding:13px 16px;border-radius:10px;font-size:.98rem;font-weight:700;letter-spacing:-.01em;color:#2f050c;background:linear-gradient(180deg,#f8e3b5 0%,#dfb466 55%,#c79846 100%);border:1px solid rgba(255,248,226,.65);box-shadow:inset 0 1px 0 rgba(255,255,255,.65),0 8px 18px rgba(18,4,7,.34);transition:transform .22s var(--fgk-smooth),filter .2s ease}
+.fgk:hover .fgk-cta{transform:translateY(-1px);filter:brightness(1.05)}
+.fgk:focus-visible{outline:none}.fgk:focus-visible .fgk-box{outline:3px solid #facc15;outline-offset:2px}
 @media(max-width:640px){#fg-choix{align-items:flex-start}#fg-choix .gr.fgx>a.op{margin-top:0}}
-@media(prefers-reduced-motion:reduce){.fgk-lid,.fgk-box,.fgk-cta{transition:none}}
+@media(prefers-reduced-motion:reduce){.fgk-lid,.fgk-box,.fgk-box:after,.fgk-cta,.fgk-badge{transition:none}}
 #fg-choix .v150{position:relative}#fg-choix .v150 .old{color:rgba(255,255,255,.6);text-decoration:line-through;text-decoration-thickness:2px;font-size:1.15rem;font-weight:400}#fg-choix .v150 .px{font-size:2.6rem;font-weight:800;line-height:1.05}#fg-choix .v150 .pct{position:absolute;top:-16px;right:-12px;width:74px;height:74px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 35% 30%,#f7d98c,#c9973c);color:#3a1a0a;font-weight:800;font-size:1.15rem;box-shadow:0 10px 20px -8px rgba(0,0,0,.5);transform:rotate(-12deg)}#fg-choix .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}@media(max-width:640px){#fg-choix .v150 .pct{top:-12px;right:-6px;width:62px;height:62px;font-size:1rem}}
 </style>
 <div id="fg-choix" role="dialog" aria-modal="true" aria-labelledby="fg-choix-t">
@@ -3688,8 +3699,9 @@ if(cd) tick();
     <span class="go">Je choisis cette formule</span>
    </a>
    <a class="fgk" href="https://espace.forma-gard.com/inscription-noel-12-fois">
-    <span class="fgk-lid" aria-hidden="true"><i></i><span class="fgk-bow"><b></b><b></b><em></em></span></span>
+    <span class="fgk-lid" aria-hidden="true"><span class="fgk-bow"><span class="fgk-tail l"></span><span class="fgk-tail r"></span><span class="fgk-loop"></span><span class="fgk-knot"></span><span class="fgk-loop r"></span></span><span class="fgk-bar"><span class="fgk-notch"></span></span></span>
     <span class="fgk-box">
+     <span class="fgk-rib" aria-hidden="true"></span>
      <span class="fgk-badge">Offre des fêtes · en 12 fois</span>
      <span class="fgk-price">12,50&nbsp;€ / mois</span>
      <span class="fgk-desc">Pendant 12 mois, soit 150&nbsp;€ pour toute la formation. Rien n'est prélevé pendant 14 jours.</span>
