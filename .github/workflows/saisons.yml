@@ -22,10 +22,10 @@ jobs:
           elif [ "$J" -ge 1101 ]; then P=noel
           else P=normal; fi
           echo "Page du jour : $P"
-          cp "saisons/$P.html" index.html
-          if git diff --quiet index.html; then echo "Rien à changer"; exit 0; fi
+          cp "saisons/$P.html" accueil-0pzt549izz.html
+          if git diff --quiet accueil-0pzt549izz.html; then echo "Rien à changer"; exit 0; fi
           git config user.name "FORMA-GARD (automatique)"
           git config user.email "contact@forma-gard.com"
-          git add index.html
+          git add accueil-0pzt549izz.html
           git commit -m "Page d'accueil : $P"
           git push
